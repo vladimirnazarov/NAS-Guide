@@ -7,10 +7,13 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+
         mavenCentral()
         gradlePluginPortal()
     }
 }
+
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -21,3 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "NAS Guide"
 include(":app")
+include(":nasgapi")
+include(":ui")

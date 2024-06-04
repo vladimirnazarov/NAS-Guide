@@ -1,4 +1,4 @@
-package by.ssrlab.nasguide
+package by.ssrlab.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
