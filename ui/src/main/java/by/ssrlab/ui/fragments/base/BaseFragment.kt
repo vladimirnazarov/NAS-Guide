@@ -1,4 +1,7 @@
 package by.ssrlab.ui.fragments.base
 
-class BaseFragment {
+import androidx.fragment.app.Fragment
+
+interface BaseFragment {
+
 }
