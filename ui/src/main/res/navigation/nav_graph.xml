@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="by.ssrlab.ui.fragments.launch.MainFragment"
+        android:label="MainFragment">
+
+        <action
+            android:id="@+id/action_mainFragment_to_historyFragment"
+            app:destination="@id/historyFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_orgFragment"
+            app:destination="@id/orgFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_inventionsFragment"
+            app:destination="@id/inventionsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="by.ssrlab.ui.fragments.history.HistoryFragment"
+        android:label="HistoryFragment">
+
+        <action
+            android:id="@+id/action_historyFragment_to_datesFragment"
+            app:destination="@id/datesFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_historyFragment_to_personsFragment"
+            app:destination="@id/personsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_historyFragment_to_placesFragment"
+            app:destination="@id/placesFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/inventionsFragment"
+        android:name="by.ssrlab.ui.fragments.inventions.InventionsFragment"
+        android:label="InventionsFragment">
+
+        <action
+            android:id="@+id/action_inventionsFragment_to_filterFragment"
+            app:destination="@id/filterFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_inventionsFragment_to_inventionExpFragment"
+            app:destination="@id/inventionExpFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/orgFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.OrgFragment"
+        android:label="OrgFragment">
+
+        <action
+            android:id="@+id/action_orgFragment_to_exhibitFragment"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_orgFragment_to_filterFragment"
+            app:destination="@id/filterFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_orgFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="by.ssrlab.ui.fragments.launch.start.StartFragment"
+        android:label="StartFragment">
+
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="by.ssrlab.ui.fragments.launch.search.SearchFragment"
+        android:label="SearchFragment"/>
+
+    <fragment
+        android:id="@+id/datesFragment"
+        android:name="by.ssrlab.ui.fragments.history.dates.DatesFragment"
+        android:label="DatesFragment"/>
+
+    <fragment
+        android:id="@+id/personsFragment"
+        android:name="by.ssrlab.ui.fragments.history.persons.PersonsFragment"
+        android:label="PersonsFragment">
+
+        <action
+            android:id="@+id/action_personsFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_personsFragment_to_exhibitFragment"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="by.ssrlab.ui.fragments.history.places.PlacesFragment"
+        android:label="PlacesFragment">
+
+        <action
+            android:id="@+id/action_placesFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_placesFragment_to_exhibitFragment"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/exhibitFragment"
+        android:name="by.ssrlab.ui.fragments.common.ExhibitFragment"
+        android:label="ExhibitFragment">
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_achievementsFragment"
+            app:destination="@id/achievementsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_researchFragment"
+            app:destination="@id/researchFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_labsFragment"
+            app:destination="@id/labsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="by.ssrlab.ui.fragments.common.MapFragment"
+        android:label="MapFragment"/>
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="by.ssrlab.ui.fragments.common.FilterFragment"
+        android:label="FilterFragment"/>
+
+    <fragment
+        android:id="@+id/researchFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.child.ResearchFragment"
+        android:label="ResearchFragment"/>
+
+    <fragment
+        android:id="@+id/achievementsFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.child.AchievementsFragment"
+        android:label="AchievementsFragment"/>
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.child.ContactsFragment"
+        android:label="ContactsFragment"/>
+
+    <fragment
+        android:id="@+id/labsFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.child.LabsFragment"
+        android:label="LabsFragment"/>
+
+    <fragment
+        android:id="@+id/inventionExpFragment"
+        android:name="by.ssrlab.ui.fragments.inventions.InventionExpFragment"
+        android:label="InventionExpFragment">
+
+        <action
+            android:id="@+id/action_inventionExpFragment_to_exhibitFragment"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+</navigation>
