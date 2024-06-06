@@ -97,15 +97,6 @@
             app:popEnterAnim="@anim/nav_pen"
             app:popExitAnim="@anim/nav_pex"/>
 
-        <action
-            android:id="@+id/action_inventionsFragment_to_inventionExpFragment"
-            app:destination="@id/inventionExpFragment"
-
-            app:enterAnim="@anim/nav_en"
-            app:exitAnim="@anim/nav_ex"
-            app:popEnterAnim="@anim/nav_pen"
-            app:popExitAnim="@anim/nav_pex"/>
-
     </fragment>
 
     <fragment
@@ -160,7 +151,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="by.ssrlab.ui.fragments.launch.search.SearchFragment"
+        android:name="by.ssrlab.common_ui.common.utils.SearchFragment"
         android:label="SearchFragment"/>
 
     <fragment
@@ -220,7 +211,7 @@
 
     <fragment
         android:id="@+id/exhibitFragment"
-        android:name="by.ssrlab.ui.fragments.common.ExhibitFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.ExhibitFragment"
         android:label="ExhibitFragment">
 
         <action
@@ -268,16 +259,25 @@
             app:popEnterAnim="@anim/nav_pen"
             app:popExitAnim="@anim/nav_pex"/>
 
+        <action
+            android:id="@+id/action_exhibitFragment_self"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
     </fragment>
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="by.ssrlab.ui.fragments.common.MapFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.MapFragment"
         android:label="MapFragment"/>
 
     <fragment
         android:id="@+id/filterFragment"
-        android:name="by.ssrlab.ui.fragments.common.FilterFragment"
+        android:name="by.ssrlab.common_ui.common.utils.FilterFragment"
         android:label="FilterFragment"/>
 
     <fragment
@@ -298,16 +298,11 @@
     <fragment
         android:id="@+id/labsFragment"
         android:name="by.ssrlab.ui.fragments.organizations.child.LabsFragment"
-        android:label="LabsFragment"/>
-
-    <fragment
-        android:id="@+id/inventionExpFragment"
-        android:name="by.ssrlab.ui.fragments.inventions.InventionExpFragment"
-        android:label="InventionExpFragment">
+        android:label="LabsFragment">
 
         <action
-            android:id="@+id/action_inventionExpFragment_to_exhibitFragment"
-            app:destination="@id/exhibitFragment"
+            android:id="@+id/action_labsFragment_to_departmentsFragment"
+            app:destination="@id/departmentsFragment"
 
             app:enterAnim="@anim/nav_en"
             app:exitAnim="@anim/nav_ex"
@@ -315,5 +310,10 @@
             app:popExitAnim="@anim/nav_pex"/>
 
     </fragment>
+
+    <fragment
+        android:id="@+id/departmentsFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.child.DepartmentsFragment"
+        android:label="DepartmentsFragment"/>
 
 </navigation>

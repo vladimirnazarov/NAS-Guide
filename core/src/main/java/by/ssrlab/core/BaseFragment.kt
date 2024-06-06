@@ -1,4 +1,4 @@
-package by.ssrlab.ui.fragments.base
+package by.ssrlab.core
 
 import androidx.fragment.app.Fragment
 
