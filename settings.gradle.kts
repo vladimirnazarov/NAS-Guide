@@ -26,3 +26,7 @@ rootProject.name = "NAS Guide"
 include(":app")
 include(":nasgapi")
 include(":ui")
+include(":data")
+include(":core")
+include(":domain")
+include(":common-ui")

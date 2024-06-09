@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    namespace = "by.ssrlab.ui"
+    namespace = "by.ssrlab.common_ui"
     compileSdk = 34
 
     defaultConfig {
@@ -25,11 +24,11 @@ android {
         }
     }
 
-    dataBinding {
+    viewBinding {
         enable = true
     }
 
-    viewBinding {
+    dataBinding {
         enable = true
     }
 
@@ -44,17 +43,12 @@ android {
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":common-ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":core"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.navigation.safe.args.gradle.plugin)
-    implementation(libs.androidx.navigation.fragment.ktx)
 }
