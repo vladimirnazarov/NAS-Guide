@@ -3,6 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="oval">
 
-    <solid android:color="@color/toolbar_button"/>
+    <solid android:color="@color/toolbar_button_primary_bg"/>
 
 </shape>

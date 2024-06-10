@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -34,12 +33,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -55,6 +54,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.androidx.navigation.ui.ktx)
-    implementation(libs.androidx.navigation.safe.args.gradle.plugin)
     implementation(libs.androidx.navigation.fragment.ktx)
 }

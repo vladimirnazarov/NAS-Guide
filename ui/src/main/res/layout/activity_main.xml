@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+    android:background="@color/black"
     tools:ignore="ContentDescription"
     tools:context="by.ssrlab.ui.MainActivity"
 
@@ -34,12 +35,13 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <ImageButton
-                android:id="@+id/toolbar_lang_action"
+                android:id="@+id/toolbar_lang_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                android:src="@drawable/ic_language"
+                android:src="@drawable/toolbar_ic_lang"
                 android:background="@drawable/ripple_rounded_toolbar"
+                app:tint="@color/toolbar_ic_selector"
 
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -51,7 +53,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar_search_icon"
+            android:id="@+id/toolbar_search_ic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -65,45 +67,14 @@
             app:layout_constraintEnd_toStartOf="@id/toolbar_lang">
 
             <ImageButton
-                android:id="@+id/toolbar_search_icon_action"
+                android:id="@+id/toolbar_search_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                android:src="@drawable/ic_language"
+                android:src="@drawable/toolbar_ic_search"
                 android:background="@drawable/ripple_rounded_toolbar"
 
-                android:padding="@dimen/toolbar_button_padding"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:background="@drawable/background_button_round"
-
-            android:visibility="gone"
-
-            android:layout_marginVertical="@dimen/toolbar_margin"
-            android:layout_marginStart="@dimen/toolbar_margin"
-
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageButton
-                android:id="@+id/toolbar_back_action"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:src="@drawable/ic_back"
-                android:background="@drawable/ripple_rounded_toolbar"
+                app:tint="@color/toolbar_ic_selector"
 
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -120,6 +91,8 @@
         android:id="@+id/toolbar_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:visibility="gone"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
