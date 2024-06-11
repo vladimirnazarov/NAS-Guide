@@ -6,6 +6,7 @@
 
     <!--  Activity  -->
     <dimen name="activity_header_corners">16dp</dimen>
+    <dimen name="activity_bottom_line">20dp</dimen>
 
     <!--  Toolbar  -->
     <dimen name="toolbar_height">60dp</dimen>
