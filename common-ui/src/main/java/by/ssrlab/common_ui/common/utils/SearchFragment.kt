@@ -1,7 +1,11 @@
 package by.ssrlab.common_ui.common.utils
 
-import androidx.fragment.app.Fragment
-import by.ssrlab.core.BaseFragment
+import android.view.View
+import by.ssrlab.common_ui.common.fragments.BaseFragment
 
-class SearchFragment: Fragment(), BaseFragment {
+class SearchFragment: BaseFragment() {
+
+    override fun initBinding(): View {
+        TODO("Not yet implemented")
+    }
 }

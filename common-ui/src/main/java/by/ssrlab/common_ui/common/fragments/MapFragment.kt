@@ -1,7 +1,10 @@
 package by.ssrlab.common_ui.common.fragments
 
-import androidx.fragment.app.Fragment
-import by.ssrlab.core.BaseFragment
+import android.view.View
 
-class MapFragment: Fragment(), BaseFragment {
+class MapFragment: BaseFragment() {
+
+    override fun initBinding(): View {
+        TODO("Not yet implemented")
+    }
 }
