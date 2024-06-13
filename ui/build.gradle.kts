@@ -43,7 +43,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
     implementation(project(":common-ui"))
+
+    implementation(libs.koin.android)
+
+    implementation(libs.coil)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

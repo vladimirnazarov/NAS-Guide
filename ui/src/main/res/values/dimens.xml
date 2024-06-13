@@ -19,7 +19,4 @@
     <!--  Main  -->
     <dimen name="main_title">25sp</dimen>
 
-    <!--  Recycler View  -->
-    <dimen name="rv_item_corners">16dp</dimen>
-
 </resources>
