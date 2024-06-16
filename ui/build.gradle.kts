@@ -47,8 +47,8 @@ dependencies {
     implementation(project(":common-ui"))
 
     implementation(libs.koin.android)
-
     implementation(libs.coil)
+    implementation(libs.androidx.databinding.runtime)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

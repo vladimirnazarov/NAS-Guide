@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import by.ssrlab.ui.databinding.ActivityStartBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,6 +24,14 @@ class StartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            )
+        )
 
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,10 +53,10 @@ class StartActivity : AppCompatActivity() {
                     delay(500)
                     startAnimation(logoTitle, AnimationUtils.loadAnimation(this@StartActivity, R.anim.logo_title))
                 }
-            }
 
-            delay(2000)
-            moveNext()
+                delay(1000)
+                moveNext()
+            }
         }
     }
 
@@ -58,6 +69,12 @@ class StartActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(intent)
+
+        val options = ActivityOptionsCompat.makeCustomAnimation(
+            this,
+            R.anim.nav_en,
+            R.anim.nav_ex
+        )
+        startActivity(intent, options.toBundle())
     }
 }
