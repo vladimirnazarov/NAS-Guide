@@ -1,7 +1,11 @@
 package by.ssrlab.ui.fragments.history.dates
 
-import androidx.fragment.app.Fragment
-import by.ssrlab.core.BaseFragment
+import android.view.View
+import by.ssrlab.common_ui.common.fragments.BaseFragment
 
-class DatesFragment: Fragment(), BaseFragment {
+class DatesFragment: BaseFragment() {
+
+    override fun initBinding(): View {
+        TODO("Not yet implemented")
+    }
 }

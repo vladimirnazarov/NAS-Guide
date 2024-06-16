@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -134,24 +134,8 @@
     </fragment>
 
     <fragment
-        android:id="@+id/startFragment"
-        android:name="by.ssrlab.ui.fragments.launch.start.StartFragment"
-        android:label="StartFragment">
-
-        <action
-            android:id="@+id/action_startFragment_to_mainFragment"
-            app:destination="@id/mainFragment"
-
-            app:enterAnim="@anim/nav_en"
-            app:exitAnim="@anim/nav_ex"
-            app:popEnterAnim="@anim/nav_pen"
-            app:popExitAnim="@anim/nav_pex"/>
-
-    </fragment>
-
-    <fragment
         android:id="@+id/searchFragment"
-        android:name="by.ssrlab.common_ui.common.utils.SearchFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.utils.SearchFragment"
         android:label="SearchFragment"/>
 
     <fragment
@@ -277,7 +261,7 @@
 
     <fragment
         android:id="@+id/filterFragment"
-        android:name="by.ssrlab.common_ui.common.utils.FilterFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.utils.FilterFragment"
         android:label="FilterFragment"/>
 
     <fragment

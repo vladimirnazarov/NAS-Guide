@@ -27,6 +27,14 @@ android {
         }
     }
 
+    dataBinding {
+        enable = true
+    }
+
+    viewBinding {
+        enable = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -38,7 +46,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
     implementation(project(":ui"))
+
+    implementation(libs.koin.android)
+
+    implementation(libs.coil)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

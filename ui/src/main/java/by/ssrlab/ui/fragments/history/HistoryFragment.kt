@@ -1,7 +1,11 @@
 package by.ssrlab.ui.fragments.history
 
-import androidx.fragment.app.Fragment
-import by.ssrlab.core.BaseFragment
+import android.view.View
+import by.ssrlab.common_ui.common.fragments.BaseFragment
 
-class HistoryFragment: Fragment(), BaseFragment {
+class HistoryFragment: BaseFragment() {
+
+    override fun initBinding(): View {
+        TODO("Not yet implemented")
+    }
 }

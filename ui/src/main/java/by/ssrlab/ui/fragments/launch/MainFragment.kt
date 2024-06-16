@@ -1,7 +1,15 @@
 package by.ssrlab.ui.fragments.launch
 
-import androidx.fragment.app.Fragment
-import by.ssrlab.core.BaseFragment
+import android.view.View
+import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.ui.databinding.FragmentMainBinding
 
-class MainFragment: Fragment(), BaseFragment {
+class MainFragment: BaseFragment() {
+
+    private lateinit var binding: FragmentMainBinding
+
+    override fun initBinding(): View {
+        binding = FragmentMainBinding.inflate(layoutInflater)
+        return binding.root
+    }
 }

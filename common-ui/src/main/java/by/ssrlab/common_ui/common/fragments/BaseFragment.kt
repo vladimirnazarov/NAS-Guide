@@ -1,4 +1,4 @@
-package by.ssrlab.ui.fragments
+package by.ssrlab.common_ui.common.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

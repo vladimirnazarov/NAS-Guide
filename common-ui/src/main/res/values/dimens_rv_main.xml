@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  RV Main  -->
+    <dimen name="rv_item_corners">16dp</dimen>
+
+    <dimen name="rv_main_text">22sp</dimen>
+
+</resources>
