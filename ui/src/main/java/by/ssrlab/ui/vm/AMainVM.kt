@@ -22,7 +22,7 @@ class AMainVM(private val resources: Resources): ViewModel() {
         }
     }
 
-    private val _headerImg = MutableLiveData(R.drawable.header_main)
+    private val _headerImg = MutableLiveData(0)
     val headerImg: LiveData<Int>
         get() = _headerImg
 

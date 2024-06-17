@@ -11,4 +11,6 @@
     <color name="clickable_text_false">#165089</color>
     <color name="clickable_text_true">#01315C</color>
 
+    <color name="ripple_folder">#4DFFFFFF</color>
+
 </resources>

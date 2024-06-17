@@ -49,6 +49,18 @@
             app:layout_constraintEnd_toEndOf="@id/rv_main_png"
             app:layout_constraintBottom_toBottomOf="@id/rv_main_png"/>
 
+        <ImageButton
+            android:id="@+id/rv_main_ripple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@drawable/ripple_folder"
+
+            app:layout_constraintTop_toTopOf="@id/rv_main_png"
+            app:layout_constraintStart_toStartOf="@id/rv_main_png"
+            app:layout_constraintEnd_toEndOf="@id/rv_main_png"
+            app:layout_constraintBottom_toBottomOf="@id/rv_main_png"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

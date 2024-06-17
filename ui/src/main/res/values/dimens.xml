@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--  Common  -->
-    <dimen name="common_margin">16dp</dimen>
-    <dimen name="common_rv_padding">48dp</dimen>
-
     <!--  Activity  -->
     <dimen name="activity_header_corners">16dp</dimen>
     <dimen name="activity_bottom_line">20dp</dimen>
