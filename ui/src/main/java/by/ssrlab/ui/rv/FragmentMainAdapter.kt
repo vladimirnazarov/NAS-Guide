@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import by.ssrlab.common_ui.databinding.RvMainItemBinding
 import by.ssrlab.common_ui.common.obj.FolderObject
-import by.ssrlab.ui.R
+import by.ssrlab.common_ui.databinding.RvMainItemBinding
 import coil.load
+import coil.transform.RoundedCornersTransformation
 
 class FragmentMainAdapter(
     private val entitiesList: List<FolderObject>
@@ -32,7 +32,9 @@ class FragmentMainAdapter(
             folderObj = entitiesList[position]
             executePendingBindings()
 
-            rvMainPng.load(folderObj.imageResource)
+            rvMainPng.load(entitiesList[position].imageResource) {
+                transformations(RoundedCornersTransformation(20f))
+            }
         }
     }
 

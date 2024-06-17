@@ -3,6 +3,7 @@
 
     <!--  Common  -->
     <dimen name="common_margin">16dp</dimen>
+    <dimen name="common_rv_padding">48dp</dimen>
 
     <!--  Activity  -->
     <dimen name="activity_header_corners">16dp</dimen>
@@ -11,7 +12,7 @@
     <!--  Toolbar  -->
     <dimen name="toolbar_height">60dp</dimen>
     <dimen name="toolbar_margin">16dp</dimen>
-    <dimen name="toolbar_button_padding">16dp</dimen>
+    <dimen name="toolbar_button_padding">12dp</dimen>
     
     <dimen name="toolbar_text">17sp</dimen>
     <dimen name="toolbar_tsi_margin">8dp</dimen>

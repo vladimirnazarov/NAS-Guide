@@ -6,4 +6,9 @@
 
     <dimen name="rv_main_text">22sp</dimen>
 
+    <dimen name="rv_text_margin_h">16dp</dimen>
+    <dimen name="rv_text_margin_v">16dp</dimen>
+    <dimen name="rv_margin_h">16dp</dimen>
+    <dimen name="rv_margin_v">16dp</dimen>
+
 </resources>

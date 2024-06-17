@@ -1,117 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-
-    tools:ignore="ContentDescription"
-    tools:context="by.ssrlab.ui.MainActivity"
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="by.ssrlab.ui.vm.AMainVM"/>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/toolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+
+        android:background="@color/white"
+
+        tools:ignore="ContentDescription"
+        tools:context="by.ssrlab.ui.MainActivity"
+
         android:layout_width="match_parent"
-        android:layout_height="@dimen/toolbar_height"
+        android:layout_height="match_parent">
 
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar_lang"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/activity_header"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:background="@drawable/background_button_round"
-
-            android:layout_marginVertical="@dimen/toolbar_margin"
-            android:layout_marginEnd="@dimen/toolbar_margin"
+            android:scaleType="fitXY"
 
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageButton
-                android:id="@+id/toolbar_lang_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toolbar_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                android:src="@drawable/toolbar_ic_lang"
-                android:background="@drawable/ripple_rounded_toolbar"
-                app:tint="@color/toolbar_ic_selector"
+                android:background="@drawable/background_button_round"
 
-                android:padding="@dimen/toolbar_button_padding"
+                android:layout_marginVertical="@dimen/toolbar_margin"
+                android:layout_marginEnd="@dimen/toolbar_margin"
 
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/toolbar_lang_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/toolbar_ic_lang"
+                    android:background="@drawable/ripple_rounded_toolbar"
+                    app:tint="@color/toolbar_ic_selector"
+
+                    android:padding="@dimen/toolbar_button_padding"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/toolbar_search_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/background_button_round"
+
+                android:layout_marginVertical="@dimen/toolbar_margin"
+                android:layout_marginEnd="@dimen/toolbar_margin"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/toolbar_lang">
+
+                <ImageButton
+                    android:id="@+id/toolbar_search_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/toolbar_ic_search"
+                    android:background="@drawable/ripple_rounded_toolbar"
+
+                    app:tint="@color/toolbar_ic_selector"
+
+                    android:padding="@dimen/toolbar_button_padding"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar_search_ic"
-            android:layout_width="wrap_content"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/activity_fragment_host"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/nav_graph"
+
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/activity_bottom_blur"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_bottom_line"
+
+            android:background="@color/white_50transparent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <include
             android:layout_height="wrap_content"
-
-            android:background="@drawable/background_button_round"
-
-            android:layout_marginVertical="@dimen/toolbar_margin"
-            android:layout_marginEnd="@dimen/toolbar_margin"
-
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/toolbar_lang">
-
-            <ImageButton
-                android:id="@+id/toolbar_search_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:src="@drawable/toolbar_ic_search"
-                android:background="@drawable/ripple_rounded_toolbar"
-
-                app:tint="@color/toolbar_ic_selector"
-
-                android:padding="@dimen/toolbar_button_padding"
-
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_width="match_parent"
+            layout="@layout/search_common"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/activity_fragment_host"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/nav_graph"
-
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/activity_bottom_line"
-
-        android:background="@color/white_50transparent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <include
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        layout="@layout/search_common"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
