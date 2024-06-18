@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.common.obj.FolderObject
 import by.ssrlab.common_ui.databinding.RvFolderItemBinding
 
-class FragmentMainAdapter(
+class FragmentHistoryAdapter(
     private val entitiesList: List<FolderObject>,
-    private val pngLoadAction: (ImageView, Int) -> Unit,
+    private val pngLoadAction: (ImageView, Int) -> Int,
     private val navigateAction: (Int) -> Unit
-): RecyclerView.Adapter<FragmentMainAdapter.FragmentMainViewHolder>() {
+): RecyclerView.Adapter<FragmentHistoryAdapter.FragmentHistoryHolder>() {
 
-    inner class FragmentMainViewHolder(val binding: RvFolderItemBinding): RecyclerView.ViewHolder(binding.root)
+    inner class FragmentHistoryHolder(val binding: RvFolderItemBinding): RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FragmentMainViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FragmentHistoryHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = DataBindingUtil.inflate<RvFolderItemBinding>(
             inflater,
@@ -25,10 +25,10 @@ class FragmentMainAdapter(
             false
         )
 
-        return FragmentMainViewHolder(binding)
+        return FragmentHistoryHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FragmentMainViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FragmentHistoryHolder, position: Int) {
         holder.binding.apply {
             folderObj = entitiesList[position]
             executePendingBindings()

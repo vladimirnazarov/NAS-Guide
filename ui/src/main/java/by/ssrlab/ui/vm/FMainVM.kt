@@ -1,13 +1,12 @@
-package by.ssrlab.ui.vm.fragment
+package by.ssrlab.ui.vm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import by.ssrlab.ui.repository.UiDataProvider
-import org.koin.core.component.KoinComponent
 
-class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel(), KoinComponent{
+class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel() {
 
     @Suppress("UNCHECKED_CAST")
     class Factory(private val uiDataProvider: UiDataProvider): ViewModelProvider.Factory {
@@ -21,8 +20,9 @@ class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel(), KoinComp
     val title: LiveData<String>
         get() = _title
 
-    fun getData() = uiDataProvider.getMainFolders()
     fun setTitle(value: String) {
         _title.value = value
     }
+
+    fun getData() = uiDataProvider.getMainFolders()
 }

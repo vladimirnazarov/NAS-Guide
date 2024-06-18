@@ -54,6 +54,8 @@ dependencies {
     implementation(project(":common-ui"))
 
     implementation(libs.koin.android)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.runtime)
 
     implementation(libs.coil)
 

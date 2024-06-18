@@ -13,17 +13,17 @@
 
         tools:ignore="ContentDescription"
 
-        android:background="@drawable/background_rv_item"
+        android:background="@drawable/background_rv_folder_main"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/rv_main_png"
+            android:id="@+id/rv_folder_main_png"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:background="@drawable/background_rv_item"
+            android:background="@drawable/background_rv_folder_main"
 
             android:layout_marginVertical="@dimen/rv_margin_v"
             android:layout_marginHorizontal="@dimen/rv_margin_h"
@@ -34,32 +34,32 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/rv_main_title"
+            android:id="@+id/rv_folder_main_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@{folderObj.title}"
             android:textColor="@color/rv_main_text"
-            android:textSize="@dimen/rv_main_text"
+            android:textSize="@dimen/rv_folder_main_text"
 
             android:layout_marginBottom="@dimen/rv_text_margin_v"
             android:layout_marginHorizontal="@dimen/rv_text_margin_h"
 
-            app:layout_constraintStart_toStartOf="@id/rv_main_png"
-            app:layout_constraintEnd_toEndOf="@id/rv_main_png"
-            app:layout_constraintBottom_toBottomOf="@id/rv_main_png"/>
+            app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
+            app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
+            app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
 
         <ImageButton
-            android:id="@+id/rv_main_ripple"
+            android:id="@+id/rv_folder_main_ripple"
             android:layout_width="0dp"
             android:layout_height="0dp"
 
             android:background="@drawable/ripple_folder"
 
-            app:layout_constraintTop_toTopOf="@id/rv_main_png"
-            app:layout_constraintStart_toStartOf="@id/rv_main_png"
-            app:layout_constraintEnd_toEndOf="@id/rv_main_png"
-            app:layout_constraintBottom_toBottomOf="@id/rv_main_png"/>
+            app:layout_constraintTop_toTopOf="@id/rv_folder_main_png"
+            app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
+            app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
+            app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
