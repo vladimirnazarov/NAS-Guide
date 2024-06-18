@@ -1,12 +1,13 @@
-package by.ssrlab.ui.vm
+package by.ssrlab.ui.vm.fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import by.ssrlab.common_ui.common.repository.UiDataProvider
+import by.ssrlab.ui.repository.UiDataProvider
+import org.koin.core.component.KoinComponent
 
-class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel() {
+class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel(), KoinComponent{
 
     @Suppress("UNCHECKED_CAST")
     class Factory(private val uiDataProvider: UiDataProvider): ViewModelProvider.Factory {

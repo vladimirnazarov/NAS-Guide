@@ -2,15 +2,16 @@ package by.ssrlab.ui.rv
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.common.obj.FolderObject
 import by.ssrlab.common_ui.databinding.RvMainItemBinding
-import coil.load
-import coil.transform.RoundedCornersTransformation
 
 class FragmentMainAdapter(
-    private val entitiesList: List<FolderObject>
+    private val entitiesList: List<FolderObject>,
+    private val pngLoadAction: (ImageView, Int) -> Unit,
+    private val movementAction: (Int) -> Unit
 ): RecyclerView.Adapter<FragmentMainAdapter.FragmentMainViewHolder>() {
 
     inner class FragmentMainViewHolder(val binding: RvMainItemBinding): RecyclerView.ViewHolder(binding.root)
@@ -32,8 +33,9 @@ class FragmentMainAdapter(
             folderObj = entitiesList[position]
             executePendingBindings()
 
-            rvMainPng.load(entitiesList[position].imageResource) {
-                transformations(RoundedCornersTransformation(20f))
+            pngLoadAction(rvMainPng, entitiesList[position].imageResource)
+            rvMainRipple.setOnClickListener {
+                movementAction(entitiesList[position].address)
             }
         }
     }

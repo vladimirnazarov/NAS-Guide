@@ -63,4 +63,6 @@ class MainActivity : AppCompatActivity() {
             binding.activityHeader.load(it)
         }
     }
+
+    fun provideViewModel() = viewModel
 }
