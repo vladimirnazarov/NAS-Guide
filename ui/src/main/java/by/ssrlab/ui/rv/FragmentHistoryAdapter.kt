@@ -10,7 +10,7 @@ import by.ssrlab.common_ui.databinding.RvFolderItemBinding
 
 class FragmentHistoryAdapter(
     private val entitiesList: List<FolderObject>,
-    private val pngLoadAction: (ImageView, Int) -> Int,
+    private val pngLoadAction: (ImageView, Int) -> Unit,
     private val navigateAction: (Int) -> Unit
 ): RecyclerView.Adapter<FragmentHistoryAdapter.FragmentHistoryHolder>() {
 
