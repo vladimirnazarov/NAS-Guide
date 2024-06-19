@@ -13,4 +13,6 @@
 
     <color name="ripple_folder">#4DFFFFFF</color>
 
+    <color name="folders_header">#FFFFFF</color>
+
 </resources>

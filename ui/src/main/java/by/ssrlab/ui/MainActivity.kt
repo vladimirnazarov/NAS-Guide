@@ -4,20 +4,19 @@ import android.os.Bundle
 import android.view.ViewTreeObserver
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
+import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.ui.databinding.ActivityMainBinding
-import by.ssrlab.ui.vm.AMainVM
 import coil.load
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.component.KoinComponent
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), KoinComponent {
 
     private lateinit var binding: ActivityMainBinding
-    private val viewModel: AMainVM by viewModels {
-        AMainVM.Factory(resources)
-    }
+    private val activityViewModel: AMainVM by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
 
-        binding.viewModel = viewModel
+        binding.viewModel = activityViewModel
         binding.lifecycleOwner = this@MainActivity
 
         observeLayoutChange()
@@ -44,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             override fun onGlobalLayout() {
                 binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val statusBarHeight = viewModel.getPadding(AMainVM.ActivityMainMarginParams.STATUS_HEIGHT)
-                val navBarHeight = viewModel.getPadding(AMainVM.ActivityMainMarginParams.NAVIGATION_HEIGHT)
+                val statusBarHeight = activityViewModel.getPadding(AMainVM.ActivityMainMarginParams.STATUS_HEIGHT)
+                val navBarHeight = activityViewModel.getPadding(AMainVM.ActivityMainMarginParams.NAVIGATION_HEIGHT)
 
                 val toolbarParams = binding.toolbar.layoutParams as ConstraintLayout.LayoutParams
                 toolbarParams.topMargin = statusBarHeight
@@ -59,10 +58,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeHeader() {
-        viewModel.headerImg.observe(this) {
+        activityViewModel.headerImg.observe(this) {
             binding.activityHeader.load(it)
         }
     }
-
-    fun provideViewModel() = viewModel
 }

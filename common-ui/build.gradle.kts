@@ -43,6 +43,11 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.koin.android)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.runtime)
+
     implementation(libs.coil)
 
     implementation(libs.androidx.core.ktx)
