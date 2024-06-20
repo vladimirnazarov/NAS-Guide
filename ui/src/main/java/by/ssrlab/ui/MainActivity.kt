@@ -2,7 +2,6 @@ package by.ssrlab.ui
 
 import android.os.Bundle
 import android.view.ViewTreeObserver
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

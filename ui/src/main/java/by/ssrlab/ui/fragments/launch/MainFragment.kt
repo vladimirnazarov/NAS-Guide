@@ -3,7 +3,6 @@ package by.ssrlab.ui.fragments.launch
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
