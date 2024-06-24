@@ -1,11 +1,10 @@
 package by.ssrlab.common_ui.common.vm
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class AMainVM(private val context: Context): ViewModel() {
+class AMainVM: ViewModel() {
 
     enum class ActivityMainMarginParams(val param: String) {
         STATUS_HEIGHT("status_bar_height"),
@@ -18,16 +17,5 @@ class AMainVM(private val context: Context): ViewModel() {
 
     fun setHeaderImg(resource: Int) {
         _headerImg.value = resource
-    }
-
-    @Suppress("DiscouragedApi")
-    fun getPadding(identifier: ActivityMainMarginParams): Int {
-        var result = 0
-        val resourceId = context.resources.getIdentifier(identifier.param, "dimen", "android")
-        if (resourceId > 0) {
-            result = context.resources.getDimensionPixelSize(resourceId)
-        }
-
-        return result
     }
 }

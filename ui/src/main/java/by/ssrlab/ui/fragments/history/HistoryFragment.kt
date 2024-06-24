@@ -3,14 +3,11 @@ package by.ssrlab.ui.fragments.history
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentHistoryBinding
 import by.ssrlab.ui.rv.FragmentHistoryAdapter

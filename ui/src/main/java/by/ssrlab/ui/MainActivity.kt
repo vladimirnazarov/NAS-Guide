@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             override fun onGlobalLayout() {
                 binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val statusBarHeight = activityViewModel.getPadding(AMainVM.ActivityMainMarginParams.STATUS_HEIGHT)
-                val navBarHeight = activityViewModel.getPadding(AMainVM.ActivityMainMarginParams.NAVIGATION_HEIGHT)
+                val statusBarHeight = getPadding(AMainVM.ActivityMainMarginParams.STATUS_HEIGHT)
+                val navBarHeight = getPadding(AMainVM.ActivityMainMarginParams.NAVIGATION_HEIGHT)
 
                 val toolbarParams = binding.toolbar.layoutParams as ConstraintLayout.LayoutParams
                 toolbarParams.topMargin = statusBarHeight
@@ -61,5 +61,16 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         activityViewModel.headerImg.observe(this) {
             binding.activityHeader.load(it)
         }
+    }
+
+    @Suppress("DiscouragedApi")
+    private fun getPadding(identifier: AMainVM.ActivityMainMarginParams): Int {
+        var result = 0
+        val resourceId = resources.getIdentifier(identifier.param, "dimen", "android")
+        if (resourceId > 0) {
+            result = resources.getDimensionPixelSize(resourceId)
+        }
+
+        return result
     }
 }

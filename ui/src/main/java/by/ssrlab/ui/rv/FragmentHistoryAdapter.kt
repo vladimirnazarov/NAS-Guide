@@ -33,6 +33,7 @@ class FragmentHistoryAdapter(
             folderObj = entitiesList[position]
             executePendingBindings()
 
+            rvFolderMainTitle.setText(entitiesList[position].title)
             pngLoadAction(rvFolderMainPng, entitiesList[position].imageResource)
             rvFolderMainRipple.setOnClickListener {
                 navigateAction(entitiesList[position].address)
