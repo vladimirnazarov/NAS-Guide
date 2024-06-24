@@ -9,7 +9,8 @@
     android:background="@color/primary_blue"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/start_activity">
 
     <TextView
         android:id="@+id/logo_title"

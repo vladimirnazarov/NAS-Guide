@@ -7,6 +7,8 @@ android {
     namespace = "by.ssrlab.ui"
     compileSdk = 34
 
+    useLibrary("android.test.mock")
+
     defaultConfig {
         minSdk = 29
 
@@ -57,9 +59,14 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit5)
+    androidTestImplementation(libs.mockito.android)
+    debugImplementation(libs.androidx.fragment.testing)
 
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.navigation.fragment.ktx)
