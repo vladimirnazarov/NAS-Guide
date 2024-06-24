@@ -5,5 +5,11 @@
 
     <dimen name="common_margin">16dp</dimen>
     <dimen name="common_rv_padding">48dp</dimen>
+    <dimen name="common_rv_top_margin">20dp</dimen>
+
+    <dimen name="support_button_background_radius">100dp</dimen>
+    <dimen name="support_button_title">15sp</dimen>
+    <dimen name="support_button_external_margin">28dp</dimen>
+    <dimen name="support_button_internal_margin">6dp</dimen>
 
 </resources>

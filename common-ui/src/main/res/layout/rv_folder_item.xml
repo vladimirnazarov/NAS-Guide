@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
 
             android:text="@{folderObj.title}"
-            android:textColor="@color/rv_main_text"
+            android:textColor="@color/rv_folder_text"
             android:textSize="@dimen/rv_folder_main_text"
 
             android:layout_marginBottom="@dimen/rv_text_margin_v"
