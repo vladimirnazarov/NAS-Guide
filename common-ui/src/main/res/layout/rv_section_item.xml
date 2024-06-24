@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="ContentDescription"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/background_rv_section"
+        android:elevation="@dimen/section_elevation"
+
+        android:layout_marginVertical="@dimen/section_vertical_margin"
+        android:layout_marginHorizontal="@dimen/section_horizontal_margin"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/rv_section_png"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:background="@drawable/background_rv_sections_png"
+
+            android:layout_marginStart="@dimen/section_png_margin"
+            android:layout_marginVertical="@dimen/section_png_margin"
+            
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/section_title_margin_start"
+            android:layout_marginEnd="@dimen/section_title_margin_end"
+            android:layout_marginVertical="@dimen/section_title_margin_vertical"
+
+            app:layout_constraintStart_toEndOf="@id/rv_section_png"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/rv_section_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/sections_title_text_size"
+                android:textColor="@color/rv_section_text"
+                android:textStyle="bold"
+
+                android:gravity="start|top"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/rv_section_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:textSize="@dimen/sections_title_text_size"
+                android:textColor="@color/rv_section_text"
+                android:textStyle="bold"
+
+                android:layout_marginStart="@dimen/section_title_margin_start"
+
+                app:layout_constraintStart_toEndOf="@id/rv_section_number"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

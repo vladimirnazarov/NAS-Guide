@@ -13,8 +13,6 @@
 
         tools:ignore="ContentDescription"
 
-        android:background="@drawable/background_rv_folder_main"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -23,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:background="@drawable/background_rv_folder_main"
+            android:background="@drawable/background_rv_folder"
+            android:elevation="@dimen/folder_elevation"
 
             android:layout_marginVertical="@dimen/rv_margin_v"
             android:layout_marginHorizontal="@dimen/rv_margin_h"
