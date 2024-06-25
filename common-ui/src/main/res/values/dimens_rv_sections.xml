@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="section_vertical_margin">6dp</dimen>
+    <dimen name="section_horizontal_margin">20dp</dimen>
+    <dimen name="section_png_margin">10dp</dimen>
+    <dimen name="section_png_corners">16dp</dimen>
+    <dimen name="section_elevation">4dp</dimen>
+
+    <dimen name="section_title_margin_end">10dp</dimen>
+    <dimen name="section_title_margin_start">8dp</dimen>
+    <dimen name="section_title_margin_vertical">26dp</dimen>
+    <dimen name="sections_title_text_size">15sp</dimen>
+
+</resources>

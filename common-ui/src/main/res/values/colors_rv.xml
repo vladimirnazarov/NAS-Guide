@@ -2,6 +2,7 @@
 <resources>
 
     <color name="rv_folder_text">#FFFFFF</color>
+    <color name="rv_folder_background">#F3F3F7</color>
     <color name="ripple_folder">#4DFFFFFF</color>
     <color name="folders_header">#FFFFFF</color>
 
