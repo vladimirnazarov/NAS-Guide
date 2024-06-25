@@ -1,65 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <data>
-        <variable
-            name="folderObj"
-            type="by.ssrlab.common_ui.common.obj.FolderObject"/>
-    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription"
 
-        tools:ignore="ContentDescription"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/rv_folder_main_png"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
 
-        <ImageView
-            android:id="@+id/rv_folder_main_png"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:background="@drawable/background_rv_folder"
+        android:elevation="@dimen/folder_elevation"
 
-            android:background="@drawable/background_rv_folder"
-            android:elevation="@dimen/folder_elevation"
+        android:layout_marginVertical="@dimen/rv_margin_v"
+        android:layout_marginHorizontal="@dimen/rv_margin_h"
 
-            android:layout_marginVertical="@dimen/rv_margin_v"
-            android:layout_marginHorizontal="@dimen/rv_margin_h"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+        android:id="@+id/rv_folder_main_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/rv_folder_main_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        android:text="@{folderObj.title}"
+        android:textColor="@color/rv_folder_text"
+        android:textSize="@dimen/rv_folder_main_text"
 
-            android:text="@{folderObj.title}"
-            android:textColor="@color/rv_folder_text"
-            android:textSize="@dimen/rv_folder_main_text"
+        android:layout_marginBottom="@dimen/rv_text_margin_v"
+        android:layout_marginHorizontal="@dimen/rv_text_margin_h"
 
-            android:layout_marginBottom="@dimen/rv_text_margin_v"
-            android:layout_marginHorizontal="@dimen/rv_text_margin_h"
+        app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
+        app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
+        app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
 
-            app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
-            app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
-            app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
+    <ImageButton
+        android:id="@+id/rv_folder_main_ripple"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
 
-        <ImageButton
-            android:id="@+id/rv_folder_main_ripple"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+        android:background="@drawable/ripple_folder"
 
-            android:background="@drawable/ripple_folder"
+        app:layout_constraintTop_toTopOf="@id/rv_folder_main_png"
+        app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
+        app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
+        app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
 
-            app:layout_constraintTop_toTopOf="@id/rv_folder_main_png"
-            app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
-            app:layout_constraintEnd_toEndOf="@id/rv_folder_main_png"
-            app:layout_constraintBottom_toBottomOf="@id/rv_folder_main_png"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

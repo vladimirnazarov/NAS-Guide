@@ -15,4 +15,7 @@
     <color name="support_button_utils">#FFFFFF</color>
     <color name="ripple_button_support">#80FFFFFF</color>
 
+    <!--  Coil  -->
+    <color name="coil_placeholder">#C7C7CC</color>
+
 </resources>

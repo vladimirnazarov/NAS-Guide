@@ -11,14 +11,14 @@ import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentMainBinding
-import by.ssrlab.ui.rv.FragmentMainAdapter
+import by.ssrlab.ui.rv.folder.FolderAdapter
 import by.ssrlab.ui.vm.FMainVM
 import org.koin.android.ext.android.get
 
 class MainFragment: BaseFragment() {
 
     private lateinit var binding: FragmentMainBinding
-    private lateinit var adapter: FragmentMainAdapter
+    private lateinit var adapter: FolderAdapter
     override val viewModel: FMainVM by viewModels {
         FMainVM.Factory(get())
     }
@@ -38,7 +38,7 @@ class MainFragment: BaseFragment() {
     }
 
     private fun initAdapter() {
-        adapter = FragmentMainAdapter(viewModel.getData(), { image, resource ->
+        adapter = FolderAdapter(viewModel.getData(), { image, resource ->
             loadImage(image, resource)
         }, { address ->
             navigateNext(address)
