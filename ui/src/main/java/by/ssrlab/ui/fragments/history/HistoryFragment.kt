@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentHistoryBinding
-import by.ssrlab.ui.rv.FragmentHistoryAdapter
+import by.ssrlab.ui.rv.folder.FolderAdapter
 import by.ssrlab.ui.vm.FHistoryVM
 import org.koin.android.ext.android.get
 
 class HistoryFragment: BaseFragment() {
 
     private lateinit var binding: FragmentHistoryBinding
-    private lateinit var adapter: FragmentHistoryAdapter
+    private lateinit var adapter: FolderAdapter
     override val viewModel: FHistoryVM by viewModels {
         FHistoryVM.Factory(get())
     }
@@ -37,7 +37,7 @@ class HistoryFragment: BaseFragment() {
     }
 
     private fun initAdapter() {
-        adapter = FragmentHistoryAdapter(viewModel.getData(), { image, resource ->
+        adapter = FolderAdapter(viewModel.getData(), { image, resource ->
             loadImage(image, resource)
         }, { address ->
             navigateNext(address)

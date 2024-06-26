@@ -1,38 +1,33 @@
-package by.ssrlab.ui.rv
+package by.ssrlab.ui.rv.folder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.common.obj.FolderObject
 import by.ssrlab.common_ui.databinding.RvFolderItemBinding
 
-class FragmentMainAdapter(
+class FolderAdapter(
     private val entitiesList: List<FolderObject>,
     private val pngLoadAction: (ImageView, Int) -> Unit,
     private val navigateAction: (Int) -> Unit
-): RecyclerView.Adapter<FragmentMainAdapter.FragmentMainViewHolder>() {
+): RecyclerView.Adapter<FolderAdapter.FolderHolder>() {
 
-    inner class FragmentMainViewHolder(val binding: RvFolderItemBinding): RecyclerView.ViewHolder(binding.root)
+    inner class FolderHolder(val binding: RvFolderItemBinding): RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FragmentMainViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FolderHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate<RvFolderItemBinding>(
+        val binding = RvFolderItemBinding.inflate(
             inflater,
-            by.ssrlab.common_ui.R.layout.rv_folder_item,
             parent,
             false
         )
 
-        return FragmentMainViewHolder(binding)
+        return FolderHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FragmentMainViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FolderHolder, position: Int) {
         holder.binding.apply {
-            folderObj = entitiesList[position]
-            executePendingBindings()
-
             rvFolderMainTitle.setText(entitiesList[position].title)
             pngLoadAction(rvFolderMainPng, entitiesList[position].imageResource)
             rvFolderMainRipple.setOnClickListener {
