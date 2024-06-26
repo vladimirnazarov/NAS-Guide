@@ -26,7 +26,7 @@ class HistoryFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.setTitle(requireContext().resources.getString(R.string.page_history_title))
-        activityVM.setHeaderImg(R.drawable.header_history)
+        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_history)
 
         binding.apply {
             viewModel = this@HistoryFragment.viewModel

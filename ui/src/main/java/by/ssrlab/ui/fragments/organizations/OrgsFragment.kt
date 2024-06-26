@@ -1,4 +1,4 @@
-package by.ssrlab.ui.fragments.inventions
+package by.ssrlab.ui.fragments.organizations
 
 import android.os.Bundle
 import android.view.View
@@ -9,27 +9,27 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.ui.R
-import by.ssrlab.ui.databinding.FragmentInventionsBinding
+import by.ssrlab.ui.databinding.FragmentOrgsBinding
 import by.ssrlab.ui.rv.section.SectionsAdapter
-import by.ssrlab.ui.vm.FInventionsVM
+import by.ssrlab.ui.vm.FOrgsVM
 import org.koin.android.ext.android.get
 
-class InventionsFragment: BaseFragment() {
+class OrgsFragment: BaseFragment() {
 
-    private lateinit var binding: FragmentInventionsBinding
+    private lateinit var binding: FragmentOrgsBinding
     private lateinit var adapter: SectionsAdapter
-    override val viewModel: FInventionsVM by viewModels {
-        FInventionsVM.Factory(get())
+    override val viewModel: FOrgsVM by viewModels {
+        FOrgsVM.Factory(get())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.common_ui.R.string.folder_inventions))
-        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_inventions)
+        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.common_ui.R.string.folder_organizations))
+        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_organizations)
 
         binding.apply {
-            viewModel = this@InventionsFragment.viewModel
+            viewModel = this@OrgsFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
 
             initAdapter()
@@ -42,13 +42,13 @@ class InventionsFragment: BaseFragment() {
         }
 
         binding.apply {
-            inventionsRv.adapter = adapter
-            inventionsRv.layoutManager = LinearLayoutManager(requireContext())
+            orgsRv.adapter = adapter
+            orgsRv.layoutManager = LinearLayoutManager(requireContext())
         }
     }
 
     override fun initBinding(container: ViewGroup?): View {
-        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_inventions, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_orgs, container, false)
         return binding.root
     }
 
