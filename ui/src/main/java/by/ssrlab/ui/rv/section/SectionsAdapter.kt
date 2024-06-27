@@ -8,10 +8,10 @@ import by.ssrlab.common_ui.databinding.RvSectionItemBinding
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
-class SectionAdapter(
+class SectionsAdapter(
     private val entitiesList: List<SectionObject>,
     private val navigateAction: (Int) -> Unit
-): RecyclerView.Adapter<SectionAdapter.SectionHolder>() {
+): RecyclerView.Adapter<SectionsAdapter.SectionHolder>() {
 
     inner class SectionHolder(val binding: RvSectionItemBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -37,7 +37,7 @@ class SectionAdapter(
                 crossfade(500)
             }
             rvSectionRipple.setOnClickListener {
-                //TODO
+                navigateAction(entitiesList[position].address)
             }
         }
     }

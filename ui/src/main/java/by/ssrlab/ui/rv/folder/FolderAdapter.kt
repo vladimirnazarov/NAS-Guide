@@ -28,7 +28,7 @@ class FolderAdapter(
 
     override fun onBindViewHolder(holder: FolderHolder, position: Int) {
         holder.binding.apply {
-            rvFolderMainTitle.setText(entitiesList[position].title)
+            rvFolderMainTitle.text = root.context.getString(entitiesList[position].title)
             pngLoadAction(rvFolderMainPng, entitiesList[position].imageResource)
             rvFolderMainRipple.setOnClickListener {
                 navigateAction(entitiesList[position].address)

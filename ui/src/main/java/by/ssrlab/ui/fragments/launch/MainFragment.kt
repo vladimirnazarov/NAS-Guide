@@ -27,7 +27,7 @@ class MainFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.setTitle(requireContext().resources.getString(R.string.page_main_title))
-        activityVM.setHeaderImg(R.drawable.header_main)
+        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_main)
 
         binding.apply {
             viewModel = this@MainFragment.viewModel

@@ -101,7 +101,7 @@
 
     <fragment
         android:id="@+id/orgFragment"
-        android:name="by.ssrlab.ui.fragments.organizations.OrgFragment"
+        android:name="by.ssrlab.ui.fragments.organizations.OrgsFragment"
         android:label="OrgFragment">
 
         <action

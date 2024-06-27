@@ -24,5 +24,5 @@ class FHistoryVM(private val uiDataProvider: UiDataProvider): ViewModel() {
         _title.value = value
     }
 
-    fun getData() = uiDataProvider.getSecondaryFolders()
+    fun getData() = uiDataProvider.getHistoryFolders()
 }
