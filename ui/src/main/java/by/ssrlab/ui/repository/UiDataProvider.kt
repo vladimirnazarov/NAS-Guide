@@ -24,17 +24,17 @@ open class UiDataProvider {
 
     open fun getSections(): List<SectionObject> {
         return listOf(
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0),
-            SectionObject("Test", "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/144694078/original/42073354247a976027d92a56ded126bc59235d60/send-you-a-random-png.png", 0)
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
+            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0)
         )
     }
 }

@@ -34,6 +34,8 @@
         android:textColor="@color/rv_folder_text"
         android:textSize="@dimen/rv_folder_main_text"
 
+        android:elevation="@dimen/folder_elevation"
+
         android:layout_marginBottom="@dimen/rv_text_margin_v"
         android:layout_marginHorizontal="@dimen/rv_text_margin_h"
 
@@ -47,6 +49,7 @@
         android:layout_height="0dp"
 
         android:background="@drawable/ripple_folder"
+        android:elevation="@dimen/folder_elevation"
 
         app:layout_constraintTop_toTopOf="@id/rv_folder_main_png"
         app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"
