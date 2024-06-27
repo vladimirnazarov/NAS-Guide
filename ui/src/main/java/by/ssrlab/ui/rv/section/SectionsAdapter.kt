@@ -33,8 +33,9 @@ class SectionsAdapter(
             rvSectionTitle.text = entitiesList[position].title
             rvSectionPng.load(entitiesList[position].imageSource) {
                 transformations(RoundedCornersTransformation(16f))
-                placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder_animated)
+                placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder)
                 crossfade(500)
+                crossfade(true)
             }
             rvSectionRipple.setOnClickListener {
                 navigateAction(entitiesList[position].address)

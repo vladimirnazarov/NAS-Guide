@@ -5,7 +5,7 @@
     <dimen name="section_horizontal_margin">20dp</dimen>
     <dimen name="section_png_margin">10dp</dimen>
     <dimen name="section_png_corners">16dp</dimen>
-    <dimen name="section_elevation">4dp</dimen>
+    <dimen name="section_elevation">2dp</dimen>
 
     <dimen name="section_title_margin_end">10dp</dimen>
     <dimen name="section_title_margin_start">8dp</dimen>
