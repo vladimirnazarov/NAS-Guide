@@ -58,39 +58,97 @@
             android:id="@+id/exhibit_player_controls"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_marginTop="@dimen/exhibit_margin_v_under"
             
             app:layout_constraintTop_toBottomOf="@id/exhibit_player_progress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <ImageButton
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/exhibit_play"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                
+
+                android:background="@drawable/background_exhibit_button_oval"
+
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageButton
+                    android:id="@+id/exhibit_play_ripple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/ripple_exhibit_oval_primary"
+                    android:src="@drawable/ic_play"
+
+                    android:padding="@dimen/exhibit_button_padding_primary"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             
-            <ImageButton
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/exhibit_previous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                
-                app:layout_constraintEnd_toStartOf="@id/exhibit_play"
+
+                android:layout_marginEnd="@dimen/exhibit_button_margin_h_1"
+
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/exhibit_play">
+
+                <ImageButton
+                    android:id="@+id/exhibit_previous_ripple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/ripple_exhibit_oval_secondary"
+                    android:src="@drawable/ic_previous"
+
+                    android:padding="@dimen/exhibit_button_padding_secondary"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             
-            <ImageButton
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/exhibit_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                app:layout_constraintStart_toEndOf="@id/exhibit_play"
+                android:layout_marginStart="@dimen/exhibit_button_margin_h_1"
+
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/exhibit_play">
+
+                <ImageButton
+                    android:id="@+id/exhibit_next_ripple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/ripple_exhibit_oval_secondary"
+                    android:src="@drawable/ic_next"
+
+                    android:padding="@dimen/exhibit_button_padding_secondary"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
             
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -101,6 +159,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+        android:layout_marginHorizontal="@dimen/exhibit_margin_h"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exhibit_player_block">
@@ -110,6 +171,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:textColor="@color/exhibit_text_primary"
+            android:textSize="@dimen/exhibit_text_primary"
+            android:textStyle="bold"
+
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -118,6 +183,11 @@
             android:id="@+id/exhibit_body"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:textColor="@color/exhibit_text_secondary"
+            android:textSize="@dimen/exhibit_text_secondary"
+
+            android:layout_marginTop="@dimen/exhibit_margin_v_under"
 
             app:layout_constraintTop_toBottomOf="@id/exhibit_title"
             app:layout_constraintStart_toStartOf="parent"
@@ -297,11 +367,81 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exhibit_button_map"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:background="@drawable/background_exhibit_button_rounded"
+
+        android:layout_marginTop="@dimen/exhibit_margin_v_large"
+        android:layout_marginHorizontal="@dimen/exhibit_margin_h"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exhibit_additional_block"/>
+        app:layout_constraintTop_toBottomOf="@id/exhibit_additional_block">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="@dimen/exhibit_button_margin_v"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/exhibit_map_ic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_map"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/exhibit_map_title"/>
+
+            <TextView
+                android:id="@+id/exhibit_map_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="@dimen/exhibit_text_button_primary"
+                android:textColor="@color/exhibit_button_text_primary"
+
+                android:layout_marginStart="@dimen/exhibit_button_margin_h_2"
+
+                app:layout_constraintStart_toEndOf="@id/exhibit_map_ic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/exhibit_map_ripple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@drawable/ripple_exhibit_rounded_primary"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+
+        app:layout_constraintTop_toBottomOf="@id/exhibit_button_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
