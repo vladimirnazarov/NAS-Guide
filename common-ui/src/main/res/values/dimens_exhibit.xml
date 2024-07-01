@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="exhibit_button_primary">28dp</dimen>
+    <dimen name="exhibit_button_secondary_1">20dp</dimen>
+    <dimen name="exhibit_button_secondary_2">24dp</dimen>
+    <dimen name="exhibit_button_padding_primary">16dp</dimen>
+    <dimen name="exhibit_button_padding_secondary">8dp</dimen>
+    <dimen name="exhibit_button_primary_corners">100dp</dimen>
+    <dimen name="exhibit_button_secondary_corners">12dp</dimen>
+    <dimen name="exhibit_button_margin_v">12dp</dimen>
+    <dimen name="exhibit_button_margin_h_1">28dp</dimen>
+    <dimen name="exhibit_button_margin_h_2">8dp</dimen>
+
+    <dimen name="exhibit_text_primary">22sp</dimen>
+    <dimen name="exhibit_text_secondary">17sp</dimen>
+    <dimen name="exhibit_text_button_primary">17sp</dimen>
+    <dimen name="exhibit_text_button_secondary">15sp</dimen>
+    <dimen name="exhibit_text_timer">12sp</dimen>
+    <dimen name="exhibit_text_margin_v">12dp</dimen>
+
+    <dimen name="exhibit_margin_v_normal">24dp</dimen>
+    <dimen name="exhibit_margin_v_large">40dp</dimen>
+    <dimen name="exhibit_margin_v_under">12dp</dimen>
+    <dimen name="exhibit_margin_h">20dp</dimen>
+
+</resources>
