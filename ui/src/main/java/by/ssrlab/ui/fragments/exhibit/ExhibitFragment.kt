@@ -1,8 +1,9 @@
-package by.ssrlab.common_ui.common.fragments
+package by.ssrlab.ui.fragments.exhibit
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
+import by.ssrlab.common_ui.common.fragments.BaseFragment
 
 class ExhibitFragment: BaseFragment() {
 
