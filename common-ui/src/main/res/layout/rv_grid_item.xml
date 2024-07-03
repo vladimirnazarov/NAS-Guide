@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:ignore="ContentDescription"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/grid_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/background_rv_grid"
+        android:elevation="@dimen/grid_elevation"
+
+        android:layout_margin="@dimen/grid_margin_side"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/grid_png"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/background_rv_grid_png"
+
+            android:layout_marginHorizontal="@dimen/grid_margin_side"
+            android:layout_marginTop="@dimen/grid_margin_side"
+            android:layout_marginBottom="@dimen/grid_margin_side_large"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/grid_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Ігнатоўскі\nУсевалад\nМакаравіч"
+            android:textColor="@color/rv_grid_text"
+            android:textSize="@dimen/grid_title"
+
+            android:gravity="center"
+
+            android:layout_marginHorizontal="@dimen/grid_margin_side"
+            android:layout_marginTop="@dimen/grid_margin_side"
+
+            app:layout_constraintTop_toBottomOf="@id/grid_png"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/grid_ripple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@drawable/ripple_grid"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="grid_title">15sp</dimen>
+    <dimen name="grid_background_corners">20dp</dimen>
+    <dimen name="grid_image_corners">16dp</dimen>
+    <dimen name="grid_elevation">2dp</dimen>
+    
+    <dimen name="grid_margin_border">12dp</dimen>
+    <dimen name="grid_margin_side">8dp</dimen>
+    <dimen name="grid_margin_side_large">85dp</dimen>
+
+</resources>

@@ -22,7 +22,7 @@ open class UiDataProvider {
         )
     }
 
-    open fun getSections(): List<SectionObject> {
+    fun getSections(): List<SectionObject> {
         return listOf(
             SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
             SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
@@ -35,6 +35,36 @@ open class UiDataProvider {
             SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
             SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0),
             SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png", 0)
+        )
+    }
+
+    fun getPlaces(): List<SectionObject> {
+        return listOf(
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0)
+        )
+    }
+
+    fun getPersons(): List<SectionObject> {
+        return listOf(
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0),
+            SectionObject("Test", "", 0)
         )
     }
 }
