@@ -195,7 +195,7 @@
 
     <fragment
         android:id="@+id/exhibitFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.ExhibitFragment"
+        android:name="by.ssrlab.ui.fragments.exhibit.ExhibitFragment"
         android:label="ExhibitFragment">
 
         <action

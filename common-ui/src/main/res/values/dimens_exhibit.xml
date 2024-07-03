@@ -8,9 +8,12 @@
     <dimen name="exhibit_button_padding_secondary">8dp</dimen>
     <dimen name="exhibit_button_primary_corners">100dp</dimen>
     <dimen name="exhibit_button_secondary_corners">12dp</dimen>
-    <dimen name="exhibit_button_margin_v">12dp</dimen>
+    <dimen name="exhibit_button_margin_v_1">12dp</dimen>
+    <dimen name="exhibit_button_margin_v_2">10dp</dimen>
     <dimen name="exhibit_button_margin_h_1">28dp</dimen>
     <dimen name="exhibit_button_margin_h_2">8dp</dimen>
+    <dimen name="exhibit_button_margin_h_3">16dp</dimen>
+    <dimen name="exhibit_button_margin_h_4">20dp</dimen>
 
     <dimen name="exhibit_text_primary">22sp</dimen>
     <dimen name="exhibit_text_secondary">17sp</dimen>
@@ -23,5 +26,9 @@
     <dimen name="exhibit_margin_v_large">40dp</dimen>
     <dimen name="exhibit_margin_v_under">12dp</dimen>
     <dimen name="exhibit_margin_h">20dp</dimen>
+
+    <dimen name="exhibit_player_corners">100dp</dimen>
+    <dimen name="exhibit_player_height">5dp</dimen>
+    <dimen name="exhibit_player_thumb_size">10dp</dimen>
 
 </resources>

@@ -14,4 +14,8 @@
     <color name="exhibit_text_primary">#000000</color>
     <color name="exhibit_text_secondary">#4F4F4F</color>
 
+    <color name="exhibit_player_background">#F3F3F7</color>
+    <color name="exhibit_player_foreground">#C9DBFD</color>
+    <color name="exhibit_player_thumb">#C9DBFD</color>
+
 </resources>

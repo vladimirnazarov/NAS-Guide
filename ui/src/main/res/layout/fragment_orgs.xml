@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:src="@drawable/ic_filter"
+                    android:src="@drawable/ic_map"
 
                     android:layout_marginStart="@dimen/support_button_external_margin"
                     android:layout_marginVertical="@dimen/support_button_internal_margin"
