@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--  Activity  -->
-    <dimen name="activity_header_corners">16dp</dimen>
-    <dimen name="activity_bottom_line">20dp</dimen>
-
     <!--  Toolbar  -->
     <dimen name="toolbar_height">60dp</dimen>
     <dimen name="toolbar_margin">16dp</dimen>
     <dimen name="toolbar_button_padding">12dp</dimen>
-    
+
     <dimen name="toolbar_text">17sp</dimen>
     <dimen name="toolbar_tsi_margin">8dp</dimen>
+
+    <dimen name="toolbar_ic_size">24dp</dimen>
 
 </resources>

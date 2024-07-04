@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import coil.load
@@ -61,6 +62,10 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         activityViewModel.headerImg.observe(this) {
             binding.activityHeader.load(it)
         }
+    }
+
+    private fun setupButtons() {
+        //TODO
     }
 
     @Suppress("DiscouragedApi")
