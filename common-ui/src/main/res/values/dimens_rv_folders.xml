@@ -2,15 +2,9 @@
 <resources>
 
     <!--  RV Main  -->
-    <dimen name="rv_item_corners">25dp</dimen>
+    <dimen name="folder_corners">25dp</dimen>
     <dimen name="folder_elevation">4dp</dimen>
 
-    <dimen name="rv_folder_main_text">22sp</dimen>
-    <dimen name="rv_page_title">25sp</dimen>
-
-    <dimen name="rv_text_margin_h">16dp</dimen>
-    <dimen name="rv_text_margin_v">16dp</dimen>
-    <dimen name="rv_margin_h">16dp</dimen>
-    <dimen name="rv_margin_v">16dp</dimen>
+    <dimen name="folder_main_text">22sp</dimen>
 
 </resources>

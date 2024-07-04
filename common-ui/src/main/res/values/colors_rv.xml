@@ -10,4 +10,8 @@
     <color name="rv_section_background">#F3F3F7</color>
     <color name="ripple_section">#66A6A6A6</color>
 
+    <color name="rv_grid_text">#000B16</color>
+    <color name="rv_grid_background">#F3F3F7</color>
+    <color name="ripple_grid">#66A6A6A6</color>
+
 </resources>

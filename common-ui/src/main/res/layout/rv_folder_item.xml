@@ -32,7 +32,7 @@
 
         android:text="@{folderObj.title}"
         android:textColor="@color/rv_folder_text"
-        android:textSize="@dimen/rv_folder_main_text"
+        android:textSize="@dimen/folder_main_text"
 
         android:elevation="@dimen/folder_elevation"
 
