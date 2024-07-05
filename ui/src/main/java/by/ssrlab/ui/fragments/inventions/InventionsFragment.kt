@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.obj.ToolbarControlObject
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentInventionsBinding
 import by.ssrlab.ui.rv.section.SectionsAdapter
@@ -18,6 +19,14 @@ class InventionsFragment: BaseFragment() {
 
     private lateinit var binding: FragmentInventionsBinding
     private lateinit var adapter: SectionsAdapter
+
+    override val toolbarControlObject = ToolbarControlObject(
+        isBack = true,
+        isLang = false,
+        isSearch = true,
+        isDates = false
+    )
+
     override val viewModel: FInventionsVM by viewModels {
         FInventionsVM.Factory(get())
     }
@@ -57,6 +66,6 @@ class InventionsFragment: BaseFragment() {
     }
 
     override fun navigateNext(address: Int) {
-        //TODO
+        findNavController().navigate(R.id.action_inventionsFragment_to_exhibitFragment)
     }
 }

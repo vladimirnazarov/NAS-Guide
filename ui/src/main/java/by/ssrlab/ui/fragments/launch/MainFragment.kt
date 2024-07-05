@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.obj.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentMainBinding
@@ -19,6 +20,14 @@ class MainFragment: BaseFragment() {
 
     private lateinit var binding: FragmentMainBinding
     private lateinit var adapter: FolderAdapter
+
+    override val toolbarControlObject = ToolbarControlObject(
+        isBack = false,
+        isLang = true,
+        isSearch = true,
+        isDates = false
+    )
+
     override val viewModel: FMainVM by viewModels {
         FMainVM.Factory(get())
     }

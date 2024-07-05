@@ -1,16 +1,20 @@
 package by.ssrlab.ui
 
+import android.annotation.SuppressLint
+import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
+import android.view.View
 import android.view.ViewTreeObserver
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.ui.databinding.ActivityMainBinding
-import coil.load
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 
@@ -18,6 +22,9 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private lateinit var binding: ActivityMainBinding
     private val activityViewModel: AMainVM by viewModel()
+
+    private lateinit var container: ConstraintLayout
+    private lateinit var transition: AutoTransition
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +44,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
         observeLayoutChange()
         observeHeader()
+        observeButtonsState()
     }
 
     private fun observeLayoutChange() {
@@ -58,14 +66,35 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         })
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun observeHeader() {
         activityViewModel.headerImg.observe(this) {
-            binding.activityHeader.load(it)
+            val currentDrawable = binding.activityHeader.drawable
+            val newDrawable = resources.getDrawable(it, null)
+
+            if (currentDrawable != null) {
+                val transitionDrawable = TransitionDrawable(arrayOf(currentDrawable, newDrawable))
+                binding.activityHeader.setImageDrawable(transitionDrawable)
+                transitionDrawable.startTransition(100)
+            } else {
+                binding.activityHeader.setImageDrawable(newDrawable)
+            }
         }
     }
 
-    private fun setupButtons() {
-        //TODO
+    private fun observeButtonsState() {
+        container = binding.toolbar
+        transition = AutoTransition().apply {
+            duration = 75
+            interpolator = AccelerateDecelerateInterpolator()
+        }
+
+        activityViewModel.apply {
+            isBackVisible.observe(this@MainActivity) { animateButton(binding.toolbarBack, it) }
+            isLangVisible.observe(this@MainActivity) { animateButton(binding.toolbarLang, it) }
+            isSearchVisible.observe(this@MainActivity) { animateButton(binding.toolbarSearch, it) }
+            isDatesVisible.observe(this@MainActivity) { animateButton(binding.toolbarDate, it) }
+        }
     }
 
     @Suppress("DiscouragedApi")
@@ -77,5 +106,12 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         }
 
         return result
+    }
+
+    private fun animateButton(button: View, visible: Boolean) {
+        TransitionManager.beginDelayedTransition(container, transition)
+
+        if (visible) button.visibility = View.VISIBLE
+        else button.visibility = View.GONE
     }
 }
