@@ -47,6 +47,7 @@ abstract class BaseFragment: Fragment() {
     open fun onBackPressed() {}
     open fun initActivity() {}
     open fun navigateNext(address: Int) {}
+    open fun initAdapter() {}
 
     fun loadImage(imageView: ImageView, imageId: Int) {
         val resources = imageView.context.resources

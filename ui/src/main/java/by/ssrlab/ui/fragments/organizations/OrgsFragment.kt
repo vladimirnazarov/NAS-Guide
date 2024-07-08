@@ -45,7 +45,7 @@ class OrgsFragment: BaseFragment() {
         }
     }
 
-    private fun initAdapter() {
+    override fun initAdapter() {
         adapter = SectionsAdapter(viewModel.getData()) { address ->
             navigateNext(address)
         }
