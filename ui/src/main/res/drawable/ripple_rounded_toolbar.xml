@@ -15,4 +15,14 @@
 
     </item>
 
+    <item>
+
+        <shape android:shape="oval">
+
+            <solid android:color="@color/toolbar_button_primary_bg"/>
+
+        </shape>
+
+    </item>
+
 </ripple>

@@ -1,5 +1,7 @@
 package by.ssrlab.common_ui.common.fragments
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,17 +9,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.RoundedBitmapDrawable
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import by.ssrlab.common_ui.common.obj.ToolbarControlObject
 import by.ssrlab.common_ui.common.vm.AMainVM
-import coil.load
-import coil.transform.RoundedCornersTransformation
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 abstract class BaseFragment: Fragment() {
 
     abstract val viewModel: ViewModel
     val activityVM: AMainVM by activityViewModel()
+
+    abstract val toolbarControlObject: ToolbarControlObject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +39,7 @@ abstract class BaseFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        activityVM.setupButtons(toolbarControlObject)
         return initBinding(container)
     }
 
@@ -41,9 +47,17 @@ abstract class BaseFragment: Fragment() {
     open fun onBackPressed() {}
     open fun initActivity() {}
     open fun navigateNext(address: Int) {}
-    open fun loadImage(imageView: ImageView, imageId: Int) {
-        imageView.load(imageId) {
-            transformations(RoundedCornersTransformation(20f))
-        }
+
+    fun loadImage(imageView: ImageView, imageId: Int) {
+        val resources = imageView.context.resources
+        val bitmap = BitmapFactory.decodeResource(resources, imageId)
+        val roundedDrawable = createRoundedDrawable(resources, bitmap)
+        imageView.setImageDrawable(roundedDrawable)
+    }
+
+    private fun createRoundedDrawable(resources: android.content.res.Resources, bitmap: Bitmap): RoundedBitmapDrawable {
+        val roundedDrawable = RoundedBitmapDrawableFactory.create(resources, bitmap)
+        roundedDrawable.cornerRadius = 20f
+        return roundedDrawable
     }
 }

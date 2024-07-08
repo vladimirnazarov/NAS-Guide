@@ -97,6 +97,15 @@
             app:popEnterAnim="@anim/nav_pen"
             app:popExitAnim="@anim/nav_pex"/>
 
+        <action
+            android:id="@+id/action_inventionsFragment_to_exhibitFragment"
+            app:destination="@id/exhibitFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
     </fragment>
 
     <fragment

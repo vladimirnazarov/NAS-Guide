@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:background="@drawable/background_rv_folder"
-        android:elevation="@dimen/folder_elevation"
+        android:scaleType="fitXY"
+        android:scaleY="1.15"
 
         android:layout_marginVertical="@dimen/rv_margin_v"
         android:layout_marginHorizontal="@dimen/rv_margin_h"
@@ -50,6 +50,8 @@
 
         android:background="@drawable/ripple_folder"
         android:elevation="@dimen/folder_elevation"
+
+        android:scaleY="1.15"
 
         app:layout_constraintTop_toTopOf="@id/rv_folder_main_png"
         app:layout_constraintStart_toStartOf="@id/rv_folder_main_png"

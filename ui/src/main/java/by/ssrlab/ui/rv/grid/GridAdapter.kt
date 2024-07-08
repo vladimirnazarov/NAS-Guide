@@ -3,13 +3,13 @@ package by.ssrlab.ui.rv.grid
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import by.ssrlab.common_ui.common.obj.SectionObject
+import by.ssrlab.common_ui.common.obj.GridObject
 import by.ssrlab.common_ui.databinding.RvGridItemBinding
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
 class GridAdapter(
-    private val entitiesList: List<SectionObject>,
+    private val entitiesList: List<GridObject>,
     private val navigateAction: (Int) -> Unit
 ): RecyclerView.Adapter<GridAdapter.GridHolder>() {
 

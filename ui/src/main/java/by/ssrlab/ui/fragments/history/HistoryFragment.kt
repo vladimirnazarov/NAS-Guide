@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.obj.ToolbarControlObject
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentHistoryBinding
 import by.ssrlab.ui.rv.folder.FolderAdapter
@@ -18,6 +19,14 @@ class HistoryFragment: BaseFragment() {
 
     private lateinit var binding: FragmentHistoryBinding
     private lateinit var adapter: FolderAdapter
+
+    override val toolbarControlObject = ToolbarControlObject(
+        isBack = true,
+        isLang = false,
+        isSearch = false,
+        isDates = false
+    )
+
     override val viewModel: FHistoryVM by viewModels {
         FHistoryVM.Factory(get())
     }
@@ -59,6 +68,6 @@ class HistoryFragment: BaseFragment() {
     }
 
     override fun navigateNext(address: Int) {
-//        findNavController().navigate(address)
+        findNavController().navigate(address)
     }
 }
