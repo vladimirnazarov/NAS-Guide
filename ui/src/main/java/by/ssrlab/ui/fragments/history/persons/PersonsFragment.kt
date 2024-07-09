@@ -46,7 +46,7 @@ class PersonsFragment: BaseFragment() {
         }
     }
 
-    private fun initAdapter() {
+    override fun initAdapter() {
         adapter = GridAdapter(viewModel.getData()) { address ->
             navigateNext(address)
         }

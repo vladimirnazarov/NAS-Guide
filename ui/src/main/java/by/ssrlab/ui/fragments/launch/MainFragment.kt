@@ -46,7 +46,7 @@ class MainFragment: BaseFragment() {
         }
     }
 
-    private fun initAdapter() {
+    override fun initAdapter() {
         adapter = FolderAdapter(viewModel.getData(), { image, resource ->
             loadImage(image, resource)
         }, { address ->
