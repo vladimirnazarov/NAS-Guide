@@ -13,7 +13,7 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.obj.ToolbarControlObject
+import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
 import by.ssrlab.common_ui.common.vm.AMainVM
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
