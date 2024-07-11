@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dates_title">19sp</dimen>
+    <dimen name="dates_date">17sp</dimen>
+    <dimen name="dates_body">15sp</dimen>
+
+    <dimen name="dates_corners">20dp</dimen>
+    <dimen name="dates_png_corners">8dp</dimen>
+    
+    <dimen name="dates_margin_v">16dp</dimen>
+    <dimen name="dates_margin_h">16dp</dimen>
+    <dimen name="dates_margin_under">8dp</dimen>
+
+    <dimen name="dates_elevation">2dp</dimen>
+
+</resources>

@@ -5,11 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.common_ui.common.obj.ToolbarControlObject
+import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentPlacesBinding
 import by.ssrlab.ui.rv.section.SectionsAdapter

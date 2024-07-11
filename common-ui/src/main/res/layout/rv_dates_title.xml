@@ -11,14 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:textSize=""
-        android:textStyle=""
-        android:textColor=""
+        android:textSize="@dimen/dates_title"
+        android:textStyle="bold"
+        android:textColor="@color/dates_title"
 
-        android:gravity=""
+        android:gravity="start"
 
-        android:layout_marginHorizontal=""
-        android:layout_marginVertical=""
+        android:layout_marginHorizontal="@dimen/dates_margin_h"
+        android:layout_marginTop="@dimen/dates_margin_v"
+        android:layout_marginBottom="@dimen/dates_margin_under"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -14,10 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:background=""
-        android:elevation=""
+        android:background="@drawable/background_rv_dates"
+        android:elevation="@dimen/dates_elevation"
 
-        android:layout_marginVertical=""
+        android:layout_marginVertical="@dimen/dates_margin_under"
+        android:layout_marginHorizontal="@dimen/dates_margin_h"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +30,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:layout_marginTop=""
-            android:layout_marginHorizontal=""
+            android:background="@drawable/background_rv_dates_png"
+
+            android:layout_marginTop="@dimen/dates_margin_v"
+            android:layout_marginHorizontal="@dimen/dates_margin_h"
 
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:textColor=""
-            android:textStyle=""
-            android:textSize=""
+            android:textColor="@color/dates_title"
+            android:textStyle="bold"
+            android:textSize="@dimen/dates_date"
 
-            android:gravity=""
+            android:gravity="start"
 
-            android:layout_marginTop=""
-            android:layout_marginHorizontal=""
+            android:layout_marginTop="@dimen/dates_margin_under"
+            android:layout_marginHorizontal="@dimen/dates_margin_h"
 
             app:layout_constraintTop_toBottomOf="@id/rv_dates_png"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,16 +62,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:textColor=""
-            android:textSize=""
+            android:textColor="@color/dates_body"
+            android:textSize="@dimen/dates_body"
 
-            android:gravity=""
+            android:gravity="start"
 
-            android:layout_marginTop=""
-            android:layout_marginBottom=""
-            android:layout_marginHorizontal=""
+            android:layout_marginTop="@dimen/dates_margin_under"
+            android:layout_marginBottom="@dimen/dates_margin_v"
+            android:layout_marginHorizontal="@dimen/dates_margin_h"
 
             app:layout_constraintTop_toBottomOf="@id/rv_dates_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/rv_dates_ripple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@drawable/ripple_dates"
+
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

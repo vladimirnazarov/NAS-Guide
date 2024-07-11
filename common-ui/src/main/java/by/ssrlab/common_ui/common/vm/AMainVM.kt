@@ -3,7 +3,7 @@ package by.ssrlab.common_ui.common.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.obj.ToolbarControlObject
+import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
 
 class AMainVM: ViewModel() {
 
