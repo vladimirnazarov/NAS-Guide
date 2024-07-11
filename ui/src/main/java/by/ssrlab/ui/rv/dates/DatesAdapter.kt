@@ -7,6 +7,9 @@ import androidx.viewbinding.ViewBinding
 import by.ssrlab.common_ui.common.obj.DatesObject
 import by.ssrlab.common_ui.databinding.RvDatesItemBinding
 import by.ssrlab.common_ui.databinding.RvDatesTitleBinding
+import by.ssrlab.ui.R
+import coil.load
+import coil.transform.RoundedCornersTransformation
 
 private const val ITEM_TITLE = 0
 private const val ITEM_DATE = 1
@@ -29,7 +32,29 @@ class DatesAdapter(
     }
 
     override fun onBindViewHolder(holder: DatesHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.binding.apply {
+            when (this@apply) {
+                is RvDatesTitleBinding -> {
+                    this.rvDatesTitle.text = title
+                }
+
+                is RvDatesItemBinding -> {
+                    this.rvDatesDate.text = entitiesList[position].date
+                    this.rvDatesBody.text = entitiesList[position].body
+
+                    this.rvDatesPng.load(entitiesList[position]) {
+                        crossfade(true)
+                        crossfade(500)
+                        placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder)
+                        transformations(RoundedCornersTransformation(8f))
+                    }
+
+                    this.rvDatesRipple.setOnClickListener {
+                        navigateAction(entitiesList[position])
+                    }
+                }
+            }
+        }
     }
 
     override fun getItemCount() = entitiesList.size + 1
