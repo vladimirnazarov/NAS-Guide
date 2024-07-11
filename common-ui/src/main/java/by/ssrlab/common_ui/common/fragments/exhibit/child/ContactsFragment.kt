@@ -1,17 +1,16 @@
-package by.ssrlab.ui.fragments.exhibit
+package by.ssrlab.common_ui.common.fragments.exhibit.child
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
-import by.ssrlab.common_ui.databinding.FragmentExhibitBinding
 
-class ExhibitFragment: BaseFragment() {
+class ContactsFragment: BaseFragment() {
 
     override val toolbarControlObject = ToolbarControlObject(
-        isBack = true,
-        isLang = false,
+        isBack = false,
+        isLang = true,
         isSearch = true,
         isDates = false
     )
@@ -20,8 +19,6 @@ class ExhibitFragment: BaseFragment() {
         get() = TODO("Not yet implemented")
 
     override fun initBinding(container: ViewGroup?): View {
-        val binding = FragmentExhibitBinding.inflate(layoutInflater)
-        return binding.root
+        TODO("Not yet implemented")
     }
-
 }

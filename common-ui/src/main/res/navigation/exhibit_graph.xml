@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exhibit_graph">
+
+    <fragment
+        android:id="@+id/researchFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.ResearchFragment"
+        android:label="ResearchFragment"/>
+
+    <fragment
+        android:id="@+id/achievementsFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.AchievementsFragment"
+        android:label="AchievementsFragment"/>
+
+    <fragment
+        android:id="@+id/contactsFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.ContactsFragment"
+        android:label="ContactsFragment"/>
+
+    <fragment
+        android:id="@+id/labsFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.LabsFragment"
+        android:label="LabsFragment">
+
+        <action
+            android:id="@+id/action_labsFragment_to_departmentsFragment"
+            app:destination="@id/departmentsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/departmentsFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.DepartmentsFragment"
+        android:label="DepartmentsFragment"/>
+
+</navigation>
