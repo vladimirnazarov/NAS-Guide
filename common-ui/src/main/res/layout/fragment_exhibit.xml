@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="ContentDescription"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/exhibit_png"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:scaleType="fitXY"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exhibit_player_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_player_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <SeekBar
+                        android:id="@+id/exhibit_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:progressDrawable="@drawable/background_player_progress"
+                        android:thumb="@drawable/background_player_thumb"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_current_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/exhibit_text_secondary"
+                        android:textSize="@dimen/exhibit_text_timer"
+
+                        app:layout_constraintTop_toBottomOf="@id/exhibit_progress"
+                        app:layout_constraintStart_toStartOf="@id/exhibit_progress"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="@color/exhibit_text_secondary"
+                        android:textSize="@dimen/exhibit_text_timer"
+
+                        app:layout_constraintTop_toBottomOf="@id/exhibit_progress"
+                        app:layout_constraintEnd_toEndOf="@id/exhibit_progress"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_player_controls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_under"
+
+                    app:layout_constraintTop_toBottomOf="@id/exhibit_player_progress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/exhibit_play"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:background="@drawable/background_exhibit_button_oval"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <ImageButton
+                            android:id="@+id/exhibit_play_ripple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/ripple_exhibit_oval_primary"
+                            android:src="@drawable/ic_play"
+
+                            android:padding="@dimen/exhibit_button_padding_primary"
+
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/exhibit_previous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_1"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_play">
+
+                        <ImageButton
+                            android:id="@+id/exhibit_previous_ripple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/ripple_exhibit_oval_secondary"
+                            android:src="@drawable/ic_previous"
+
+                            android:padding="@dimen/exhibit_button_padding_secondary"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/exhibit_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_1"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/exhibit_play">
+
+                        <ImageButton
+                            android:id="@+id/exhibit_next_ripple"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/ripple_exhibit_oval_secondary"
+                            android:src="@drawable/ic_next"
+
+                            android:padding="@dimen/exhibit_button_padding_secondary"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exhibit_text_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+                android:layout_marginHorizontal="@dimen/exhibit_margin_h"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exhibit_player_block">
+
+                <TextView
+                    android:id="@+id/exhibit_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/exhibit_text_primary"
+                    android:textSize="@dimen/exhibit_text_primary"
+                    android:textStyle="bold"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/exhibit_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/exhibit_text_secondary"
+                    android:textSize="@dimen/exhibit_text_secondary"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_under"
+
+                    app:layout_constraintTop_toBottomOf="@id/exhibit_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exhibit_additional_block"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+                android:layout_marginHorizontal="@dimen/exhibit_margin_h"
+
+                app:layout_constraintTop_toBottomOf="@id/exhibit_text_block"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_button_research"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/background_exhibit_button_text"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/exhibit_research_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_text_next"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_3"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_research_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="@dimen/exhibit_text_button_secondary"
+                        android:textColor="@color/exhibit_button_text_secondary"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_3"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_4"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_research_ic"/>
+
+                    <ImageButton
+                        android:id="@+id/exhibit_research_ripple"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+
+                        android:background="@drawable/ripple_exhibit_rounded_secondary"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_button_labs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/background_exhibit_button_text"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_under"
+
+                    app:layout_constraintTop_toBottomOf="@id/exhibit_button_research"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/exhibit_labs_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_text_next"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_3"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_labs_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="@dimen/exhibit_text_button_secondary"
+                        android:textColor="@color/exhibit_button_text_secondary"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_3"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_4"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_labs_ic"/>
+
+                    <ImageButton
+                        android:id="@+id/exhibit_labs_ripple"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+
+                        android:background="@drawable/ripple_exhibit_rounded_secondary"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_button_achievements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/background_exhibit_button_text"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_under"
+
+                    app:layout_constraintTop_toBottomOf="@id/exhibit_button_labs"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/exhibit_achievements_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_text_next"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_3"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_achievements_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="@dimen/exhibit_text_button_secondary"
+                        android:textColor="@color/exhibit_button_text_secondary"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_3"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_4"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_achievements_ic"/>
+
+                    <ImageButton
+                        android:id="@+id/exhibit_achievements_ripple"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+
+                        android:background="@drawable/ripple_exhibit_rounded_secondary"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/exhibit_button_contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/background_exhibit_button_text"
+
+                    android:layout_marginTop="@dimen/exhibit_margin_v_under"
+
+                    app:layout_constraintTop_toBottomOf="@id/exhibit_button_achievements"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <ImageView
+                        android:id="@+id/exhibit_contacts_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_text_next"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_3"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_contacts_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="@dimen/exhibit_text_button_secondary"
+                        android:textColor="@color/exhibit_button_text_secondary"
+
+                        android:layout_marginVertical="@dimen/exhibit_button_margin_v_2"
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_3"
+                        android:layout_marginEnd="@dimen/exhibit_button_margin_h_4"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_contacts_ic"/>
+
+                    <ImageButton
+                        android:id="@+id/exhibit_contacts_ripple"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+
+                        android:background="@drawable/ripple_exhibit_rounded_secondary"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/exhibit_button_map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/background_exhibit_button_rounded"
+
+                android:layout_marginTop="@dimen/exhibit_margin_v_large"
+                android:layout_marginHorizontal="@dimen/exhibit_margin_h"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exhibit_additional_block">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginVertical="@dimen/exhibit_button_margin_v_1"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/exhibit_map_ic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_map"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/exhibit_map_title"/>
+
+                    <TextView
+                        android:id="@+id/exhibit_map_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="@dimen/exhibit_text_button_primary"
+                        android:textColor="@color/exhibit_button_text_primary"
+
+                        android:layout_marginStart="@dimen/exhibit_button_margin_h_2"
+
+                        app:layout_constraintStart_toEndOf="@id/exhibit_map_ic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageButton
+                    android:id="@+id/exhibit_map_ripple"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:background="@drawable/ripple_exhibit_rounded_primary"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:layout_marginTop="@dimen/exhibit_margin_v_normal"
+
+                app:layout_constraintTop_toBottomOf="@id/exhibit_button_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
