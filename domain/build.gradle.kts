@@ -4,6 +4,10 @@ plugins {
 }
 
 java {
+    dependencies {
+        implementation(project(":data"))
+    }
+
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }

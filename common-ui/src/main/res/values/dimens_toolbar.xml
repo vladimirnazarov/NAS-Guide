@@ -9,6 +9,6 @@
     <dimen name="toolbar_text">17sp</dimen>
     <dimen name="toolbar_tsi_margin">8dp</dimen>
 
-    <dimen name="toolbar_ic_size">24dp</dimen>
+    <dimen name="toolbar_ic_size">28dp</dimen>
 
 </resources>

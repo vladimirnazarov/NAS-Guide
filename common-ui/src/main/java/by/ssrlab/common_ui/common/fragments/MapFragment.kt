@@ -3,11 +3,11 @@ package by.ssrlab.common_ui.common.fragments
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
+import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 
 class MapFragment: BaseFragment() {
 
-    override val toolbarControlObject = ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
         isBack = false,
         isLang = true,
         isSearch = true,

@@ -47,7 +47,7 @@
 
                 android:src="@drawable/toolbar_main_ic_lang"
                 android:background="@drawable/ripple_rounded_toolbar_main"
-                app:tint="@color/toolbar_exhibit_ic_selector"
+                app:tint="@color/toolbar_main_ic_selector"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
@@ -66,7 +66,7 @@
 
                 android:src="@drawable/toolbar_main_ic_date"
                 android:background="@drawable/ripple_rounded_toolbar_main"
-                app:tint="@color/toolbar_exhibit_ic_selector"
+                app:tint="@color/toolbar_main_ic_selector"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
@@ -85,7 +85,7 @@
 
                 android:src="@drawable/toolbar_main_ic_search"
                 android:background="@drawable/ripple_rounded_toolbar_main"
-                app:tint="@color/toolbar_exhibit_ic_selector"
+                app:tint="@color/toolbar_main_ic_selector"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
@@ -104,7 +104,7 @@
 
                 android:src="@drawable/toolbar_main_ic_back"
                 android:background="@drawable/ripple_rounded_toolbar_main"
-                app:tint="@color/toolbar_exhibit_ic_selector"
+                app:tint="@color/toolbar_main_ic_selector"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"

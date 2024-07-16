@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import by.ssrlab.ui.repository.UiDataProvider
+import by.ssrlab.domain.ui.UiDataProvider
 
 class FHistoryVM(private val uiDataProvider: UiDataProvider): ViewModel() {
 
