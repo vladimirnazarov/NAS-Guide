@@ -24,7 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "NAS Guide"
 include(":app")
-include(":nasgapi")
 include(":ui")
 include(":data")
 include(":domain")

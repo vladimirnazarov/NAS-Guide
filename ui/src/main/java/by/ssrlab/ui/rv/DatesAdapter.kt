@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import by.ssrlab.data.obj.DatesObject
 import by.ssrlab.common_ui.databinding.RvDatesItemBinding
 import by.ssrlab.common_ui.databinding.RvDatesTitleBinding
+import by.ssrlab.data.obj.DatesObject
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
@@ -14,9 +14,8 @@ private const val ITEM_TITLE = 0
 private const val ITEM_DATE = 1
 
 class DatesAdapter(
-    private val entitiesList: List<by.ssrlab.data.obj.DatesObject>,
+    private val entitiesList: List<DatesObject>,
     private val title: String,
-    private val navigateAction: (by.ssrlab.data.obj.DatesObject) -> Unit
 ): RecyclerView.Adapter<DatesAdapter.DatesHolder>() {
 
     inner class DatesHolder(val binding: ViewBinding): RecyclerView.ViewHolder(binding.root)
@@ -49,7 +48,7 @@ class DatesAdapter(
                     }
 
                     this.rvDatesRipple.setOnClickListener {
-                        navigateAction(entitiesList[position])
+                        //TODO
                     }
                 }
             }

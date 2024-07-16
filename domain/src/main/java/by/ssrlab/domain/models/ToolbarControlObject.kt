@@ -1,4 +1,4 @@
-package by.ssrlab.data.obj.ctrl
+package by.ssrlab.domain.models
 
 data class ToolbarControlObject(
     val isBack: Boolean,

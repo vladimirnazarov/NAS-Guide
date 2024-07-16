@@ -43,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
+    api(project(":domain"))
 
     implementation(libs.koin.android)
     implementation(libs.androidx.activity)

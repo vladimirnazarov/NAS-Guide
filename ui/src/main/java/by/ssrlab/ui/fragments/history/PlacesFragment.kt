@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentPlacesBinding
@@ -21,7 +20,7 @@ class PlacesFragment: BaseFragment() {
     private lateinit var binding: FragmentPlacesBinding
     private lateinit var adapter: SectionsAdapter
 
-    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
         isBack = true,
         isLang = false,
         isSearch = true,
@@ -41,9 +40,9 @@ class PlacesFragment: BaseFragment() {
         binding.apply {
             viewModel = this@PlacesFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
-
-            initAdapter()
         }
+
+        initAdapter()
     }
 
     override fun initAdapter() {

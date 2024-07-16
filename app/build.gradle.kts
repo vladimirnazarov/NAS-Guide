@@ -47,7 +47,6 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation(project(":nasgapi"))
     implementation(project(":data"))
     implementation(project(":ui"))
     implementation(project(":common-ui"))

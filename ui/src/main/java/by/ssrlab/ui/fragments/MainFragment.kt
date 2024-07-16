@@ -20,7 +20,7 @@ class MainFragment: BaseFragment() {
     private lateinit var binding: FragmentMainBinding
     private lateinit var adapter: FolderAdapter
 
-    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
         isBack = false,
         isLang = true,
         isSearch = true,
@@ -40,9 +40,9 @@ class MainFragment: BaseFragment() {
         binding.apply {
             viewModel = this@MainFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
-
-            initAdapter()
         }
+
+        initAdapter()
     }
 
     override fun initAdapter() {

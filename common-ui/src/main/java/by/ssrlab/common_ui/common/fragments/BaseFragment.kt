@@ -13,10 +13,8 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 import by.ssrlab.common_ui.common.vm.AMainVM
-import by.ssrlab.domain.ui.ControlDataProvider
-import org.koin.android.ext.android.inject
+import by.ssrlab.domain.models.ToolbarControlObject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 abstract class BaseFragment: Fragment() {
@@ -24,7 +22,7 @@ abstract class BaseFragment: Fragment() {
     abstract val viewModel: ViewModel
     val activityVM: AMainVM by activityViewModel()
 
-    val controlDataProvider: ControlDataProvider by inject()
+    abstract val toolbarControlObject: ToolbarControlObject
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +39,7 @@ abstract class BaseFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        activityVM.setupButtons(controlDataProvider.provideToolbarControlObject())
+        activityVM.setupButtons(toolbarControlObject)
         return initBinding(container)
     }
 
