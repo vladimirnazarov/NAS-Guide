@@ -3,14 +3,8 @@ package by.ssrlab.common_ui.common.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
 
 class AMainVM: ViewModel() {
-
-    enum class ActivityMainMarginParams(val param: String) {
-        STATUS_HEIGHT("status_bar_height"),
-        NAVIGATION_HEIGHT("navigation_bar_height")
-    }
 
     private val _headerImg = MutableLiveData(0)
     val headerImg: LiveData<Int>
@@ -30,10 +24,10 @@ class AMainVM: ViewModel() {
     val isSearchVisible: LiveData<Boolean> get() = _isSearchVisible
     val isDatesVisible: LiveData<Boolean> get() = _isDatesVisible
 
-    fun setupButtons(toolbarControlObject: ToolbarControlObject) {
-        _isBackVisible.value = toolbarControlObject.isBack
-        _isLangVisible.value = toolbarControlObject.isLang
-        _isSearchVisible.value = toolbarControlObject.isSearch
-        _isDatesVisible.value = toolbarControlObject.isDates
+    fun setupButtons(isBack: Boolean, isLang: Boolean, isSearch: Boolean, isDates: Boolean) {
+        _isBackVisible.value = isBack
+        _isLangVisible.value = isLang
+        _isSearchVisible.value = isSearch
+        _isDatesVisible.value = isDates
     }
 }

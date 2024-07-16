@@ -43,7 +43,6 @@
 
                 android:src="@drawable/toolbar_exhibit_ic_volume"
                 android:background="@drawable/ripple_rounded_toolbar_exhibit"
-                app:tint="@color/toolbar_exhibit_ic_selector"
 
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -61,7 +60,6 @@
 
                 android:src="@drawable/toolbar_exhibit_ic_back"
                 android:background="@drawable/ripple_rounded_toolbar_exhibit"
-                app:tint="@color/toolbar_exhibit_ic_selector"
 
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -83,6 +81,17 @@
             app:navGraph="@navigation/exhibit_graph"
 
             app:layout_constraintTop_toBottomOf="@id/activity_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <View
+            android:id="@+id/activity_bottom_blur"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_bottom_line"
+
+            android:background="@color/white_50transparent"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>

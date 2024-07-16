@@ -8,10 +8,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
+import by.ssrlab.data.obj.ctrl.ToolbarControlObject
+import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentInventionsBinding
-import by.ssrlab.ui.rv.section.SectionsAdapter
+import by.ssrlab.ui.rv.SectionsAdapter
 import by.ssrlab.ui.vm.FInventionsVM
 import org.koin.android.ext.android.get
 
@@ -20,7 +21,7 @@ class InventionsFragment: BaseFragment() {
     private lateinit var binding: FragmentInventionsBinding
     private lateinit var adapter: SectionsAdapter
 
-    override val toolbarControlObject = ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
         isBack = true,
         isLang = false,
         isSearch = true,
@@ -46,8 +47,8 @@ class InventionsFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = SectionsAdapter(viewModel.getData()) { address ->
-            navigateNext(address)
+        adapter = SectionsAdapter(viewModel.getData()) {
+            navigateNext()
         }
 
         binding.apply {
@@ -65,7 +66,7 @@ class InventionsFragment: BaseFragment() {
         findNavController().popBackStack()
     }
 
-    override fun navigateNext(address: Int) {
-        findNavController().navigate(R.id.action_inventionsFragment_to_exhibitFragment)
+    override fun navigateNext() {
+        (activity as MainActivity).moveToExhibit()
     }
 }

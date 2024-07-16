@@ -1,6 +1,7 @@
 package by.ssrlab.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
+import by.ssrlab.common_ui.common.ExhibitActivity
+import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -52,8 +55,8 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             override fun onGlobalLayout() {
                 binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
-                val statusBarHeight = getPadding(AMainVM.ActivityMainMarginParams.STATUS_HEIGHT)
-                val navBarHeight = getPadding(AMainVM.ActivityMainMarginParams.NAVIGATION_HEIGHT)
+                val statusBarHeight = getPadding(ActivityMainMarginParams.STATUS_HEIGHT)
+                val navBarHeight = getPadding(ActivityMainMarginParams.NAVIGATION_HEIGHT)
 
                 val toolbarParams = binding.toolbar.layoutParams as ConstraintLayout.LayoutParams
                 toolbarParams.topMargin = statusBarHeight
@@ -98,7 +101,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     }
 
     @Suppress("DiscouragedApi")
-    private fun getPadding(identifier: AMainVM.ActivityMainMarginParams): Int {
+    private fun getPadding(identifier: ActivityMainMarginParams): Int {
         var result = 0
         val resourceId = resources.getIdentifier(identifier.param, "dimen", "android")
         if (resourceId > 0) {
@@ -113,5 +116,10 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
         if (visible) button.visibility = View.VISIBLE
         else button.visibility = View.GONE
+    }
+
+    fun moveToExhibit() {
+        val intent = Intent(this, ExhibitActivity::class.java)
+        startActivity(intent)
     }
 }

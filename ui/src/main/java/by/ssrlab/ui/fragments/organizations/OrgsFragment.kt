@@ -8,10 +8,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
+import by.ssrlab.data.obj.ctrl.ToolbarControlObject
+import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentOrgsBinding
-import by.ssrlab.ui.rv.section.SectionsAdapter
+import by.ssrlab.ui.rv.SectionsAdapter
 import by.ssrlab.ui.vm.FOrgsVM
 import org.koin.android.ext.android.get
 
@@ -20,7 +21,7 @@ class OrgsFragment: BaseFragment() {
     private lateinit var binding: FragmentOrgsBinding
     private lateinit var adapter: SectionsAdapter
 
-    override val toolbarControlObject = ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
         isBack = true,
         isLang = false,
         isSearch = true,
@@ -46,8 +47,8 @@ class OrgsFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = SectionsAdapter(viewModel.getData()) { address ->
-            navigateNext(address)
+        adapter = SectionsAdapter(viewModel.getData()) {
+            navigateNext()
         }
 
         binding.apply {
@@ -66,6 +67,6 @@ class OrgsFragment: BaseFragment() {
     }
 
     override fun navigateNext(address: Int) {
-        findNavController().navigate(R.id.action_orgFragment_to_exhibitFragment)
+        (activity as MainActivity).moveToExhibit()
     }
 }

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="by.ssrlab.ui.fragments.launch.MainFragment"
+        android:name="by.ssrlab.ui.fragments.MainFragment"
         android:label="MainFragment">
 
         <action
@@ -131,12 +131,12 @@
 
     <fragment
         android:id="@+id/datesFragment"
-        android:name="by.ssrlab.ui.fragments.history.dates.DatesFragment"
+        android:name="by.ssrlab.ui.fragments.history.DatesFragment"
         android:label="DatesFragment"/>
 
     <fragment
         android:id="@+id/personsFragment"
-        android:name="by.ssrlab.ui.fragments.history.persons.PersonsFragment"
+        android:name="by.ssrlab.ui.fragments.history.PersonsFragment"
         android:label="PersonsFragment">
 
         <action
@@ -152,7 +152,7 @@
 
     <fragment
         android:id="@+id/placesFragment"
-        android:name="by.ssrlab.ui.fragments.history.places.PlacesFragment"
+        android:name="by.ssrlab.ui.fragments.history.PlacesFragment"
         android:label="PlacesFragment">
 
         <action

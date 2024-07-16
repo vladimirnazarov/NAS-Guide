@@ -2,10 +2,10 @@
 <resources>
 
     <!--  Toolbar  -->
-    <color name="toolbar_button_primary">#FFFFFF</color>
+    <color name="toolbar_button_primary">#165089</color>
     <color name="toolbar_button_primary_active">#165089</color>
-    <color name="toolbar_button_primary_bg">#33FFFFFF</color>
-    <color name="toolbar_button_primary_bg_ripple">#FFFFFF</color>
+    <color name="toolbar_button_primary_bg">#CCFFFFFF</color>
+    <color name="toolbar_button_primary_bg_ripple">#80AFAFAF</color>
 
     <color name="toolbar_button_secondary">#C7C7CC</color>
 

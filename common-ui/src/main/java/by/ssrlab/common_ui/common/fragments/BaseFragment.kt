@@ -13,8 +13,10 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.obj.ctrl.ToolbarControlObject
+import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.domain.ui.ControlDataProvider
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 abstract class BaseFragment: Fragment() {
@@ -22,7 +24,7 @@ abstract class BaseFragment: Fragment() {
     abstract val viewModel: ViewModel
     val activityVM: AMainVM by activityViewModel()
 
-    abstract val toolbarControlObject: ToolbarControlObject
+    val controlDataProvider: ControlDataProvider by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ abstract class BaseFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        activityVM.setupButtons(toolbarControlObject)
+        activityVM.setupButtons(controlDataProvider.provideToolbarControlObject())
         return initBinding(container)
     }
 
@@ -47,6 +49,7 @@ abstract class BaseFragment: Fragment() {
     open fun onBackPressed() {}
     open fun initActivity() {}
     open fun navigateNext(address: Int) {}
+    open fun navigateNext() {}
     open fun initAdapter() {}
 
     fun loadImage(imageView: ImageView, imageId: Int) {

@@ -72,8 +72,8 @@ class StartActivity : AppCompatActivity() {
 
         val options = ActivityOptionsCompat.makeCustomAnimation(
             this,
-            R.anim.nav_en,
-            R.anim.nav_ex
+            by.ssrlab.common_ui.R.anim.nav_en,
+            by.ssrlab.common_ui.R.anim.nav_ex
         )
         startActivity(intent, options.toBundle())
     }
