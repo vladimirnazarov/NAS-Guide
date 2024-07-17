@@ -8,7 +8,7 @@ import by.ssrlab.data.obj.FolderObject
 import by.ssrlab.common_ui.databinding.RvFolderItemBinding
 
 class FolderAdapter(
-    private val entitiesList: List<by.ssrlab.data.obj.FolderObject>,
+    private val entitiesList: List<FolderObject>,
     private val pngLoadAction: (ImageView, Int) -> Unit,
     private val navigateAction: (Int) -> Unit
 ): RecyclerView.Adapter<FolderAdapter.FolderHolder>() {
@@ -28,10 +28,10 @@ class FolderAdapter(
 
     override fun onBindViewHolder(holder: FolderHolder, position: Int) {
         holder.binding.apply {
-            rvFolderMainTitle.text = root.context.getString(entitiesList[position].title)
-            pngLoadAction(rvFolderMainPng, entitiesList[position].imageResource)
+            rvFolderMainTitle.text = root.context.getString(entitiesList[position].title.toInt())
+            pngLoadAction(rvFolderMainPng, entitiesList[position].imageResource.toInt())
             rvFolderMainRipple.setOnClickListener {
-                navigateAction(entitiesList[position].address)
+                navigateAction(entitiesList[position].address.toInt())
             }
         }
     }

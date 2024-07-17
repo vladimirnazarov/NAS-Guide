@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentPersonsBinding
@@ -21,7 +20,7 @@ class PersonsFragment: BaseFragment() {
     private lateinit var binding: FragmentPersonsBinding
     private lateinit var adapter: GridAdapter
 
-    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
         isBack = true,
         isLang = false,
         isSearch = true,
@@ -41,9 +40,9 @@ class PersonsFragment: BaseFragment() {
         binding.apply {
             viewModel = this@PersonsFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
-
-            initAdapter()
         }
+
+        initAdapter()
     }
 
     override fun initAdapter() {

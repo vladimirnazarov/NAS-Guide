@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentHistoryBinding
 import by.ssrlab.ui.rv.FolderAdapter
@@ -20,7 +19,7 @@ class HistoryFragment: BaseFragment() {
     private lateinit var binding: FragmentHistoryBinding
     private lateinit var adapter: FolderAdapter
 
-    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
         isBack = true,
         isLang = false,
         isSearch = false,
@@ -40,9 +39,9 @@ class HistoryFragment: BaseFragment() {
         binding.apply {
             viewModel = this@HistoryFragment.viewModel
             lifecycleOwner = viewLifecycleOwner
-
-            initAdapter()
         }
+
+        initAdapter()
     }
 
     override fun initAdapter() {

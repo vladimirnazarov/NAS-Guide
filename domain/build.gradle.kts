@@ -5,7 +5,7 @@ plugins {
 
 java {
     dependencies {
-        implementation(project(":data"))
+        api(project(":data"))
     }
 
     sourceCompatibility = JavaVersion.VERSION_17
