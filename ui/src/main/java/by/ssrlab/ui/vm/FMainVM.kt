@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import by.ssrlab.domain.ui.UiDataProvider
+import by.ssrlab.ui.R
 
 class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel() {
 
@@ -24,5 +25,9 @@ class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel() {
         _title.value = value
     }
 
-    fun getData() = uiDataProvider.getMainFolders()
+    fun getData() = uiDataProvider.getMainFolders(
+        R.id.action_mainFragment_to_historyFragment,
+        R.id.action_mainFragment_to_orgFragment,
+        R.id.action_mainFragment_to_inventionsFragment
+    )
 }
