@@ -34,7 +34,7 @@ class InventionsFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.common_ui.R.string.folder_inventions))
+        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.domain.R.string.folder_inventions))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_inventions)
 
         binding.apply {

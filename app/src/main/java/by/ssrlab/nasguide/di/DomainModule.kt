@@ -5,5 +5,4 @@ import org.koin.dsl.module
 
 val domainModule = module {
     single { UiDataProvider() }
-    single { ControlDataProvider() }
 }

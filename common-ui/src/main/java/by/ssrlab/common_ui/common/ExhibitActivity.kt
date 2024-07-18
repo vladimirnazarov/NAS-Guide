@@ -2,6 +2,8 @@ package by.ssrlab.common_ui.common
 
 import android.os.Bundle
 import android.view.ViewTreeObserver
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
@@ -19,9 +21,20 @@ class ExhibitActivity : AppCompatActivity(), KoinComponent {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            )
+        )
 
         binding = ActivityExhibitBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        observeLayoutChange()
+//        observeHeader()
     }
 
     private fun observeHeader() {
