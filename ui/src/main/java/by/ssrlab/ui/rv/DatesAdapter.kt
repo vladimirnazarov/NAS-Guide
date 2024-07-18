@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import by.ssrlab.common_ui.databinding.RvDatesItemBinding
 import by.ssrlab.common_ui.databinding.RvDatesTitleBinding
-import by.ssrlab.data.obj.DatesObject
+import by.ssrlab.data.obj.DateObject
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
@@ -14,7 +14,7 @@ private const val ITEM_TITLE = 0
 private const val ITEM_DATE = 1
 
 class DatesAdapter(
-    private val entitiesList: List<DatesObject>,
+    private val entitiesList: List<DateObject>,
     private val title: String,
 ): RecyclerView.Adapter<DatesAdapter.DatesHolder>() {
 

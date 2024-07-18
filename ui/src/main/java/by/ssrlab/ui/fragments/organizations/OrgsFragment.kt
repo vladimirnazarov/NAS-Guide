@@ -34,7 +34,7 @@ class OrgsFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.common_ui.R.string.folder_organizations))
+        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.domain.R.string.folder_organizations))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_organizations)
 
         binding.apply {

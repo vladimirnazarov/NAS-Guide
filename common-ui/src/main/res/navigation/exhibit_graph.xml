@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/exhibit_graph">
+    android:id="@+id/exhibit_graph"
+    app:startDestination="@id/exhibitFragment">
 
     <fragment
         android:id="@+id/researchFragment"
@@ -38,5 +39,48 @@
         android:id="@+id/departmentsFragment"
         android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.DepartmentsFragment"
         android:label="DepartmentsFragment"/>
+
+    <fragment
+        android:id="@+id/exhibitFragment"
+        android:name="by.ssrlab.common_ui.common.fragments.exhibit.ExhibitFragment"
+        android:label="ExhibitFragment">
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_researchFragment"
+            app:destination="@id/researchFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_labsFragment"
+            app:destination="@id/labsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_achievementsFragment"
+            app:destination="@id/achievementsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+        <action
+            android:id="@+id/action_exhibitFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment"
+
+            app:enterAnim="@anim/nav_en"
+            app:exitAnim="@anim/nav_ex"
+            app:popEnterAnim="@anim/nav_pen"
+            app:popExitAnim="@anim/nav_pex"/>
+
+    </fragment>
 
 </navigation>

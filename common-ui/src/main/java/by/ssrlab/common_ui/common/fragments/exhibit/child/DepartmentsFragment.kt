@@ -4,11 +4,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
 import by.ssrlab.common_ui.common.fragments.BaseFragment
-import by.ssrlab.data.obj.ctrl.ToolbarControlObject
 
 class DepartmentsFragment: BaseFragment() {
 
-    override val toolbarControlObject = by.ssrlab.data.obj.ctrl.ToolbarControlObject(
+    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
         isBack = false,
         isLang = true,
         isSearch = true,
