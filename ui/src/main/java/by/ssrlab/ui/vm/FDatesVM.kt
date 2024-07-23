@@ -1,5 +1,6 @@
 package by.ssrlab.ui.vm
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -21,7 +22,7 @@ class FDatesVM(private val uiDataProvider: UiDataProvider): ViewModel() {
     }
 
     private fun transformDate() {
-
+        //TODO
     }
 
     fun getData() = uiDataProvider.getDates()

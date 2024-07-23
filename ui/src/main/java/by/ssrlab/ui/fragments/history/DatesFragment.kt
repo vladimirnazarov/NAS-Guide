@@ -5,7 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.data.util.MainActivityUiState
+import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.databinding.FragmentDatesBinding
 import by.ssrlab.ui.rv.DatesAdapter
 import by.ssrlab.ui.vm.FDatesVM
@@ -30,14 +33,25 @@ class DatesFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //TODO Bind fragment under the image
+        (requireActivity() as MainActivity).changeLayoutState(MainActivityUiState.DateFragment)
         //TODO Set date transformation in the viewModel
 
         initAdapter()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        (requireActivity() as MainActivity).changeLayoutState(MainActivityUiState.Other)
+    }
+
     override fun initAdapter() {
-        //TODO
+        adapter = DatesAdapter(viewModel.getData(), "Test test test")
+
+        binding.apply {
+            datesRv.layoutManager = LinearLayoutManager(requireContext())
+            datesRv.adapter = adapter
+        }
     }
 
     override fun initBinding(container: ViewGroup?): View {
@@ -47,5 +61,9 @@ class DatesFragment: BaseFragment() {
 
     override fun onBackPressed() {
         findNavController().popBackStack()
+    }
+
+    override fun navigateNext(address: Int) {
+        //TODO
     }
 }
