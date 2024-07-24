@@ -11,12 +11,14 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.databinding.DataBindingUtil
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import by.ssrlab.common_ui.common.ExhibitActivity
 import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
@@ -121,5 +123,31 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     fun moveToExhibit() {
         val intent = Intent(this, ExhibitActivity::class.java)
         startActivity(intent)
+    }
+
+    fun changeLayoutState(mainActivityUiState: MainActivityUiState) {
+        val constraintLayout = binding.mainActivity
+        val constraintSet = ConstraintSet().apply { clone(constraintLayout) }
+
+        when (mainActivityUiState) {
+             MainActivityUiState.DateFragment -> {
+                 constraintSet.connect(
+                     binding.activityMainFragmentHost.id,
+                     ConstraintSet.TOP,
+                     binding.activityHeader.id,
+                     ConstraintSet.BOTTOM
+                 )
+                 constraintSet.applyTo(constraintLayout)
+             }
+             MainActivityUiState.Other -> {
+                 constraintSet.connect(
+                     binding.activityMainFragmentHost.id,
+                     ConstraintSet.TOP,
+                     binding.toolbar.id,
+                     ConstraintSet.BOTTOM
+                 )
+                 constraintSet.applyTo(constraintLayout)
+             }
+        }
     }
 }
