@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
+import by.ssrlab.domain.models.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.databinding.FragmentDatesBinding
 import by.ssrlab.ui.rv.DatesAdapter
@@ -20,7 +21,7 @@ class DatesFragment: BaseFragment() {
     private lateinit var binding: FragmentDatesBinding
     private lateinit var adapter: DatesAdapter
 
-    override val toolbarControlObject = by.ssrlab.domain.models.ToolbarControlObject(
+    override val toolbarControlObject = ToolbarControlObject(
         isBack = false,
         isLang = true,
         isSearch = true,

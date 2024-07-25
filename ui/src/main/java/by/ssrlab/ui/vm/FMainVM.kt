@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import by.ssrlab.domain.ui.UiDataProvider
+import by.ssrlab.domain.repository.ui.UiDataProvider
 import by.ssrlab.ui.R
 
 class FMainVM(private val uiDataProvider: UiDataProvider): ViewModel() {

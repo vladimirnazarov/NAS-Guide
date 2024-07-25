@@ -9,7 +9,7 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import by.ssrlab.common_ui.common.vm.AMainVM
-import by.ssrlab.domain.ui.UiDataProvider
+import by.ssrlab.domain.repository.ui.UiDataProvider
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

@@ -1,4 +1,4 @@
-package by.ssrlab.domain.ui
+package by.ssrlab.domain.repository.ui
 
 import by.ssrlab.data.obj.DateObject
 import by.ssrlab.data.obj.FolderObject

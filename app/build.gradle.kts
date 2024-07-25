@@ -66,4 +66,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+    implementation(platform(libs.okhttp.bom))
 }
