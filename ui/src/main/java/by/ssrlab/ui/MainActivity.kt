@@ -19,6 +19,7 @@ import by.ssrlab.common_ui.common.ExhibitActivity
 import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.data.util.MainActivityUiState
+import by.ssrlab.data.util.ToolbarStateByDates
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
@@ -148,6 +149,17 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                  )
                  constraintSet.applyTo(constraintLayout)
              }
+        }
+    }
+
+    fun setupToolbarByDates(toolbarStateByDates: ToolbarStateByDates) {
+        when (toolbarStateByDates) {
+            ToolbarStateByDates.OnCreate -> {
+                //TODO setup additional titles visibility
+            }
+            ToolbarStateByDates.OnDestroy -> {
+                //TODO setup additional titles visibility
+            }
         }
     }
 }

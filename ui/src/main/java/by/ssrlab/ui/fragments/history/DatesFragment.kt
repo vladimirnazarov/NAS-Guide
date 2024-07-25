@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.data.util.MainActivityUiState
+import by.ssrlab.data.util.ToolbarStateByDates
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.databinding.FragmentDatesBinding
 import by.ssrlab.ui.rv.DatesAdapter
@@ -33,7 +34,10 @@ class DatesFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (requireActivity() as MainActivity).changeLayoutState(MainActivityUiState.DateFragment)
+        (requireActivity() as MainActivity).apply {
+            changeLayoutState(MainActivityUiState.DateFragment)
+            setupToolbarByDates(ToolbarStateByDates.OnCreate)
+        }
         //TODO Set date transformation in the viewModel
 
         initAdapter()
@@ -42,7 +46,10 @@ class DatesFragment: BaseFragment() {
     override fun onDestroyView() {
         super.onDestroyView()
 
-        (requireActivity() as MainActivity).changeLayoutState(MainActivityUiState.Other)
+        (requireActivity() as MainActivity).apply {
+            changeLayoutState(MainActivityUiState.Other)
+            setupToolbarByDates(ToolbarStateByDates.OnDestroy)
+        }
     }
 
     override fun initAdapter() {
