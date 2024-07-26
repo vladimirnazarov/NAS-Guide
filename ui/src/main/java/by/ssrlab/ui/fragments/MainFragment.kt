@@ -28,18 +28,18 @@ class MainFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: FMainVM by viewModels {
+    override val fragmentViewModel: FMainVM by viewModels {
         FMainVM.Factory(get())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(R.string.page_main_title))
+        fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_main_title))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_main)
 
         binding.apply {
-            viewModel = this@MainFragment.viewModel
+            viewModel = this@MainFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
         }
 
@@ -47,7 +47,7 @@ class MainFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = FolderAdapter(viewModel.getData(), { image, resource ->
+        adapter = FolderAdapter(fragmentViewModel.getData(), { image, resource ->
             loadImage(image, resource)
         }, { address ->
             navigateNext(address)

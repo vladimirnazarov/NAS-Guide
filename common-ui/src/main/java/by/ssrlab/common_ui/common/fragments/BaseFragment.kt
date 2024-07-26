@@ -19,7 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 abstract class BaseFragment: Fragment() {
 
-    abstract val viewModel: ViewModel
+    abstract val fragmentViewModel: ViewModel
     val activityVM: AMainVM by activityViewModel()
 
     abstract val toolbarControlObject: ToolbarControlObject
@@ -49,6 +49,7 @@ abstract class BaseFragment: Fragment() {
     open fun navigateNext(address: Int) {}
     open fun navigateNext() {}
     open fun initAdapter() {}
+    open fun observeOnDataChanged() {}
 
     fun loadImage(imageView: ImageView, imageId: Int) {
         val resources = imageView.context.resources

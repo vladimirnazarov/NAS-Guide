@@ -28,7 +28,7 @@ class DatesFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: FDatesVM by viewModels {
+    override val fragmentViewModel: FDatesVM by viewModels {
         FDatesVM.Factory(get())
     }
 
@@ -54,7 +54,7 @@ class DatesFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = DatesAdapter(viewModel.getData(), "Test test test")
+        adapter = DatesAdapter(fragmentViewModel.getData(), "Test test test")
 
         binding.apply {
             datesRv.layoutManager = LinearLayoutManager(requireContext())

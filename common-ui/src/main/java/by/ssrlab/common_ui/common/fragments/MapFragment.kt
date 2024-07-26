@@ -14,7 +14,7 @@ class MapFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: ViewModel
+    override val fragmentViewModel: ViewModel
         get() = TODO("Not yet implemented")
 
     override fun initBinding(container: ViewGroup?): View {

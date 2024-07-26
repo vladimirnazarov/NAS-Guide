@@ -1,17 +1,18 @@
 package by.ssrlab.data.data.additional
 
+import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
 
 data class Place(
 
     @SerializedName("pk")
-    val pk: Int,
+    override val pk: Int,
 
     @SerializedName("key_name")
     val keyName: String,
 
     @SerializedName("logo")
-    val logo: String,
+    override val logo: String,
 
     @SerializedName("latitude")
     val lat: Double,
@@ -20,5 +21,5 @@ data class Place(
     val lon: Double,
 
     @SerializedName("images")
-    val image: Image
-)
+    override val image: Image
+): DescriptionData

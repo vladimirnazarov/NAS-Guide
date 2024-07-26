@@ -4,22 +4,21 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
 import by.ssrlab.domain.models.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
-import by.ssrlab.ui.databinding.FragmentInventionsBinding
-import by.ssrlab.ui.rv.SectionsAdapter
-import by.ssrlab.ui.vm.FInventionsVM
-import org.koin.android.ext.android.get
+import by.ssrlab.ui.databinding.FragmentDevelopmentsBinding
+import by.ssrlab.ui.rv.SectionAdapter
+import by.ssrlab.ui.vm.FDevelopmentsVM
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class InventionsFragment: BaseFragment() {
+class DevelopmentsFragment: BaseFragment() {
 
-    private lateinit var binding: FragmentInventionsBinding
-    private lateinit var adapter: SectionsAdapter
+    private lateinit var binding: FragmentDevelopmentsBinding
+    private lateinit var adapter: SectionAdapter
 
     override val toolbarControlObject = ToolbarControlObject(
         isBack = true,
@@ -28,26 +27,31 @@ class InventionsFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: FInventionsVM by viewModels {
-        FInventionsVM.Factory(get())
-    }
+    override val fragmentViewModel: FDevelopmentsVM by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(by.ssrlab.domain.R.string.folder_inventions))
+        fragmentViewModel.setTitle(requireContext().resources.getString(by.ssrlab.domain.R.string.folder_inventions))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_inventions)
 
         binding.apply {
-            viewModel = this@InventionsFragment.viewModel
+            viewModel = this@DevelopmentsFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
         }
 
         initAdapter()
+        observeOnDataChanged()
+    }
+
+    override fun observeOnDataChanged() {
+        fragmentViewModel.inventionsData.observe(viewLifecycleOwner) {
+            adapter.updateData(it)
+        }
     }
 
     override fun initAdapter() {
-        adapter = SectionsAdapter(viewModel.getData()) {
+        adapter = SectionAdapter(fragmentViewModel.inventionsData.value!!) {
             navigateNext()
         }
 
@@ -58,7 +62,7 @@ class InventionsFragment: BaseFragment() {
     }
 
     override fun initBinding(container: ViewGroup?): View {
-        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_inventions, container, false)
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_developments, container, false)
         return binding.root
     }
 

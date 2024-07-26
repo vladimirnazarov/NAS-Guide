@@ -1,11 +1,12 @@
 package by.ssrlab.data.data.additional
 
+import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
 
 data class Organization(
 
     @SerializedName("pk")
-    val pk: Int,
+    override val pk: Int,
 
     @SerializedName("key_name")
     val keyName: String,
@@ -16,9 +17,12 @@ data class Organization(
     @SerializedName("longitude")
     val lon: Double,
 
+    @SerializedName("logo")
+    override val logo: String,
+
     @SerializedName("department_filter")
     val departmentFilter: DepartmentFilter,
 
     @SerializedName("images")
-    val image: Image
-)
+    override val image: Image
+): DescriptionData

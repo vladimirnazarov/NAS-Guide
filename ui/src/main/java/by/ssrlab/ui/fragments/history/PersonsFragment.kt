@@ -28,18 +28,18 @@ class PersonsFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: FPersonsVM by viewModels {
+    override val fragmentViewModel: FPersonsVM by viewModels {
         FPersonsVM.Factory(get())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(R.string.page_persons_title))
+        fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_persons_title))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_persons)
 
         binding.apply {
-            viewModel = this@PersonsFragment.viewModel
+            viewModel = this@PersonsFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
         }
 
@@ -47,7 +47,7 @@ class PersonsFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = GridAdapter(viewModel.getData()) {
+        adapter = GridAdapter(fragmentViewModel.getData()) {
             navigateNext()
         }
 
