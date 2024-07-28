@@ -36,4 +36,6 @@ android {
 
 dependencies {
     api(project(":data"))
+
+    implementation(libs.retrofit)
 }

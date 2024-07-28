@@ -11,7 +11,7 @@ import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import by.ssrlab.common_ui.common.vm.AMainVM
-import by.ssrlab.domain.ui.UiDataProvider
+import by.ssrlab.domain.repository.ui.UiDataProvider
 import org.junit.After
 import org.junit.Before
 import org.koin.androidx.viewmodel.dsl.viewModel
