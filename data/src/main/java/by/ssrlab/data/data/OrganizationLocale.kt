@@ -2,15 +2,16 @@ package by.ssrlab.data.data
 
 import by.ssrlab.data.data.additional.Language
 import by.ssrlab.data.data.additional.Organization
+import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 
 data class OrganizationLocale(
 
     @SerializedName("pk")
-    val pk: Int,
+    override val pk: Int,
 
     @SerializedName("organization")
-    val organization: Organization,
+    override val description: Organization,
 
     @SerializedName("lang")
     val language: Language,
@@ -22,7 +23,7 @@ data class OrganizationLocale(
     val audio: String?,
 
     @SerializedName("name")
-    val name: String,
+    override val name: String,
 
     @SerializedName("contacts")
     val contacts: String,
@@ -32,4 +33,4 @@ data class OrganizationLocale(
 
     @SerializedName("research_areas")
     val researchAreas: List<String>
-)
+): RepositoryData

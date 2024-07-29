@@ -27,18 +27,18 @@ class HistoryFragment: BaseFragment() {
         isDates = false
     )
 
-    override val viewModel: FHistoryVM by viewModels {
+    override val fragmentViewModel: FHistoryVM by viewModels {
         FHistoryVM.Factory(get())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.setTitle(requireContext().resources.getString(R.string.page_history_title))
+        fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_history_title))
         activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_history)
 
         binding.apply {
-            viewModel = this@HistoryFragment.viewModel
+            viewModel = this@HistoryFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
         }
 
@@ -46,7 +46,7 @@ class HistoryFragment: BaseFragment() {
     }
 
     override fun initAdapter() {
-        adapter = FolderAdapter(viewModel.getData(), { image, resource ->
+        adapter = FolderAdapter(fragmentViewModel.getData(), { image, resource ->
             loadImage(image, resource)
         }, { address ->
             navigateNext(address)

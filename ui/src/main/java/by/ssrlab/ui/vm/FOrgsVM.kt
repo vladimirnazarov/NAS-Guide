@@ -4,17 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import by.ssrlab.domain.repository.ui.UiDataProvider
+import by.ssrlab.common_ui.common.vm.BaseFragmentVM
+import by.ssrlab.data.data.OrganizationLocale
+import by.ssrlab.domain.repository.network.OrgsRepository
 
-class FOrgsVM(private val uiDataProvider: UiDataProvider): ViewModel() {
+class FOrgsVM(orgsRepository: OrgsRepository): BaseFragmentVM<OrganizationLocale>(orgsRepository) {
 
-    @Suppress("UNCHECKED_CAST")
-    class Factory(private val uiDataProvider: UiDataProvider): ViewModelProvider.Factory {
-
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return FOrgsVM(uiDataProvider) as T
-        }
-    }
+    private val _orgsData = MutableLiveData<List<OrganizationLocale>>(listOf())
+    val orgsData: LiveData<List<OrganizationLocale>> get() = _orgsData
 
     private val _title = MutableLiveData("")
     val title: LiveData<String>
@@ -24,5 +21,9 @@ class FOrgsVM(private val uiDataProvider: UiDataProvider): ViewModel() {
         _title.value = value
     }
 
-    fun getData() = uiDataProvider.getSections()
+    init {
+        getData {
+            _orgsData.value = it
+        }
+    }
 }

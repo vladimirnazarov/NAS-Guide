@@ -85,7 +85,7 @@
 
     <fragment
         android:id="@+id/inventionsFragment"
-        android:name="by.ssrlab.ui.fragments.inventions.InventionsFragment"
+        android:name="by.ssrlab.ui.fragments.inventions.DevelopmentsFragment"
         android:label="InventionsFragment">
 
         <action

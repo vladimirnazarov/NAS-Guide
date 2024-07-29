@@ -20,11 +20,17 @@ private const val BASE_URL = "https://nasbguide.krokam.by/"
 private const val CACHE_SIZE = (1024 * 1024 * 5).toLong()
 
 val networkModule = module {
+
     single<Retrofit>(named("network")) { provideRetrofit(context = get()) }
+
     single<DevelopmentsApi>(named("network")) { provideApi(retrofit = get(named("network"))) }
+
     single<EventsApi>(named("network")) { provideApi(retrofit = get(named("network"))) }
+
     single<OrgsApi>(named("network")) { provideApi(retrofit = get(named("network"))) }
+
     single<PersonsApi>(named("network")) { provideApi(retrofit = get(named("network"))) }
+
     single<PlacesApi>(named("network")) { provideApi(retrofit = get(named("network"))) }
 }
 

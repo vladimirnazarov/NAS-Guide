@@ -3,7 +3,7 @@
     <data>
         <variable
             name="viewModel"
-            type="by.ssrlab.ui.vm.FInventionsVM"/>
+            type="by.ssrlab.ui.vm.FDevelopmentsVM"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

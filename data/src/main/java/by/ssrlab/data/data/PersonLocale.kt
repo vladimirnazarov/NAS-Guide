@@ -2,15 +2,16 @@ package by.ssrlab.data.data
 
 import by.ssrlab.data.data.additional.Language
 import by.ssrlab.data.data.additional.Person
+import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 
 data class PersonLocale(
 
     @SerializedName("pk")
-    val pk: Int,
+    override val pk: Int,
 
     @SerializedName("person")
-    val person: Person,
+    override val description: Person,
 
     @SerializedName("lang")
     val language: Language,
@@ -22,5 +23,5 @@ data class PersonLocale(
     val audio: String?,
 
     @SerializedName("name")
-    val name: String
-)
+    override val name: String
+): RepositoryData

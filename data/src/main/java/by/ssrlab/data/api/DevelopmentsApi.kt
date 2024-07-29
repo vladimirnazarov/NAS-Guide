@@ -3,7 +3,7 @@ package by.ssrlab.data.api
 import by.ssrlab.data.data.DevelopmentLocale
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 //1 - en
 //2 - by
@@ -11,6 +11,6 @@ import retrofit2.http.Path
 
 interface DevelopmentsApi {
 
-    @GET("api/rest/developmentlocales/?lang={lang}")
-    fun get(@Path("lang") language: Int): Call<List<DevelopmentLocale>>
+    @GET("api/rest/developmentlocales/")
+    fun get(@Query("lang") language: Int): Call<List<DevelopmentLocale>>
 }

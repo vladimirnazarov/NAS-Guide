@@ -4,17 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import by.ssrlab.common_ui.common.vm.BaseFragmentVM
+import by.ssrlab.data.data.PlaceLocale
+import by.ssrlab.domain.repository.network.PlacesRepository
 import by.ssrlab.domain.repository.ui.UiDataProvider
 
-class FPlacesVM(private val uiDataProvider: UiDataProvider): ViewModel() {
+class FPlacesVM(placesRepository: PlacesRepository): BaseFragmentVM<PlaceLocale>(placesRepository) {
 
-    @Suppress("UNCHECKED_CAST")
-    class Factory(private val uiDataProvider: UiDataProvider): ViewModelProvider.Factory {
-
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return FPlacesVM(uiDataProvider) as T
-        }
-    }
+    private val _placesData = MutableLiveData<List<PlaceLocale>>(listOf())
+    val placesData: LiveData<List<PlaceLocale>> get() = _placesData
 
     private val _title = MutableLiveData("")
     val title: LiveData<String>
@@ -24,5 +22,9 @@ class FPlacesVM(private val uiDataProvider: UiDataProvider): ViewModel() {
         _title.value = value
     }
 
-    fun getData() = uiDataProvider.getPlaces()
+    init {
+        getData {
+            _placesData.value = it
+        }
+    }
 }
