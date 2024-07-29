@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
@@ -14,7 +13,7 @@ import by.ssrlab.ui.R
 import by.ssrlab.ui.databinding.FragmentPersonsBinding
 import by.ssrlab.ui.rv.GridAdapter
 import by.ssrlab.ui.vm.FPersonsVM
-import org.koin.android.ext.android.get
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PersonsFragment: BaseFragment() {
 
@@ -28,9 +27,7 @@ class PersonsFragment: BaseFragment() {
         isDates = false
     )
 
-    override val fragmentViewModel: FPersonsVM by viewModels {
-        FPersonsVM.Factory(get())
-    }
+    override val fragmentViewModel: FPersonsVM by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,10 +41,17 @@ class PersonsFragment: BaseFragment() {
         }
 
         initAdapter()
+        observeOnDataChanged()
+    }
+
+    override fun observeOnDataChanged() {
+        fragmentViewModel.personsData.observe(viewLifecycleOwner) {
+            adapter.updateData(it)
+        }
     }
 
     override fun initAdapter() {
-        adapter = GridAdapter(fragmentViewModel.getData()) {
+        adapter = GridAdapter(fragmentViewModel.personsData.value!!) {
             navigateNext()
         }
 

@@ -32,20 +32,26 @@ class DatesFragment: BaseFragment() {
         FDatesVM.Factory(get())
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onStart() {
+        super.onStart()
 
         (requireActivity() as MainActivity).apply {
             changeLayoutState(MainActivityUiState.DateFragment)
             setupToolbarByDates(ToolbarStateByDates.OnCreate)
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_dates)
         //TODO Set date transformation in the viewModel
 
         initAdapter()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onStop() {
+        super.onStop()
 
         (requireActivity() as MainActivity).apply {
             changeLayoutState(MainActivityUiState.Other)

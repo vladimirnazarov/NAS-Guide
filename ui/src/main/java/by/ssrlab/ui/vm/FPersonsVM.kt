@@ -2,19 +2,14 @@ package by.ssrlab.ui.vm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import by.ssrlab.domain.repository.ui.UiDataProvider
+import by.ssrlab.common_ui.common.vm.BaseFragmentVM
+import by.ssrlab.data.data.PersonLocale
+import by.ssrlab.domain.repository.network.PersonsRepository
 
-class FPersonsVM(private val uiDataProvider: UiDataProvider): ViewModel() {
+class FPersonsVM(personsRepository: PersonsRepository): BaseFragmentVM<PersonLocale>(personsRepository) {
 
-    @Suppress("UNCHECKED_CAST")
-    class Factory(private val uiDataProvider: UiDataProvider): ViewModelProvider.Factory {
-
-        override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            return FPersonsVM(uiDataProvider) as T
-        }
-    }
+    private val _personsData = MutableLiveData<List<PersonLocale>>(listOf())
+    val personsData: LiveData<List<PersonLocale>> get() = _personsData
 
     private val _title = MutableLiveData("")
     val title: LiveData<String>
@@ -24,5 +19,9 @@ class FPersonsVM(private val uiDataProvider: UiDataProvider): ViewModel() {
         _title.value = value
     }
 
-    fun getData() = uiDataProvider.getPersons()
+    init {
+        getData {
+            _personsData.value = it
+        }
+    }
 }

@@ -4,6 +4,7 @@
     <dimen name="common_folder_corners">20dp</dimen>
 
     <dimen name="common_margin">16dp</dimen>
+    <dimen name="common_margin_small">6dp</dimen>
     <dimen name="common_rv_padding">48dp</dimen>
     <dimen name="common_rv_top_margin">20dp</dimen>
 

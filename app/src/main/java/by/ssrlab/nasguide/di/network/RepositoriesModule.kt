@@ -1,4 +1,4 @@
-package by.ssrlab.nasguide.di
+package by.ssrlab.nasguide.di.network
 
 import by.ssrlab.domain.repository.network.DevelopmentsRepository
 import by.ssrlab.domain.repository.network.EventsRepository
