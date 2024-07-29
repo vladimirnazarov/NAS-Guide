@@ -17,7 +17,9 @@ import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import by.ssrlab.common_ui.common.ExhibitActivity
 import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
+import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
 import by.ssrlab.ui.databinding.ActivityMainBinding
@@ -46,6 +48,13 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         binding.lifecycleOwner = this@MainActivity
         binding.viewModel = activityViewModel
+
+        activityViewModel.apply {
+            setButtonAction(ButtonAction.BackAction, ::createIsntRealizedDialog)
+            setButtonAction(ButtonAction.SearchAction, ::createIsntRealizedDialog)
+            setButtonAction(ButtonAction.LanguageAction, ::createIsntRealizedDialog)
+            setButtonAction(ButtonAction.ChooseDateAction, ::createIsntRealizedDialog)
+        }
 
         observeLayoutChange()
         observeHeader()
@@ -160,5 +169,13 @@ class MainActivity : AppCompatActivity(), KoinComponent {
                 binding.datesNowHolder.visibility = View.GONE
             }
         }
+    }
+
+    private fun createIsntRealizedDialog() {
+        createSimpleAlertDialog(
+            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_dont_available),
+            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_isnt_realized),
+            this@MainActivity
+        )
     }
 }

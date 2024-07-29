@@ -8,6 +8,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
+import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.domain.models.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
@@ -36,7 +38,10 @@ class MainFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_main_title))
-        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_main)
+        activityVM.apply {
+            setHeaderImg(by.ssrlab.common_ui.R.drawable.header_main)
+            setButtonAction(ButtonAction.BackAction, ::onBackPressed)
+        }
 
         binding.apply {
             viewModel = this@MainFragment.fragmentViewModel

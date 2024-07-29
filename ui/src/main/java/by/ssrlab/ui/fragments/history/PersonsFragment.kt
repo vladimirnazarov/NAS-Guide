@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.domain.models.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.R
@@ -33,7 +34,10 @@ class PersonsFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_persons_title))
-        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_persons)
+        activityVM.apply {
+            setHeaderImg(by.ssrlab.common_ui.R.drawable.header_persons)
+            setButtonAction(ButtonAction.BackAction, ::onBackPressed)
+        }
 
         binding.apply {
             viewModel = this@PersonsFragment.fragmentViewModel

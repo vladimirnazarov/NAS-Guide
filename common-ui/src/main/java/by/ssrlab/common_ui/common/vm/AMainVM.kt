@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import by.ssrlab.common_ui.R
+import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.domain.models.ToolbarControlObject
 import java.time.LocalDate
 import java.time.Month
@@ -21,6 +22,7 @@ class AMainVM(private val context: Context): ViewModel() {
         _headerImg.value = resource
     }
 
+    //Control buttons
     private val _isBackVisible = MutableLiveData(false)
     private val _isLangVisible = MutableLiveData(false)
     private val _isSearchVisible = MutableLiveData(false)
@@ -38,6 +40,28 @@ class AMainVM(private val context: Context): ViewModel() {
         _isDatesVisible.value = toolbarControlObject.isDates
     }
 
+    private val _backAction = MutableLiveData<() -> Unit>(::emptyAction)
+    private val _searchAction = MutableLiveData<() -> Unit>(::emptyAction)
+    private val _chooseDateAction = MutableLiveData<() -> Unit>(::emptyAction)
+    private val _languageAction = MutableLiveData<() -> Unit>(::emptyAction)
+
+    val backAction: LiveData<() -> Unit> get() = _backAction
+    val searchAction: LiveData<() -> Unit> get() = _searchAction
+    val chooseDateAction: LiveData<() -> Unit> get() = _chooseDateAction
+    val languageAction: LiveData<() -> Unit> get() = _languageAction
+
+    fun setButtonAction(buttonAction: ButtonAction, action: () -> Unit) {
+        when (buttonAction) {
+            ButtonAction.BackAction -> _backAction.value = action
+            ButtonAction.ChooseDateAction -> _searchAction.value = action
+            ButtonAction.SearchAction -> _chooseDateAction.value = action
+            ButtonAction.LanguageAction -> _languageAction.value = action
+        }
+    }
+
+    private fun emptyAction() {}
+
+    //Date section
     private val _currentDateTime = MutableLiveData(getCurrentDate())
     val currentDateTime: LiveData<String> get() = _currentDateTime
 
