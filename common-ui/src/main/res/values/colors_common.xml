@@ -7,6 +7,8 @@
 
     <!--  Common  -->
     <color name="primary_blue">#01315C</color>
+    <color name="primary_text">@color/white</color>
+    <color name="secondary_text">#E0E0E0</color>
 
     <color name="clickable_text_false">#165089</color>
     <color name="clickable_text_true">#01315C</color>

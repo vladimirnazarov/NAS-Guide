@@ -1,4 +1,4 @@
-package by.ssrlab.nasguide.di
+package by.ssrlab.nasguide.di.network
 
 import android.content.Context
 import by.ssrlab.data.api.DevelopmentsApi

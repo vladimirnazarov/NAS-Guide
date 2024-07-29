@@ -1,15 +1,16 @@
 package by.ssrlab.ui.rv
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import by.ssrlab.data.obj.GridObject
 import by.ssrlab.common_ui.databinding.RvGridItemBinding
+import by.ssrlab.data.data.common.RepositoryData
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
 class GridAdapter(
-    private val entitiesList: List<by.ssrlab.data.obj.GridObject>,
+    private var entitiesList: List<RepositoryData>,
     private val navigateAction: () -> Unit
 ): RecyclerView.Adapter<GridAdapter.GridHolder>() {
 
@@ -28,8 +29,8 @@ class GridAdapter(
 
     override fun onBindViewHolder(holder: GridHolder, position: Int) {
         holder.binding.apply {
-            gridTitle.text = entitiesList[position].title
-            gridPng.load(entitiesList[position].imageSource) {
+            gridTitle.text = entitiesList[position].name
+            gridPng.load(entitiesList[position].description?.logo) {
                 transformations(RoundedCornersTransformation(16f))
                 placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder)
                 crossfade(500)
@@ -42,4 +43,10 @@ class GridAdapter(
     }
 
     override fun getItemCount() = entitiesList.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(items: List<RepositoryData>) {
+        entitiesList = items
+        notifyDataSetChanged()
+    }
 }

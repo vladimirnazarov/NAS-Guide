@@ -155,10 +155,12 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     fun setupToolbarByDates(toolbarStateByDates: ToolbarStateByDates) {
         when (toolbarStateByDates) {
             ToolbarStateByDates.OnCreate -> {
-                //TODO setup additional titles visibility
+                binding.datesNowHolder.visibility = View.VISIBLE
+                binding.toolbarTitleAdditional.visibility = View.VISIBLE
             }
             ToolbarStateByDates.OnDestroy -> {
-                //TODO setup additional titles visibility
+                binding.datesNowHolder.visibility = View.GONE
+                binding.toolbarTitleAdditional.visibility = View.GONE
             }
         }
     }
