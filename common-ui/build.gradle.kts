@@ -7,6 +7,14 @@ android {
     namespace = "by.ssrlab.common_ui"
     compileSdk = 34
 
+    viewBinding {
+        enable = true
+    }
+
+    dataBinding {
+        enable = true
+    }
+
     defaultConfig {
         minSdk = 29
 
@@ -22,14 +30,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    viewBinding {
-        enable = true
-    }
-
-    dataBinding {
-        enable = true
     }
 
     compileOptions {

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
             name="viewModel"
@@ -7,10 +11,6 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-
         android:background="@color/white"
 
         tools:ignore="ContentDescription"
@@ -97,21 +97,21 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/toolbar_date"/>
 
-            <TextView
-                android:id="@+id/toolbar_title_additional"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+<!--            <TextView-->
+<!--                android:id="@+id/toolbar_title_additional"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
 
-                android:textStyle="bold"
-                android:textSize="@dimen/activity_dates_title_additional"
-                android:textColor="@color/primary_text"
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="@dimen/activity_dates_title_additional"-->
+<!--                android:textColor="@color/primary_text"-->
 
-                android:visibility="gone"
+<!--                android:visibility="gone"-->
 
-                app:layout_constraintStart_toEndOf="@id/toolbar_back"
-                app:layout_constraintEnd_toStartOf="@id/toolbar_date"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+<!--                app:layout_constraintStart_toEndOf="@id/toolbar_back"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/toolbar_date"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
 
             <ImageButton
                 android:id="@+id/toolbar_back"
@@ -164,6 +164,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:text="@{viewModel.currentDateTime}"
                 android:textSize="@dimen/activity_dates_chosen"
                 android:textColor="@color/primary_text"
                 android:textStyle="bold"
