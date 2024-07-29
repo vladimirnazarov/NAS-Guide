@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
 import by.ssrlab.domain.models.ToolbarControlObject
@@ -44,7 +45,10 @@ class DatesFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activityVM.setHeaderImg(by.ssrlab.common_ui.R.drawable.header_dates)
+        activityVM.apply {
+            setHeaderImg(by.ssrlab.common_ui.R.drawable.header_dates)
+            setButtonAction(ButtonAction.BackAction, ::onBackPressed)
+        }
         //TODO Set date transformation in the viewModel
 
         initAdapter()

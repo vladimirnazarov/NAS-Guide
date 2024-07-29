@@ -8,6 +8,8 @@
         <variable
             name="viewModel"
             type="by.ssrlab.common_ui.common.vm.AMainVM"/>
+
+        <import type="by.ssrlab.common_ui.common.util.BindingAdapters"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -49,6 +51,8 @@
                 android:background="@drawable/ripple_rounded_toolbar_main"
                 app:tint="@color/toolbar_main_ic_selector"
 
+                android:onClick="@{viewModel.languageAction}"
+
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -68,6 +72,8 @@
                 android:background="@drawable/ripple_rounded_toolbar_main"
                 app:tint="@color/toolbar_main_ic_selector"
 
+                android:onClick="@{viewModel.chooseDateAction}"
+
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -86,6 +92,8 @@
                 android:src="@drawable/toolbar_main_ic_search"
                 android:background="@drawable/ripple_rounded_toolbar_main"
                 app:tint="@color/toolbar_main_ic_selector"
+
+                android:onClick="@{viewModel.searchAction}"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
@@ -121,6 +129,8 @@
                 android:src="@drawable/toolbar_main_ic_back"
                 android:background="@drawable/ripple_rounded_toolbar_main"
                 app:tint="@color/toolbar_main_ic_selector"
+
+                android:onClick="@{viewModel.backAction}"
 
                 android:visibility="gone"
                 android:padding="@dimen/toolbar_button_padding"
