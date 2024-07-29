@@ -1,11 +1,17 @@
 package by.ssrlab.common_ui.common.vm
 
+import android.annotation.SuppressLint
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import by.ssrlab.common_ui.R
 import by.ssrlab.domain.models.ToolbarControlObject
+import java.time.LocalDate
+import java.time.Month
 
-class AMainVM: ViewModel() {
+@SuppressLint("StaticFieldLeak")
+class AMainVM(private val context: Context): ViewModel() {
 
     private val _headerImg = MutableLiveData(0)
     val headerImg: LiveData<Int>
@@ -30,5 +36,33 @@ class AMainVM: ViewModel() {
         _isLangVisible.value = toolbarControlObject.isLang
         _isSearchVisible.value = toolbarControlObject.isSearch
         _isDatesVisible.value = toolbarControlObject.isDates
+    }
+
+    private val _currentDateTime = MutableLiveData(getCurrentDate())
+    val currentDateTime: LiveData<String> get() = _currentDateTime
+
+    private fun getCurrentDate(): String {
+        val currentDate = LocalDate.now()
+        val currentDay = currentDate.dayOfMonth.toString()
+        val currentMonth = currentDate.month
+
+        return "$currentDay ${formatMonth(currentMonth)}"
+    }
+
+    private fun formatMonth(month: Month): String {
+        return when (month) {
+            Month.JANUARY -> context.getString(R.string.january)
+            Month.FEBRUARY -> context.getString(R.string.february)
+            Month.MARCH -> context.getString(R.string.march)
+            Month.APRIL -> context.getString(R.string.april)
+            Month.MAY -> context.getString(R.string.may)
+            Month.JUNE -> context.getString(R.string.june)
+            Month.JULY -> context.getString(R.string.july)
+            Month.AUGUST -> context.getString(R.string.august)
+            Month.SEPTEMBER -> context.getString(R.string.september)
+            Month.OCTOBER -> context.getString(R.string.october)
+            Month.NOVEMBER -> context.getString(R.string.november)
+            Month.DECEMBER -> context.getString(R.string.december)
+        }
     }
 }

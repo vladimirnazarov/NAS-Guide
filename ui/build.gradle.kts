@@ -9,6 +9,14 @@ android {
 
     useLibrary("android.test.mock")
 
+    dataBinding {
+        enable = true
+    }
+
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         minSdk = 29
 
@@ -24,14 +32,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-
-    dataBinding {
-        enable = true
-    }
-
-    viewBinding {
-        enable = true
     }
 
     compileOptions {

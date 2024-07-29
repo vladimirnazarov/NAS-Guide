@@ -22,10 +22,10 @@ class DatesFragment: BaseFragment() {
     private lateinit var adapter: DatesAdapter
 
     override val toolbarControlObject = ToolbarControlObject(
-        isBack = false,
-        isLang = true,
-        isSearch = true,
-        isDates = false
+        isBack = true,
+        isLang = false,
+        isSearch = false,
+        isDates = true
     )
 
     override val fragmentViewModel: FDatesVM by viewModels {

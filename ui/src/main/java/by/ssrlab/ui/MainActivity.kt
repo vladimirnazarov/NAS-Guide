@@ -44,9 +44,8 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         )
 
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
-
-        binding.viewModel = activityViewModel
         binding.lifecycleOwner = this@MainActivity
+        binding.viewModel = activityViewModel
 
         observeLayoutChange()
         observeHeader()
@@ -156,11 +155,9 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         when (toolbarStateByDates) {
             ToolbarStateByDates.OnCreate -> {
                 binding.datesNowHolder.visibility = View.VISIBLE
-                binding.toolbarTitleAdditional.visibility = View.VISIBLE
             }
             ToolbarStateByDates.OnDestroy -> {
                 binding.datesNowHolder.visibility = View.GONE
-                binding.toolbarTitleAdditional.visibility = View.GONE
             }
         }
     }

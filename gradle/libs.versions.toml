@@ -39,7 +39,6 @@ coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-koin-androidx-viewmodel = { module = "org.koin:koin-androidx-viewmodel", version.ref = "koin" }
 koin-test = { module = "org.koin:koin-test", version.ref = "koin" }
 koin-test-junit5 = { module = "io.insert-koin:koin-test-junit5", version.ref = "koin" }
 mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
