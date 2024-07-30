@@ -19,4 +19,9 @@
     <string name="dialog_dont_available">Недаступна</string>
     <string name="dialog_isnt_realized">Прабачце, функцыянал пакуль што недаступны</string>
 
+    //DialogLanguage
+    <string name="language_en" translatable="false">English</string>
+    <string name="language_be" translatable="false">Беларуская</string>
+    <string name="language_ru" translatable="false">Русский</string>
+
 </resources>

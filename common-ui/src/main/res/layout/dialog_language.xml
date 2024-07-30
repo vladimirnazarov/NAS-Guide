@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_marginHorizontal="@dimen/dialog_common_horizontalMargin"
+    android:background="@color/transparent"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/dialog_language_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:elevation="@dimen/dialog_common_elevation"
+
+        android:layout_margin="@dimen/dialog_common_padding"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/dialog_language_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/language_en"
+            android:textSize="@dimen/dialog_language_text"
+            android:textColor="@color/dialog_language_text"
+
+            android:background="@drawable/background_dialog_language_top_button"
+            android:button="@drawable/selector_dialog_language"
+
+            android:paddingHorizontal="@dimen/dialog_language_text_padding"
+            android:paddingVertical="@dimen/dialog_common_padding"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_language_separator"
+
+            android:background="@color/dialog_language_separator"/>
+
+        <RadioButton
+            android:id="@+id/dialog_language_be"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/language_be"
+            android:textSize="@dimen/dialog_language_text"
+            android:textColor="@color/dialog_language_text"
+
+            android:background="@drawable/background_dialog_language_mid_button"
+            android:button="@drawable/selector_dialog_language"
+
+            android:paddingHorizontal="@dimen/dialog_language_text_padding"
+            android:paddingVertical="@dimen/dialog_common_padding"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dialog_language_separator"
+
+            android:background="@color/dialog_language_separator"/>
+
+        <RadioButton
+            android:id="@+id/dialog_language_ru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/language_ru"
+            android:textSize="@dimen/dialog_language_text"
+            android:textColor="@color/dialog_language_text"
+
+            android:background="@drawable/background_dialog_language_bottom_button"
+            android:button="@drawable/selector_dialog_language"
+
+            android:paddingHorizontal="@dimen/dialog_language_text_padding"
+            android:paddingVertical="@dimen/dialog_common_padding"/>
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
