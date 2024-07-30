@@ -13,18 +13,20 @@ import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.R
-import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
+import by.ssrlab.common_ui.common.util.createLanguageDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.domain.models.SharedPreferencesUtil
 import by.ssrlab.domain.models.ToolbarControlObject
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 abstract class BaseFragment: Fragment() {
 
     abstract val fragmentViewModel: ViewModel
-    val activityVM: AMainVM by activityViewModel()
-
     abstract val toolbarControlObject: ToolbarControlObject
+
+    val activityVM: AMainVM by activityViewModel()
+    private val sharedPreferences: SharedPreferencesUtil by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +54,12 @@ abstract class BaseFragment: Fragment() {
     open fun navigateNext() {}
     open fun initAdapter() {}
     open fun observeOnDataChanged() {}
+
+    fun initLanguageDialog() {
+        createLanguageDialog(requireActivity(), sharedPreferences) {
+            requireActivity().recreate()
+        }
+    }
 
     fun loadImage(imageView: ImageView, imageId: Int) {
         val resources = imageView.context.resources

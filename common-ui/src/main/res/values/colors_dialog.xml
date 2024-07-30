@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="dialog_language_ripple">#80888888</color>
+    <color name="dialog_language_background">#FFFFFF</color>
+    <color name="dialog_language_text">#4F4F4F</color>
+    <color name="dialog_language_separator">#E0E0E0</color>
+
+</resources>
