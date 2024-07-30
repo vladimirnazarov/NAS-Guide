@@ -3,8 +3,8 @@ package by.ssrlab.data.data
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import by.ssrlab.data.data.remove.Development
-import by.ssrlab.data.data.remove.Language
+import by.ssrlab.data.data.remote.Development
+import by.ssrlab.data.data.remote.Language
 import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 

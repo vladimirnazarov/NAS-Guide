@@ -1,7 +1,7 @@
 package by.ssrlab.data.data
 
-import by.ssrlab.data.data.remove.Event
-import by.ssrlab.data.data.remove.Language
+import by.ssrlab.data.data.remote.Event
+import by.ssrlab.data.data.remote.Language
 import by.ssrlab.data.data.common.DescriptionData
 import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.Expose

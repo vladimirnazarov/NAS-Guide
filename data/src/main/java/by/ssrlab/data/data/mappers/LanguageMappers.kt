@@ -1,7 +1,7 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.LanguageEntity
-import by.ssrlab.data.data.remove.Language
+import by.ssrlab.data.data.remote.Language
 import kotlin.random.Random
 
 fun Language.toLanguageEntity(): LanguageEntity {

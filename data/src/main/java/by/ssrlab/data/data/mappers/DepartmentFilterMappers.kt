@@ -1,7 +1,7 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.DepartmentFilterEntity
-import by.ssrlab.data.data.remove.DepartmentFilter
+import by.ssrlab.data.data.remote.DepartmentFilter
 
 fun DepartmentFilter.toDepartmentFilterEntity(): DepartmentFilterEntity {
     return DepartmentFilterEntity(
