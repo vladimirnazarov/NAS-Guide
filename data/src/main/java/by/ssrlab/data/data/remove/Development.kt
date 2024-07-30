@@ -1,9 +1,9 @@
-package by.ssrlab.data.data.additional
+package by.ssrlab.data.data.remove
 
 import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
 
-data class Person(
+data class Development(
 
     @SerializedName("pk")
     override val pk: Int,
@@ -13,6 +13,12 @@ data class Person(
 
     @SerializedName("logo")
     override val logo: String,
+
+    @SerializedName("organization")
+    val organization: Organization?,
+
+    @SerializedName("department_filter")
+    val departmentFilter: DepartmentFilter,
 
     @SerializedName("images")
     override val image: Image

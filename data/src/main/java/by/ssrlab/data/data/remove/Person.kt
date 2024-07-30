@@ -1,9 +1,9 @@
-package by.ssrlab.data.data.additional
+package by.ssrlab.data.data.remove
 
 import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
 
-data class Place(
+data class Person(
 
     @SerializedName("pk")
     override val pk: Int,
@@ -13,12 +13,6 @@ data class Place(
 
     @SerializedName("logo")
     override val logo: String,
-
-    @SerializedName("latitude")
-    val lat: Double,
-
-    @SerializedName("longitude")
-    val lon: Double,
 
     @SerializedName("images")
     override val image: Image

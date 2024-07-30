@@ -1,18 +1,23 @@
 package by.ssrlab.data.data
 
-import by.ssrlab.data.data.additional.Development
-import by.ssrlab.data.data.additional.Language
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import by.ssrlab.data.data.remove.Development
+import by.ssrlab.data.data.remove.Language
 import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class DevelopmentLocale(
-
+    @PrimaryKey
     @SerializedName("pk")
     override val pk: Int,
 
     @SerializedName("development")
     override val description: Development,
 
+    @Embedded
     @SerializedName("lang")
     val language: Language,
 
