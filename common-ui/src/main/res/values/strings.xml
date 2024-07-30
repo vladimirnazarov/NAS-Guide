@@ -1,23 +1,23 @@
 <resources>
 
     //Months
-    <string name="january">студзеня</string>
-    <string name="february">лютага</string>
-    <string name="march">сакавіка</string>
-    <string name="april">красавіка</string>
-    <string name="may">траўня</string>
-    <string name="june">чэрвеня</string>
-    <string name="july">ліпеня</string>
-    <string name="august">жніўня</string>
-    <string name="september">верасня</string>
-    <string name="october">кастрычніка</string>
-    <string name="november">лістапада</string>
-    <string name="december">снежня</string>
+    <string name="january">of january</string>
+    <string name="february">of february</string>
+    <string name="march">of march</string>
+    <string name="april">of april</string>
+    <string name="may">of may</string>
+    <string name="june">of june</string>
+    <string name="july">of july</string>
+    <string name="august">of august</string>
+    <string name="september">of september</string>
+    <string name="october">of october</string>
+    <string name="november">of november</string>
+    <string name="december">of december</string>
 
     //Dialog helper
-    <string name="dialog_ok">Зразумела</string>
-    <string name="dialog_dont_available">Недаступна</string>
-    <string name="dialog_isnt_realized">Прабачце, функцыянал пакуль што недаступны</string>
+    <string name="dialog_ok">Accept</string>
+    <string name="dialog_dont_available">Not availbable</string>
+    <string name="dialog_isnt_realized">Sorry, this functionality isn\'t implemented yet</string>
 
     //DialogLanguage
     <string name="language_en" translatable="false">English</string>
