@@ -4,8 +4,8 @@
         name="Theme.NASGuide"
         parent="Theme.Material3.DayNight.NoActionBar">
 
-        <item name="colorPrimary">@color/primary_blue</item>
-        <item name="colorOnPrimary">@color/primary_blue</item>
+        <item name="colorPrimary">@color/clickable_text_false</item>
+        <item name="colorOnPrimary">@color/clickable_text_false</item>
 
     </style>
 
