@@ -1,4 +1,4 @@
-package by.ssrlab.data.data.remove
+package by.ssrlab.data.data.remote
 
 import com.google.gson.annotations.SerializedName
 

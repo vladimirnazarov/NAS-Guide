@@ -1,7 +1,7 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.DevelopmentEntity
-import by.ssrlab.data.data.remove.Development
+import by.ssrlab.data.data.remote.Development
 
 fun DevelopmentEntity.toDevelopment(): Development {
    return Development(
@@ -14,13 +14,13 @@ fun DevelopmentEntity.toDevelopment(): Development {
    )
 }
 
-fun Development.toDevelopmentEntity(existingIds: Set<Int>): DevelopmentEntity {
+fun Development.toDevelopmentEntity(): DevelopmentEntity {
     return DevelopmentEntity(
         pk = pk,
         keyName = keyName,
         logo = logo,
-        organization = organization!!.toOrganizationEntity(existingIds),
+        organization = organization!!.toOrganizationEntity(),
         departmentFilter = departmentFilter.toDepartmentFilterEntity(),
-        image = image.toImageEntity(existingIds)
+        image = image.toImageEntity()
     )
 }

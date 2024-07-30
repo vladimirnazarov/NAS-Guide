@@ -1,6 +1,6 @@
 package by.ssrlab.data.data.common
 
-import by.ssrlab.data.data.remove.Image
+import by.ssrlab.data.data.remote.Image
 
 interface DescriptionData {
     val pk: Int

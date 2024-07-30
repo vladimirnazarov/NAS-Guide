@@ -1,7 +1,7 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.EventEntity
-import by.ssrlab.data.data.remove.Event
+import by.ssrlab.data.data.remote.Event
 
 fun EventEntity.toEvent(): Event{
     return Event(

@@ -1,7 +1,7 @@
 package by.ssrlab.data.data
 
-import by.ssrlab.data.data.remove.Language
-import by.ssrlab.data.data.remove.Person
+import by.ssrlab.data.data.remote.Language
+import by.ssrlab.data.data.remote.Person
 import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 

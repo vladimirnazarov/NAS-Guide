@@ -1,9 +1,9 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.OrganizationEntity
-import by.ssrlab.data.data.remove.Organization
+import by.ssrlab.data.data.remote.Organization
 
-fun Organization.toOrganizationEntity(existingIds: Set<Int>): OrganizationEntity {
+fun Organization.toOrganizationEntity(): OrganizationEntity {
     return OrganizationEntity(
         pk = pk,
         keyName = keyName,
@@ -11,7 +11,7 @@ fun Organization.toOrganizationEntity(existingIds: Set<Int>): OrganizationEntity
         lon = lon,
         logo = logo,
         departmentFilter = departmentFilter.toDepartmentFilterEntity(),
-        image = image.toImageEntity(existingIds)
+        image = image.toImageEntity()
     )
 }
 

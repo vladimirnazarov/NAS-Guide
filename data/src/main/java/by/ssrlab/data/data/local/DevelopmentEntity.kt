@@ -15,14 +15,14 @@ data class DevelopmentEntity(
     @Relation(
         parentColumn = "organizationId",
         entity = OrganizationEntity::class,
-        entityColumn = "id"
+        entityColumn = "pk"
     )
     val organization: OrganizationEntity,
 
     @Relation(
         parentColumn = "departmentFilterId",
         entity = DepartmentFilterEntity::class,
-        entityColumn = "id"
+        entityColumn = "pk"
     )
     val departmentFilter: DepartmentFilterEntity,
 

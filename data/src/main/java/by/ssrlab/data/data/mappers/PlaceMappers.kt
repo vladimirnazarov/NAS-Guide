@@ -1,16 +1,16 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.PlaceEntity
-import by.ssrlab.data.data.remove.Place
+import by.ssrlab.data.data.remote.Place
 
-fun Place.toPlaceEntity(existingIds: Set<Int>): PlaceEntity {
+fun Place.toPlaceEntity(): PlaceEntity {
     return PlaceEntity(
         pk = pk,
         keyName = keyName,
         logo = logo,
         lat = lat,
         lon = lon,
-        image = image.toImageEntity(existingIds)
+        image = image.toImageEntity()
     )
 }
 

@@ -1,18 +1,13 @@
 package by.ssrlab.data.data.mappers
 
 import by.ssrlab.data.data.local.ImageEntity
-import by.ssrlab.data.data.remove.Image
+import by.ssrlab.data.data.remote.Image
 
 import kotlin.random.Random
 
-fun Image.toImageEntity(existingIds: Set<Int>): ImageEntity {
-    var newImageId: Int
-    do {
-        newImageId = Random.nextInt(Int.MAX_VALUE)
-    } while (existingIds.contains(newImageId))
-
+fun Image.toImageEntity(): ImageEntity {
     return ImageEntity(
-        id = newImageId,
+        id = Random.nextInt(Int.MAX_VALUE),
         address = address
     )
 }
