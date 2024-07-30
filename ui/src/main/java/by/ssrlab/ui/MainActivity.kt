@@ -1,6 +1,8 @@
 package by.ssrlab.ui
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
@@ -22,9 +24,12 @@ import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
+import by.ssrlab.domain.models.SharedPreferencesUtil
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 
@@ -33,6 +38,23 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private lateinit var container: ConstraintLayout
     private lateinit var transition: AutoTransition
+
+    fun Context.loadPreferences(): Context {
+        val sharedPreferences: SharedPreferencesUtil by inject()
+
+        val locale = Locale(sharedPreferences.getLanguage()!!)
+        Locale.setDefault(locale)
+
+        val config = resources.configuration
+        config.setLocale(locale)
+        config.setLayoutDirection(locale)
+
+        return createConfigurationContext(config)
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(ContextWrapper(newBase?.loadPreferences()))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

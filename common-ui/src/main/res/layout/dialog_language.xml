@@ -2,84 +2,293 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="ContentDescription"
 
     android:layout_marginHorizontal="@dimen/dialog_common_horizontalMargin"
-    android:background="@color/transparent"
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RadioGroup
-        android:id="@+id/dialog_language_group"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_language_en"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:elevation="@dimen/dialog_common_elevation"
+        android:background="@drawable/background_dialog_language_top_button"
 
-        android:layout_margin="@dimen/dialog_common_padding"
+        android:clickable="true"
+        android:focusable="true"
+
+        android:layout_marginTop="@dimen/dialog_common_margin"
+        android:layout_marginHorizontal="@dimen/dialog_common_margin"
+        android:paddingVertical="@dimen/dialog_common_padding"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/dialog_language_be"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <RadioButton
-            android:id="@+id/dialog_language_en"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/dialog_language_en_title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@string/language_en"
             android:textSize="@dimen/dialog_language_text"
             android:textColor="@color/dialog_language_text"
 
-            android:background="@drawable/background_dialog_language_top_button"
-            android:button="@drawable/selector_dialog_language"
+            android:layout_marginHorizontal="@dimen/dialog_common_margin"
 
-            android:paddingHorizontal="@dimen/dialog_language_text_padding"
-            android:paddingVertical="@dimen/dialog_common_padding"/>
+            app:layout_constraintStart_toEndOf="@id/dialog_language_en_switcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dialog_language_separator"
+        <ImageSwitcher
+            android:id="@+id/dialog_language_en_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-            android:background="@color/dialog_language_separator"/>
+            android:layout_marginStart="@dimen/dialog_language_button_margin"
 
-        <RadioButton
-            android:id="@+id/dialog_language_be"
-            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/dialog_language_en_switcher_unchecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_unchecked"/>
+
+            <ImageView
+                android:id="@+id/dialog_language_en_switcher_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_checked"/>
+
+        </ImageSwitcher>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dialog_language_separator"
+
+        android:background="@color/dialog_language_separator"
+
+        app:layout_constraintBottom_toBottomOf="@id/dialog_language_en"
+        app:layout_constraintStart_toStartOf="@id/dialog_language_en"
+        app:layout_constraintEnd_toEndOf="@id/dialog_language_en"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_language_be"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/background_dialog_language_mid_button"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        android:layout_marginHorizontal="@dimen/dialog_common_margin"
+        android:paddingVertical="@dimen/dialog_common_padding"
+
+        app:layout_constraintBottom_toTopOf="@id/dialog_language_ru"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_language_en"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@string/language_be"
             android:textSize="@dimen/dialog_language_text"
             android:textColor="@color/dialog_language_text"
 
-            android:background="@drawable/background_dialog_language_mid_button"
-            android:button="@drawable/selector_dialog_language"
+            android:layout_marginHorizontal="@dimen/dialog_common_margin"
 
-            android:paddingHorizontal="@dimen/dialog_language_text_padding"
-            android:paddingVertical="@dimen/dialog_common_padding"/>
+            app:layout_constraintStart_toEndOf="@id/dialog_language_be_switcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dialog_language_separator"
+        <ImageSwitcher
+            android:id="@+id/dialog_language_be_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-            android:background="@color/dialog_language_separator"/>
+            android:layout_marginStart="@dimen/dialog_language_button_margin"
 
-        <RadioButton
-            android:id="@+id/dialog_language_ru"
-            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/dialog_language_be_switcher_unchecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_unchecked"/>
+
+            <ImageView
+                android:id="@+id/dialog_language_be_switcher_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_checked"/>
+
+        </ImageSwitcher>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dialog_language_separator"
+
+        android:background="@color/dialog_language_separator"
+
+        app:layout_constraintBottom_toBottomOf="@id/dialog_language_be"
+        app:layout_constraintStart_toStartOf="@id/dialog_language_be"
+        app:layout_constraintEnd_toEndOf="@id/dialog_language_be"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialog_language_ru"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="@drawable/background_dialog_language_bottom_button"
+
+        android:clickable="true"
+        android:focusable="true"
+
+        android:layout_marginBottom="@dimen/dialog_common_margin"
+        android:layout_marginHorizontal="@dimen/dialog_common_margin"
+        android:paddingVertical="@dimen/dialog_common_padding"
+
+        app:layout_constraintTop_toBottomOf="@id/dialog_language_be"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
             android:text="@string/language_ru"
             android:textSize="@dimen/dialog_language_text"
             android:textColor="@color/dialog_language_text"
 
-            android:background="@drawable/background_dialog_language_bottom_button"
-            android:button="@drawable/selector_dialog_language"
+            android:layout_marginHorizontal="@dimen/dialog_common_margin"
 
-            android:paddingHorizontal="@dimen/dialog_language_text_padding"
-            android:paddingVertical="@dimen/dialog_common_padding"/>
+            app:layout_constraintStart_toEndOf="@id/dialog_language_ru_switcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-    </RadioGroup>
+        <ImageSwitcher
+            android:id="@+id/dialog_language_ru_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_marginStart="@dimen/dialog_language_button_margin"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/dialog_language_ru_switcher_unchecked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_unchecked"/>
+
+            <ImageView
+                android:id="@+id/dialog_language_ru_switcher_checked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_radio_button_checked"/>
+
+        </ImageSwitcher>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <RadioGroup-->
+<!--        android:id="@+id/dialog_language_group"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+
+<!--        android:layout_margin="@dimen/dialog_common_padding"-->
+
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--        <com.google.android.material.radiobutton.MaterialRadioButton-->
+<!--            android:id="@+id/dialog_language_en"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="@string/language_en"-->
+<!--            android:textSize="@dimen/dialog_language_text"-->
+<!--            android:textColor="@color/dialog_language_text"-->
+
+<!--            android:background="@drawable/background_dialog_language_top_button"-->
+<!--            android:button="@drawable/selector_dialog_language"-->
+
+<!--            android:paddingHorizontal="@dimen/dialog_language_text_padding"-->
+<!--            android:paddingVertical="@dimen/dialog_common_padding"/>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dialog_language_separator"-->
+
+<!--            android:background="@color/dialog_language_separator"/>-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/dialog_language_be"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="@string/language_be"-->
+<!--            android:textSize="@dimen/dialog_language_text"-->
+<!--            android:textColor="@color/dialog_language_text"-->
+
+<!--            android:background="@drawable/background_dialog_language_mid_button"-->
+<!--            android:button="@drawable/selector_dialog_language"-->
+
+<!--            android:paddingHorizontal="@dimen/dialog_language_text_padding"-->
+<!--            android:paddingVertical="@dimen/dialog_common_padding"/>-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dialog_language_separator"-->
+
+<!--            android:background="@color/dialog_language_separator"/>-->
+
+<!--        <RadioButton-->
+<!--            android:id="@+id/dialog_language_ru"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:text="@string/language_ru"-->
+<!--            android:textSize="@dimen/dialog_language_text"-->
+<!--            android:textColor="@color/dialog_language_text"-->
+
+<!--            android:background="@drawable/background_dialog_language_bottom_button"-->
+<!--            android:button="@drawable/selector_dialog_language"-->
+
+<!--            android:paddingHorizontal="@dimen/dialog_language_text_padding"-->
+<!--            android:paddingVertical="@dimen/dialog_common_padding"/>-->
+
+<!--    </RadioGroup>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
