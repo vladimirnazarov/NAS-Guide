@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="dialog_common_horizontalMargin">100dp</dimen>
+    <dimen name="dialog_common_horizontalMargin">50dp</dimen>
     <dimen name="dialog_common_padding">12dp</dimen>
+    <dimen name="dialog_common_margin">20dp</dimen>
     <dimen name="dialog_common_elevation">4dp</dimen>
 
     <dimen name="dialog_language_corners">12dp</dimen>
@@ -10,5 +11,6 @@
     <dimen name="dialog_language_text_padding">12dp</dimen>
     <dimen name="dialog_language_text">17sp</dimen>
     <dimen name="dialog_language_separator">1dp</dimen>
+    <dimen name="dialog_language_button_margin">36dp</dimen>
 
 </resources>

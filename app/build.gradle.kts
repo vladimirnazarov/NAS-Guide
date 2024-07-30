@@ -7,6 +7,13 @@ android {
     namespace = "by.ssrlab.nasguide"
     compileSdk = 34
 
+    bundle {
+        language {
+            @Suppress("UnstableApiUsage")
+            enableSplit = false
+        }
+    }
+
     defaultConfig {
         applicationId = "by.ssrlab.nasguide"
         minSdk = 29
