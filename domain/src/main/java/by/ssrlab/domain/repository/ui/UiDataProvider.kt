@@ -24,52 +24,6 @@ class UiDataProvider {
         )
     }
 
-    fun getSections(): List<SectionObject> {
-        return listOf(
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png")
-        )
-    }
-
-    fun getPlaces(): List<SectionObject> {
-        return listOf(
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            SectionObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png")
-        )
-    }
-
-    fun getPersons(): List<GridObject> {
-        return listOf(
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png"),
-            GridObject("Test", "https://bird-sounds-database.ssrlab.by/media/spectrograms/audio_file.melspectrogram.2024_06_26-05-15-09-665.png")
-        )
-    }
-
     fun getDates(): List<DateObject> {
         return listOf(
 

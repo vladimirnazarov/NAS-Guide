@@ -36,7 +36,7 @@ class HistoryFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fragmentViewModel.setTitle(requireContext().resources.getString(R.string.page_history_title))
+        fragmentViewModel.setTitle(requireContext().resources.getString(by.ssrlab.common_ui.R.string.page_history_title))
         activityVM.apply {
             setHeaderImg(by.ssrlab.common_ui.R.drawable.header_history)
             setButtonAction(ButtonAction.BackAction, ::onBackPressed)
