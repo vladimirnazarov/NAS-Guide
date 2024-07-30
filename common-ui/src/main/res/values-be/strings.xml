@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //Months
+    <string name="january">студзеня</string>
+    <string name="february">лютага</string>
+    <string name="march">сакавіка</string>
+    <string name="april">красавіка</string>
+    <string name="may">траўня</string>
+    <string name="june">чэрвеня</string>
+    <string name="july">ліпеня</string>
+    <string name="august">жніўня</string>
+    <string name="september">верасня</string>
+    <string name="october">кастрычніка</string>
+    <string name="november">лістапада</string>
+    <string name="december">снежня</string>
+
+    //Dialog helper
+    <string name="dialog_ok">Прыняць</string>
+    <string name="dialog_dont_available">Недаступна</string>
+    <string name="dialog_isnt_realized">Прабачце, функцыянал пакуль што недаступны</string>
+
+</resources>
