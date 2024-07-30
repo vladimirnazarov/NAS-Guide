@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.databinding.RvSectionItemBinding
 import by.ssrlab.data.data.common.RepositoryData
 import coil.load
+import coil.size.Scale
 import coil.transform.RoundedCornersTransformation
 
 class SectionAdapter(
@@ -33,6 +34,8 @@ class SectionAdapter(
             rvSectionNumber.text = positionStr
             rvSectionTitle.text = entitiesList[position].name
             rvSectionPng.load(entitiesList[position].description?.logo) {
+                size(210, 130)
+                scale(Scale.FIT)
                 transformations(RoundedCornersTransformation(16f))
                 placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder)
                 crossfade(500)
