@@ -13,14 +13,14 @@ data class DevelopmentEntity(
     val logo: String,
 
     @Relation(
-        parentColumn = "organizationId",
+        parentColumn = "organizationPk",
         entity = OrganizationEntity::class,
         entityColumn = "pk"
     )
     val organization: OrganizationEntity,
 
     @Relation(
-        parentColumn = "departmentFilterId",
+        parentColumn = "departmentFilterPk",
         entity = DepartmentFilterEntity::class,
         entityColumn = "pk"
     )

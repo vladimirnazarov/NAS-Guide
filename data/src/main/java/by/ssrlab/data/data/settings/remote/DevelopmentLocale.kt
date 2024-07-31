@@ -1,17 +1,16 @@
-package by.ssrlab.data.data
+package by.ssrlab.data.data.settings.remote
 
-import by.ssrlab.data.data.remote.Language
-import by.ssrlab.data.data.remote.Person
 import by.ssrlab.data.data.common.RepositoryData
+import by.ssrlab.data.data.remote.Development
+import by.ssrlab.data.data.remote.Language
 import com.google.gson.annotations.SerializedName
 
-data class PersonLocale(
-
+data class DevelopmentLocale(
     @SerializedName("pk")
     override val pk: Int,
 
-    @SerializedName("person")
-    override val description: Person,
+    @SerializedName("development")
+    override val description: Development,
 
     @SerializedName("lang")
     val language: Language,
@@ -24,4 +23,4 @@ data class PersonLocale(
 
     @SerializedName("name")
     override val name: String
-): RepositoryData
+) : RepositoryData
