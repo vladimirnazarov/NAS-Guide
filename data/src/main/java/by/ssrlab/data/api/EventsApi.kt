@@ -1,6 +1,6 @@
 package by.ssrlab.data.api
 
-import by.ssrlab.data.data.EventLocale
+import by.ssrlab.data.data.settings.remote.EventLocale
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

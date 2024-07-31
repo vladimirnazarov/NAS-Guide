@@ -15,7 +15,7 @@ data class OrganizationEntity(
     val logo: String,
 
     @Relation(
-        parentColumn = "departmentFilterId",
+        parentColumn = "departmentFilterPk",
         entity = DepartmentFilterEntity::class,
         entityColumn = "pk"
     )

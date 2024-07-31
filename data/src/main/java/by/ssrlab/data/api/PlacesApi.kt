@@ -1,6 +1,6 @@
 package by.ssrlab.data.api
 
-import by.ssrlab.data.data.PlaceLocale
+import by.ssrlab.data.data.settings.remote.PlaceLocale
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
