@@ -1,4 +1,4 @@
-package by.ssrlab.common_ui.common.fragments
+package by.ssrlab.common_ui.common.ui.base
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import by.ssrlab.common_ui.common.util.createLanguageDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.domain.models.SharedPreferencesUtil
 import by.ssrlab.domain.models.ToolbarControlObject
 import org.koin.android.ext.android.inject
@@ -51,7 +52,7 @@ abstract class BaseFragment: Fragment() {
     open fun onBackPressed() {}
     open fun initActivity() {}
     open fun navigateNext(address: Int) {}
-    open fun navigateNext() {}
+    open fun navigateNext(repositoryData: RepositoryData) {}
     open fun initAdapter() {}
     open fun observeOnDataChanged() {}
 

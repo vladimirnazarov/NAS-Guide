@@ -1,24 +1,24 @@
-package by.ssrlab.common_ui.common
+package by.ssrlab.common_ui.common.ui.exhibit
 
 import android.os.Bundle
 import android.view.ViewTreeObserver
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
+import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.vm.AExhibitVM
 import by.ssrlab.common_ui.databinding.ActivityExhibitBinding
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinComponent
 
-class ExhibitActivity : AppCompatActivity(), KoinComponent {
+class ExhibitActivity : BaseActivity() {
 
     private lateinit var binding: ActivityExhibitBinding
     private val activityViewModel: AExhibitVM by viewModel()
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge(
@@ -33,8 +33,12 @@ class ExhibitActivity : AppCompatActivity(), KoinComponent {
         binding = ActivityExhibitBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        activityViewModel.apply {
+            setData(intent.getParcelableExtra(PARCELABLE_DATA))
+            if (repositoryData.value != null) observeHeader()
+        }
+
         observeLayoutChange()
-//        observeHeader()
     }
 
     private fun observeHeader() {

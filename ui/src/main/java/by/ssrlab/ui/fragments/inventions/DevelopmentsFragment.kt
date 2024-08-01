@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.ui.base.BaseFragment
+import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.domain.models.ToolbarControlObject
 import by.ssrlab.ui.MainActivity
@@ -56,7 +57,7 @@ class DevelopmentsFragment: BaseFragment() {
 
     override fun initAdapter() {
         adapter = SectionAdapter(fragmentViewModel.inventionsData.value!!) {
-            navigateNext()
+            navigateNext(it)
         }
 
         binding.apply {
@@ -74,7 +75,7 @@ class DevelopmentsFragment: BaseFragment() {
         findNavController().popBackStack()
     }
 
-    override fun navigateNext() {
-        (activity as MainActivity).moveToExhibit()
+    override fun navigateNext(repositoryData: RepositoryData) {
+        (activity as MainActivity).moveToExhibit(repositoryData)
     }
 }

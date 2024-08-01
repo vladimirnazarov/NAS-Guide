@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/toolbar_button_primary_bg_ripple">
+    android:color="@color/toolbar_button_exhibit_primary_bg_ripple">
 
     <item android:id="@android:id/mask">
 
@@ -19,7 +19,7 @@
 
         <shape android:shape="oval">
 
-            <solid android:color="@color/toolbar_button_primary_bg"/>
+            <solid android:color="@color/toolbar_button_exhibit_primary_bg"/>
 
         </shape>
 

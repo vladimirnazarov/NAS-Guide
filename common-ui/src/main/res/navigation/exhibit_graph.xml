@@ -6,22 +6,22 @@
 
     <fragment
         android:id="@+id/researchFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.ResearchFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child.ResearchFragment"
         android:label="ResearchFragment"/>
 
     <fragment
         android:id="@+id/achievementsFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.AchievementsFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child.AchievementsFragment"
         android:label="AchievementsFragment"/>
 
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.ContactsFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child.ContactsFragment"
         android:label="ContactsFragment"/>
 
     <fragment
         android:id="@+id/labsFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.LabsFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child.LabsFragment"
         android:label="LabsFragment">
 
         <action
@@ -37,12 +37,12 @@
 
     <fragment
         android:id="@+id/departmentsFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.child.DepartmentsFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child.DepartmentsFragment"
         android:label="DepartmentsFragment"/>
 
     <fragment
         android:id="@+id/exhibitFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.exhibit.ExhibitFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.ExhibitFragment"
         android:label="ExhibitFragment">
 
         <action

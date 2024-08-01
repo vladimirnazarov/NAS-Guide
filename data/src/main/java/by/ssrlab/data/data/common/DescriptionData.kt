@@ -6,4 +6,6 @@ interface DescriptionData {
     val pk: Int
     val logo: String
     val image: Image
+    val lon: Double?
+    val lat: Double?
 }

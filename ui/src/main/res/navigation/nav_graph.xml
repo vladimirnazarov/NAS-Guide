@@ -113,20 +113,11 @@
             app:popEnterAnim="@anim/nav_pen"
             app:popExitAnim="@anim/nav_pex"/>
 
-        <action
-            android:id="@+id/action_orgFragment_to_mapFragment"
-            app:destination="@id/mapFragment"
-
-            app:enterAnim="@anim/nav_en"
-            app:exitAnim="@anim/nav_ex"
-            app:popEnterAnim="@anim/nav_pen"
-            app:popExitAnim="@anim/nav_pex"/>
-
     </fragment>
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.utils.SearchFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.SearchFragment"
         android:label="SearchFragment"/>
 
     <fragment
@@ -153,27 +144,11 @@
     <fragment
         android:id="@+id/placesFragment"
         android:name="by.ssrlab.ui.fragments.history.PlacesFragment"
-        android:label="PlacesFragment">
-
-        <action
-            android:id="@+id/action_placesFragment_to_mapFragment"
-            app:destination="@id/mapFragment"
-
-            app:enterAnim="@anim/nav_en"
-            app:exitAnim="@anim/nav_ex"
-            app:popEnterAnim="@anim/nav_pen"
-            app:popExitAnim="@anim/nav_pex"/>
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/mapFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.MapFragment"
-        android:label="MapFragment"/>
+        android:label="PlacesFragment"/>
 
     <fragment
         android:id="@+id/filterFragment"
-        android:name="by.ssrlab.common_ui.common.fragments.utils.FilterFragment"
+        android:name="by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.FilterFragment"
         android:label="FilterFragment"/>
 
 </navigation>

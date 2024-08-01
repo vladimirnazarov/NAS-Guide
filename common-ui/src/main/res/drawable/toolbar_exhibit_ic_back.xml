@@ -2,13 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:height="@dimen/toolbar_ic_size"
-    android:tint="@color/toolbar_button_primary"
+    android:tint="@color/toolbar_button_exhibit_primary"
     android:viewportHeight="24"
     android:viewportWidth="24"
     android:width="@dimen/toolbar_ic_size">
       
     <path
-        android:fillColor="@color/toolbar_button_primary"
+        android:fillColor="@color/toolbar_button_exhibit_primary"
         android:pathData="M16.88,2.88L16.88,2.88c-0.49,-0.49 -1.28,-0.49 -1.77,0l-8.41,8.41c-0.39,0.39 -0.39,1.02 0,1.41l8.41,8.41c0.49,0.49 1.28,0.49 1.77,0l0,0c0.49,-0.49 0.49,-1.28 0,-1.77L9.54,12l7.35,-7.35C17.37,4.16 17.37,3.37 16.88,2.88z"/>
     
 </vector>

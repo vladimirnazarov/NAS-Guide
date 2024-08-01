@@ -21,9 +21,8 @@
         <ImageView
             android:id="@+id/activity_header"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
 
-            android:background="@color/black"
             android:scaleType="fitXY"
 
             app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +44,7 @@
                 android:layout_height="wrap_content"
 
                 android:src="@drawable/toolbar_exhibit_ic_volume"
-                android:background="@drawable/ripple_rounded_toolbar_exhibit"
+                android:background="@drawable/ripple_rounded_exhibit"
 
                 android:padding="@dimen/toolbar_button_padding"
 
@@ -62,7 +61,7 @@
                 android:layout_height="wrap_content"
 
                 android:src="@drawable/toolbar_exhibit_ic_back"
-                android:background="@drawable/ripple_rounded_toolbar_exhibit"
+                android:background="@drawable/ripple_rounded_exhibit"
 
                 android:padding="@dimen/toolbar_button_padding"
 

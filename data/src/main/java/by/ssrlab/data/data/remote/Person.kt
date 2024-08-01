@@ -1,8 +1,11 @@
 package by.ssrlab.data.data.remote
 
+import android.os.Parcelable
 import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Person(
 
     @SerializedName("pk")
@@ -16,4 +19,4 @@ data class Person(
 
     @SerializedName("images")
     override val image: Image
-): DescriptionData
+): DescriptionData, Parcelable

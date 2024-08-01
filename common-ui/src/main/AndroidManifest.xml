@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <application>
 
         <activity
-            android:name=".common.ExhibitActivity"
-            android:theme="@style/Theme.NASGuide"
+            android:name=".common.ui.map.MapActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".common.ui.exhibit.ExhibitActivity"
             android:exported="false"/>
 
     </application>

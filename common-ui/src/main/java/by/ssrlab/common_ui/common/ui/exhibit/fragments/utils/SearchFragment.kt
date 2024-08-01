@@ -1,12 +1,12 @@
-package by.ssrlab.common_ui.common.fragments.utils
+package by.ssrlab.common_ui.common.ui.exhibit.fragments.utils
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
-import by.ssrlab.common_ui.common.fragments.BaseFragment
+import by.ssrlab.common_ui.common.ui.base.BaseFragment
 import by.ssrlab.domain.models.ToolbarControlObject
 
-class FilterFragment: BaseFragment() {
+class SearchFragment: BaseFragment() {
 
     override val toolbarControlObject = ToolbarControlObject(
         isBack = false,

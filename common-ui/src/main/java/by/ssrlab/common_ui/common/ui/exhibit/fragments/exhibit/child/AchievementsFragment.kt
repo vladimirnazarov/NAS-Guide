@@ -1,11 +1,12 @@
-package by.ssrlab.common_ui.common.fragments
+package by.ssrlab.common_ui.common.ui.exhibit.fragments.exhibit.child
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModel
+import by.ssrlab.common_ui.common.ui.base.BaseFragment
 import by.ssrlab.domain.models.ToolbarControlObject
 
-class MapFragment: BaseFragment() {
+class AchievementsFragment: BaseFragment() {
 
     override val toolbarControlObject = ToolbarControlObject(
         isBack = false,

@@ -2,7 +2,7 @@ package by.ssrlab.ui.vm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import by.ssrlab.common_ui.common.vm.BaseFragmentVM
+import by.ssrlab.common_ui.common.ui.base.vm.BaseFragmentVM
 import by.ssrlab.data.data.PersonLocale
 import by.ssrlab.domain.repository.network.PersonsRepository
 

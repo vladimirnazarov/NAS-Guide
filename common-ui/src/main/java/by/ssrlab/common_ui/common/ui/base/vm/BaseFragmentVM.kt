@@ -1,4 +1,4 @@
-package by.ssrlab.common_ui.common.vm
+package by.ssrlab.common_ui.common.ui.base.vm
 
 import androidx.lifecycle.ViewModel
 import by.ssrlab.data.data.common.RepositoryData

@@ -1,7 +1,5 @@
 package by.ssrlab.ui
 
-import android.content.Context
-import android.content.ContextWrapper
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,41 +7,20 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import by.ssrlab.domain.models.SharedPreferencesUtil
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.ui.databinding.ActivityStartBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import org.koin.android.ext.android.inject
-import org.koin.core.component.inject
-import java.util.Locale
 
-class StartActivity : AppCompatActivity() {
+class StartActivity : BaseActivity() {
 
     private lateinit var binding: ActivityStartBinding
     private var isAnimationStarted = false
     private val animScope = CoroutineScope(Dispatchers.Main + Job())
-
-    fun Context.loadPreferences(): Context {
-        val sharedPreferences: SharedPreferencesUtil by inject()
-
-        val locale = Locale(sharedPreferences.getLanguage()!!)
-        Locale.setDefault(locale)
-
-        val config = resources.configuration
-        config.setLocale(locale)
-        config.setLayoutDirection(locale)
-
-        return createConfigurationContext(config)
-    }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(ContextWrapper(newBase?.loadPreferences()))
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -26,11 +26,11 @@ private const val LANGUAGE_RU = 3
 
 private val dialogScope = CoroutineScope(Dispatchers.Main)
 
-fun createSimpleAlertDialog(title: String, message: String, context: Context) {
+fun createSimpleAlertDialog(title: String, message: String, buttonMessage: String, context: Context) {
     MaterialAlertDialogBuilder(context)
         .setTitle(title)
         .setMessage(message)
-        .setPositiveButton(context.getString(R.string.dialog_ok)) { dialog, _ -> dialog.dismiss() }
+        .setPositiveButton(buttonMessage) { dialog, _ -> dialog.dismiss() }
         .setCancelable(true)
         .show()
 }
