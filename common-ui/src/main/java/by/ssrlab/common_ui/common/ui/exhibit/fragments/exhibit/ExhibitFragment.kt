@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import by.ssrlab.common_ui.common.vm.AExhibitVM
 import by.ssrlab.common_ui.databinding.FragmentExhibitBinding
-import by.ssrlab.data.data.DevelopmentLocale
-import by.ssrlab.data.data.OrganizationLocale
-import by.ssrlab.data.data.PersonLocale
-import by.ssrlab.data.data.PlaceLocale
+import by.ssrlab.data.data.settings.remote.DevelopmentLocale
+import by.ssrlab.data.data.settings.remote.OrganizationLocale
+import by.ssrlab.data.data.settings.remote.PersonLocale
+import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.util.ExhibitObject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel

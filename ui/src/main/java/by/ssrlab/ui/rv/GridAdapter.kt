@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.databinding.RvGridItemBinding
-import by.ssrlab.data.data.PersonLocale
+import by.ssrlab.data.data.settings.remote.PersonLocale
 import by.ssrlab.data.data.common.RepositoryData
 import coil.load
 import coil.transform.RoundedCornersTransformation

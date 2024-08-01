@@ -43,6 +43,10 @@ class OrgsFragment: BaseFragment() {
         binding.apply {
             viewModel = this@OrgsFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
+
+            orgsMapRipple.setOnClickListener {
+                (requireActivity() as MainActivity).moveToMap(fragmentViewModel.getDescriptionArray())
+            }
         }
 
         initAdapter()

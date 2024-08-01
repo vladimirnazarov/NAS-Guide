@@ -67,11 +67,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.kotlin.stdlib)
 
-    implementation(libs.map) {
-        exclude(group = "com.mapbox.common", module = "okhttp")
-    }
-    implementation(libs.map.navigation) {
-        exclude(group = "com.mapbox.common", module = "okhttp")
-    }
+    implementation(libs.map)
+    implementation(libs.map.navigation)
     implementation(libs.play.services.location)
 }

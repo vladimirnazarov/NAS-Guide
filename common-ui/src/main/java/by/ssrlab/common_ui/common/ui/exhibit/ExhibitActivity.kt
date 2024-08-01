@@ -38,7 +38,14 @@ class ExhibitActivity : BaseActivity() {
             if (repositoryData.value != null) observeHeader()
         }
 
+        setBackAction()
         observeLayoutChange()
+    }
+
+    private fun setBackAction() {
+        binding.toolbarBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun observeHeader() {

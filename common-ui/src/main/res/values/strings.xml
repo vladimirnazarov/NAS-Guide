@@ -45,5 +45,7 @@
 
     //Map
     <string name="mapbox_access_token" translatable="false" tools:ignore="UnusedResources">pk.eyJ1Ijoidm9ka2FrdW4iLCJhIjoiY2x6YWJpZWVsMGtqbzJqczh1MHlyNzA5aSJ9.MvVmZEcQ39LXnDNKpRWshQ</string>
+    <string name="build_route">Build route</string>
+    <string name="something_went_wrong">Something went wrong :(</string>
 
 </resources>

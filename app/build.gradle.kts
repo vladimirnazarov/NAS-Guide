@@ -81,4 +81,6 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
 
     implementation(libs.kotlin.stdlib)
+    implementation(libs.map)
+    implementation(libs.map.navigation)
 }

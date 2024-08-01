@@ -2,7 +2,12 @@
 <resources>
 
     <color name="map_red">#EB5757</color>
+    <color name="map_red_secondary">#B3EB5757</color>
+    <color name="map_point_text_active">#FFFFFF</color>
+    <color name="map_point_text_inactive">#333333</color>
 
-    <color name="map_point_text">#333333</color>
+    <color name="bottom_sheet_slider">#CECECE</color>
+    <color name="bottom_sheet_button">#165089</color>
+    <color name="bottom_sheet_ripple">#662580DA</color>
 
 </resources>
