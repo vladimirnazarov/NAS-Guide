@@ -9,6 +9,7 @@ import by.ssrlab.data.data.local.PersonEntity
 
 @Entity
 data class PersonLocaleEntity(
+
     @PrimaryKey
     val pk: Int,
 

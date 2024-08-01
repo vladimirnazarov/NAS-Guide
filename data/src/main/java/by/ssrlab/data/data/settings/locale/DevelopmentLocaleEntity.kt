@@ -9,6 +9,7 @@ import by.ssrlab.data.data.local.LanguageEntity
 
 @Entity
 data class DevelopmentLocaleEntity(
+
     @PrimaryKey
     val pk: Int,
 

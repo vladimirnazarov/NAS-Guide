@@ -10,6 +10,7 @@ import by.ssrlab.data.data.local.LanguageEntity
 
 @Entity
 data class EventLocaleEntity(
+
     @PrimaryKey
     val pk: Int,
 

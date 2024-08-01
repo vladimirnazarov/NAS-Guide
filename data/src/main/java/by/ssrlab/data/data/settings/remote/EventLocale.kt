@@ -19,10 +19,13 @@ data class EventLocale(
     val language: Language,
 
     @SerializedName("about")
-    val about: String,
+    override val about: String,
 
     @SerializedName("name")
     override val name: String,
+
+    @Expose
+    override val audio: String? = null,
 
     @Expose
     override val description: DescriptionData? = null

@@ -9,6 +9,7 @@ import by.ssrlab.data.data.local.PlaceEntity
 
 @Entity
 data class PlaceLocaleEntity(
+
     @PrimaryKey
     val pk: Int,
 
@@ -22,6 +23,6 @@ data class PlaceLocaleEntity(
     @Embedded(prefix = "language_")
     val language: LanguageEntity,
     val about: String,
-    val audio: String,
+    val audio: String?,
     val name: String
 )

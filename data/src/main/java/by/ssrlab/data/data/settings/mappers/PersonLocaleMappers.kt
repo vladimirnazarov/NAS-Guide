@@ -7,8 +7,7 @@ import by.ssrlab.data.data.mappers.toPersonEntity
 import by.ssrlab.data.data.settings.locale.PersonLocaleEntity
 import by.ssrlab.data.data.settings.remote.PersonLocale
 
-fun PersonLocale.toPersonLocaleEntity(): PersonLocaleEntity =
-    PersonLocaleEntity(
+fun PersonLocale.toPersonLocaleEntity() = PersonLocaleEntity(
         pk = pk,
         description = description.toPersonEntity(),
         language = language.toLanguageEntity(),
@@ -17,8 +16,7 @@ fun PersonLocale.toPersonLocaleEntity(): PersonLocaleEntity =
         name = name
     )
 
-fun PersonLocaleEntity.toPersonLocale(): PersonLocale =
-    PersonLocale(
+fun PersonLocaleEntity.toPersonLocale() = PersonLocale(
         pk = pk,
         description = description.toPerson(),
         language = language.toLanguage(),

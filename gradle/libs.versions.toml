@@ -32,6 +32,11 @@ room = "2.6.1"
 symbolProcessingApi = "2.0.0-1.0.23"
 roomCommon = "2.6.1"
 
+#noinspection GradleDependency
+map = "10.16.1"
+mapNavigation = "2.17.1"
+playServicesLocation = "21.3.0"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databindingRuntime" }
@@ -43,6 +48,7 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 koin-test = { module = "org.koin:koin-test", version.ref = "koin" }
 koin-test-junit5 = { module = "io.insert-koin:koin-test-junit5", version.ref = "koin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -73,6 +79,11 @@ androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 symbol-processing-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "symbolProcessingApi" }
 androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
+
+#map-navigation = { module = "com.mapbox.navigationcore:navigation", version.ref = "mapNavigation" }
+map-navigation = { module = "com.mapbox.navigation:android", version.ref = "mapNavigation" }
+map = { module = "com.mapbox.maps:android", version.ref = "map" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

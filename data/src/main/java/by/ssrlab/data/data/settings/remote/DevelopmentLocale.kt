@@ -1,11 +1,15 @@
 package by.ssrlab.data.data.settings.remote
 
+import android.os.Parcelable
 import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.data.remote.Development
 import by.ssrlab.data.data.remote.Language
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DevelopmentLocale(
+
     @SerializedName("pk")
     override val pk: Int,
 
@@ -16,11 +20,11 @@ data class DevelopmentLocale(
     val language: Language,
 
     @SerializedName("about")
-    val about: String,
+    override val about: String,
 
     @SerializedName("audio")
-    val audio: String?,
+    override val audio: String?,
 
     @SerializedName("name")
     override val name: String
-) : RepositoryData
+): RepositoryData, Parcelable

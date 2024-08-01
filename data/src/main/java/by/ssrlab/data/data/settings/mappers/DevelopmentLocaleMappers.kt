@@ -7,8 +7,7 @@ import by.ssrlab.data.data.mappers.toLanguageEntity
 import by.ssrlab.data.data.settings.locale.DevelopmentLocaleEntity
 import by.ssrlab.data.data.settings.remote.DevelopmentLocale
 
-fun DevelopmentLocaleEntity.toDevelopmentLocale(): DevelopmentLocale =
-    DevelopmentLocale(
+fun DevelopmentLocaleEntity.toDevelopmentLocale() = DevelopmentLocale(
         pk = pk,
         description = description.toDevelopment(),
         language = language.toLanguage(),
@@ -17,8 +16,7 @@ fun DevelopmentLocaleEntity.toDevelopmentLocale(): DevelopmentLocale =
         name = name
     )
 
-fun DevelopmentLocale.toDevelopmentLocaleEntity(): DevelopmentLocaleEntity =
-    DevelopmentLocaleEntity(
+fun DevelopmentLocale.toDevelopmentLocaleEntity() = DevelopmentLocaleEntity(
         pk = pk,
         description = description.toDevelopmentEntity(),
         language = language.toLanguageEntity(),

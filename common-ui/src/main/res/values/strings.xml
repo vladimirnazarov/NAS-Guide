@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     //Main
     <string name="logo_title">Belarusian NAS Guide</string>
@@ -34,5 +34,16 @@
     <string name="language_en" translatable="false">English</string>
     <string name="language_be" translatable="false">Беларуская</string>
     <string name="language_ru" translatable="false">Русский</string>
+
+    //Exhibit
+    <string name="exhibit_developer">Developer:</string>
+    <string name="exhibit_map">Show on the map</string>
+    <string name="exhibit_research">Branches of research</string>
+    <string name="exhibit_laboratories">Laboratories</string>
+    <string name="exhibit_achievements">Achievements</string>
+    <string name="exhibit_contacts">Contacts</string>
+
+    //Map
+    <string name="mapbox_access_token" translatable="false" tools:ignore="UnusedResources">pk.eyJ1Ijoidm9ka2FrdW4iLCJhIjoiY2x6YWJpZWVsMGtqbzJqczh1MHlyNzA5aSJ9.MvVmZEcQ39LXnDNKpRWshQ</string>
 
 </resources>

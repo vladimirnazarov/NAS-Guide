@@ -48,13 +48,11 @@
             android:textStyle="bold"
 
             android:layout_marginStart="@dimen/section_title_margin_start"
-            android:layout_marginVertical="@dimen/section_title_margin_vertical"
 
             android:gravity="start|top"
 
             app:layout_constraintStart_toEndOf="@id/rv_section_png"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="@id/rv_section_title"/>
 
         <TextView
             android:id="@+id/rv_section_title"

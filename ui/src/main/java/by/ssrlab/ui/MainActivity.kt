@@ -1,60 +1,43 @@
 package by.ssrlab.ui
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.ContextWrapper
 import android.content.Intent
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.databinding.DataBindingUtil
 import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
-import by.ssrlab.common_ui.common.ExhibitActivity
-import by.ssrlab.common_ui.common.fragments.utils.ActivityMainMarginParams
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
+import by.ssrlab.common_ui.common.ui.exhibit.ExhibitActivity
+import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
+import by.ssrlab.data.data.DevelopmentLocale
+import by.ssrlab.data.data.OrganizationLocale
+import by.ssrlab.data.data.PersonLocale
+import by.ssrlab.data.data.PlaceLocale
+import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
-import by.ssrlab.domain.models.SharedPreferencesUtil
 import by.ssrlab.ui.databinding.ActivityMainBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
-import java.util.Locale
 
-class MainActivity : AppCompatActivity(), KoinComponent {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val activityViewModel: AMainVM by viewModel()
 
     private lateinit var container: ConstraintLayout
     private lateinit var transition: AutoTransition
-
-    fun Context.loadPreferences(): Context {
-        val sharedPreferences: SharedPreferencesUtil by inject()
-
-        val locale = Locale(sharedPreferences.getLanguage()!!)
-        Locale.setDefault(locale)
-
-        val config = resources.configuration
-        config.setLocale(locale)
-        config.setLayoutDirection(locale)
-
-        return createConfigurationContext(config)
-    }
-
-    override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(ContextWrapper(newBase?.loadPreferences()))
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -151,9 +134,20 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         else button.visibility = View.GONE
     }
 
-    fun moveToExhibit() {
+    fun moveToExhibit(repositoryData: RepositoryData) {
         val intent = Intent(this, ExhibitActivity::class.java)
+        intent.putExtra(PARCELABLE_DATA, setParcelableData(repositoryData))
         startActivity(intent)
+    }
+
+    private fun setParcelableData(repositoryData: RepositoryData): Parcelable {
+        return when (repositoryData) {
+            is DevelopmentLocale -> repositoryData
+            is OrganizationLocale -> repositoryData
+            is PersonLocale -> repositoryData
+            is PlaceLocale -> repositoryData
+            else -> repositoryData as Parcelable
+        }
     }
 
     fun changeLayoutState(mainActivityUiState: MainActivityUiState) {
@@ -197,6 +191,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         createSimpleAlertDialog(
             this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_dont_available),
             this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_isnt_realized),
+            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_ok),
             this@MainActivity
         )
     }

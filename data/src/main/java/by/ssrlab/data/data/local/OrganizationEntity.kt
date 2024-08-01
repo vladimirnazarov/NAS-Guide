@@ -7,6 +7,7 @@ import androidx.room.Relation
 
 @Entity
 data class OrganizationEntity(
+
     @PrimaryKey
     val pk: Int,
     val keyName: String,

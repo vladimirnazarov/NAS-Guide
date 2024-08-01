@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:ignore="ContentDescription"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mapbox.maps.MapView
+        xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        mapbox:mapbox_cameraTargetLat="53.91592854101463"
+        mapbox:mapbox_cameraTargetLng="27.612936753968526"
+        mapbox:mapbox_cameraZoom="14.5"
+
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent"
+        mapbox:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/map_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/toolbar_exhibit_ic_back"
+        android:background="@drawable/ripple_rounded_exhibit"
+
+        android:elevation="4dp"
+        android:padding="@dimen/toolbar_button_padding"
+
+        android:layout_marginTop="@dimen/map_margin_common_v"
+        android:layout_marginStart="@dimen/map_margin_common_h"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/map"/>
+
+    <ImageView
+        android:id="@+id/map_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/ic_location"
+        android:background="@drawable/ripple_rounded_exhibit"
+
+        android:elevation="4dp"
+        android:padding="@dimen/toolbar_button_padding"
+
+        android:layout_marginEnd="@dimen/map_margin_common_h"
+        android:layout_marginBottom="@dimen/map_margin_common_v"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

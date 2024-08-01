@@ -12,7 +12,7 @@ import coil.transform.RoundedCornersTransformation
 
 class SectionAdapter(
     private var entitiesList: List<RepositoryData>,
-    private val navigateAction: () -> Unit
+    private val navigateAction: (RepositoryData) -> Unit
 ): RecyclerView.Adapter<SectionAdapter.DevelopmentsHolder>() {
 
     inner class DevelopmentsHolder(val binding: RvSectionItemBinding): RecyclerView.ViewHolder(binding.root)
@@ -42,7 +42,7 @@ class SectionAdapter(
                 crossfade(true)
             }
             rvSectionRipple.setOnClickListener {
-                navigateAction()
+                navigateAction(entitiesList[position])
             }
         }
     }

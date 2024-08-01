@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import by.ssrlab.common_ui.databinding.RvGridItemBinding
+import by.ssrlab.data.data.PersonLocale
 import by.ssrlab.data.data.common.RepositoryData
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
 class GridAdapter(
     private var entitiesList: List<RepositoryData>,
-    private val navigateAction: () -> Unit
+    private val navigateAction: (RepositoryData) -> Unit
 ): RecyclerView.Adapter<GridAdapter.GridHolder>() {
 
     inner class GridHolder(val binding: RvGridItemBinding): RecyclerView.ViewHolder(binding.root)
@@ -37,7 +38,7 @@ class GridAdapter(
                 crossfade(true)
             }
             gridRipple.setOnClickListener {
-                navigateAction()
+                navigateAction(entitiesList[position])
             }
         }
     }

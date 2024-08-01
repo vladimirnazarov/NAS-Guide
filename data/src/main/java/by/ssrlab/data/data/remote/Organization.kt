@@ -1,8 +1,11 @@
 package by.ssrlab.data.data.remote
 
+import android.os.Parcelable
 import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Organization(
 
     @SerializedName("pk")
@@ -12,10 +15,10 @@ data class Organization(
     val keyName: String,
 
     @SerializedName("latitude")
-    val lat: Double,
+    override val lat: Double,
 
     @SerializedName("longitude")
-    val lon: Double,
+    override val lon: Double,
 
     @SerializedName("logo")
     override val logo: String,
@@ -25,4 +28,4 @@ data class Organization(
 
     @SerializedName("images")
     override val image: Image
-): DescriptionData
+): DescriptionData, Parcelable
