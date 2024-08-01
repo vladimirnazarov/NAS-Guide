@@ -18,13 +18,19 @@ import androidx.transition.TransitionManager
 import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.exhibit.ExhibitActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
+import by.ssrlab.common_ui.common.ui.map.MapActivity
 import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
-import by.ssrlab.data.data.common.RepositoryData
+import by.ssrlab.data.data.common.DescriptionData
 import by.ssrlab.data.data.settings.remote.DevelopmentLocale
 import by.ssrlab.data.data.settings.remote.OrganizationLocale
 import by.ssrlab.data.data.settings.remote.PersonLocale
 import by.ssrlab.data.data.settings.remote.PlaceLocale
+import by.ssrlab.data.data.common.RepositoryData
+import by.ssrlab.data.data.remote.Development
+import by.ssrlab.data.data.remote.Organization
+import by.ssrlab.data.data.remote.Person
+import by.ssrlab.data.data.remote.Place
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
@@ -138,6 +144,23 @@ class MainActivity : BaseActivity() {
         val intent = Intent(this, ExhibitActivity::class.java)
         intent.putExtra(PARCELABLE_DATA, setParcelableData(repositoryData))
         startActivity(intent)
+    }
+
+    fun moveToMap(descriptionData: ArrayList<DescriptionData>) {
+        val intent = Intent(this, MapActivity::class.java)
+        intent.putExtra(MAPBOX_VIEW_POINT_LIST, setMapParcelableData(descriptionData))
+        startActivity(intent)
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    private fun setMapParcelableData(descriptionData: ArrayList<DescriptionData>): ArrayList<Parcelable> {
+        return when (descriptionData[0]) {
+            is Development -> descriptionData as ArrayList<Parcelable>
+            is Organization -> descriptionData as ArrayList<Parcelable>
+            is Person -> descriptionData as ArrayList<Parcelable>
+            is Place -> descriptionData as ArrayList<Parcelable>
+            else -> descriptionData as ArrayList<Parcelable>
+        }
     }
 
     private fun setParcelableData(repositoryData: RepositoryData): Parcelable {

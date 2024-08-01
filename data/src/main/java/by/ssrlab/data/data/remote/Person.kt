@@ -1,6 +1,5 @@
 package by.ssrlab.data.data.remote
 
-import android.os.Parcelable
 import by.ssrlab.data.data.common.DescriptionData
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -13,7 +12,7 @@ data class Person(
     override val pk: Int,
 
     @SerializedName("key_name")
-    val keyName: String,
+    override val keyName: String,
 
     @SerializedName("logo")
     override val logo: String,
@@ -26,4 +25,4 @@ data class Person(
 
     @Expose
     override val lat: Double? = null
-) : DescriptionData, Parcelable
+): DescriptionData

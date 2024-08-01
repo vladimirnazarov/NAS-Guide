@@ -30,6 +30,7 @@ open class BaseActivity: AppCompatActivity(), KoinComponent {
     companion object {
         const val PARCELABLE_DATA = "parcelable_data"
         const val MAPBOX_VIEW_POINT = "mapbox_view_point"
+        const val MAPBOX_VIEW_POINT_LIST = "mapbox_view_point_list"
         const val MAPBOX_LOCATION_RECHECK_TIME = 2000L
     }
 }
