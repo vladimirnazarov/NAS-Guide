@@ -38,5 +38,7 @@
     <string name="exhibit_laboratories">Лабараторыі</string>
     <string name="exhibit_achievements">Дасягненні</string>
     <string name="exhibit_contacts">Кантакты</string>
+    <string name="build_route">Пабудаваць маршрут</string>
+    <string name="something_went_wrong">Нешта пайшло ня так :(</string>
 
 </resources>

@@ -43,6 +43,10 @@ class PlacesFragment: BaseFragment() {
         binding.apply {
             viewModel = this@PlacesFragment.fragmentViewModel
             lifecycleOwner = viewLifecycleOwner
+
+            placesMapRipple.setOnClickListener {
+                (requireActivity() as MainActivity).moveToMap(fragmentViewModel.getDescriptionArray())
+            }
         }
 
         initAdapter()

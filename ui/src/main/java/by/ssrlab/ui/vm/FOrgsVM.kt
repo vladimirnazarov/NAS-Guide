@@ -3,6 +3,7 @@ package by.ssrlab.ui.vm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import by.ssrlab.common_ui.common.ui.base.vm.BaseFragmentVM
+import by.ssrlab.data.data.common.DescriptionData
 import by.ssrlab.data.data.settings.remote.OrganizationLocale
 import by.ssrlab.domain.repository.network.OrgsRepository
 
@@ -17,6 +18,15 @@ class FOrgsVM(orgsRepository: OrgsRepository): BaseFragmentVM<OrganizationLocale
 
     fun setTitle(value: String) {
         _title.value = value
+    }
+
+    fun getDescriptionArray(): ArrayList<DescriptionData> {
+        val array = arrayListOf<DescriptionData>()
+        for (i in _orgsData.value!!) {
+            array.add(i.description)
+        }
+
+        return array
     }
 
     init {
