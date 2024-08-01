@@ -7,6 +7,7 @@ import androidx.room.Relation
 
 @Entity
 data class OrganizationEntity(
+
     @PrimaryKey
     val pk: Int,
     val keyName: String,
@@ -15,7 +16,7 @@ data class OrganizationEntity(
     val logo: String,
 
     @Relation(
-        parentColumn = "departmentFilterId",
+        parentColumn = "departmentFilterPk",
         entity = DepartmentFilterEntity::class,
         entityColumn = "pk"
     )

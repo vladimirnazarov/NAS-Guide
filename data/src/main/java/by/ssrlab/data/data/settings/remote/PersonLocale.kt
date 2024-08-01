@@ -1,26 +1,21 @@
-package by.ssrlab.data.data
+package by.ssrlab.data.data.settings.remote
 
 import android.os.Parcelable
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import by.ssrlab.data.data.remote.Development
 import by.ssrlab.data.data.remote.Language
+import by.ssrlab.data.data.remote.Person
 import by.ssrlab.data.data.common.RepositoryData
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity
-data class DevelopmentLocale(
-    @PrimaryKey
+data class PersonLocale(
+
     @SerializedName("pk")
     override val pk: Int,
 
-    @SerializedName("development")
-    override val description: Development,
+    @SerializedName("person")
+    override val description: Person,
 
-    @Embedded
     @SerializedName("lang")
     val language: Language,
 

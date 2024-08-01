@@ -1,4 +1,4 @@
-package by.ssrlab.data.data
+package by.ssrlab.data.data.settings.remote
 
 import by.ssrlab.data.data.remote.Event
 import by.ssrlab.data.data.remote.Language
