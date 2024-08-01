@@ -38,8 +38,19 @@ class ExhibitActivity : BaseActivity() {
             if (repositoryData.value != null) observeHeader()
         }
 
-        setBackAction()
+        setupButtons()
         observeLayoutChange()
+    }
+
+    private fun setupButtons() {
+        setVolumeAction()
+        setBackAction()
+    }
+
+    private fun setVolumeAction() {
+        binding.toolbarVolume.setOnClickListener {
+            createIsntRealizedDialog()
+        }
     }
 
     private fun setBackAction() {

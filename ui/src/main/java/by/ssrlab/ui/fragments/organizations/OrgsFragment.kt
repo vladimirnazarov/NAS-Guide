@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.base.BaseFragment
 import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.util.ButtonAction
@@ -51,6 +52,13 @@ class OrgsFragment: BaseFragment() {
 
         initAdapter()
         observeOnDataChanged()
+        disableButtons()
+    }
+
+    private fun disableButtons() {
+        binding.orgsFilterRipple.setOnClickListener {
+            (requireActivity() as BaseActivity).createIsntRealizedDialog()
+        }
     }
 
     override fun observeOnDataChanged() {

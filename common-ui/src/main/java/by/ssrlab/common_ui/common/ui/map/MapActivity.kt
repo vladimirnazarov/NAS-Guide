@@ -133,6 +133,7 @@ class MapActivity : BaseActivity() {
                 binding.mapPosition.apply {
                     setImageResource(R.drawable.ic_location)
                     setOnClickListener {
+                        createIsntRealizedDialog()
                         //Current location check and then center camera on user
                         fusedLocationClient.lastLocation.addOnSuccessListener { location ->
                             mapView?.camera?.flyTo(
@@ -147,7 +148,8 @@ class MapActivity : BaseActivity() {
                 binding.mapPosition.apply {
                     binding.mapPosition.setImageResource(R.drawable.ic_location_disable)
                     setOnClickListener {
-                        //TODO
+                        createIsntRealizedDialog()
+                        //TODO ask permission
                     }
                 }
             }
