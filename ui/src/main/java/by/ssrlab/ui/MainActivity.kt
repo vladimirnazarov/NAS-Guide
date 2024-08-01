@@ -19,18 +19,17 @@ import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.exhibit.ExhibitActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.ui.map.MapActivity
-import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
 import by.ssrlab.data.data.common.DescriptionData
-import by.ssrlab.data.data.settings.remote.DevelopmentLocale
-import by.ssrlab.data.data.settings.remote.OrganizationLocale
-import by.ssrlab.data.data.settings.remote.PersonLocale
-import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.data.remote.Development
 import by.ssrlab.data.data.remote.Organization
 import by.ssrlab.data.data.remote.Person
 import by.ssrlab.data.data.remote.Place
+import by.ssrlab.data.data.settings.remote.DevelopmentLocale
+import by.ssrlab.data.data.settings.remote.OrganizationLocale
+import by.ssrlab.data.data.settings.remote.PersonLocale
+import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
@@ -74,7 +73,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun observeLayoutChange() {
-        binding.root.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+        binding.root.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
 
@@ -179,24 +179,25 @@ class MainActivity : BaseActivity() {
         val constraintSet = ConstraintSet().apply { clone(constraintLayout) }
 
         when (mainActivityUiState) {
-             MainActivityUiState.DateFragment -> {
-                 constraintSet.connect(
-                     binding.activityMainFragmentHost.id,
-                     ConstraintSet.TOP,
-                     binding.activityHeader.id,
-                     ConstraintSet.BOTTOM
-                 )
-                 constraintSet.applyTo(constraintLayout)
-             }
-             MainActivityUiState.Other -> {
-                 constraintSet.connect(
-                     binding.activityMainFragmentHost.id,
-                     ConstraintSet.TOP,
-                     binding.toolbar.id,
-                     ConstraintSet.BOTTOM
-                 )
-                 constraintSet.applyTo(constraintLayout)
-             }
+            MainActivityUiState.DateFragment -> {
+                constraintSet.connect(
+                    binding.activityMainFragmentHost.id,
+                    ConstraintSet.TOP,
+                    binding.activityHeader.id,
+                    ConstraintSet.BOTTOM
+                )
+                constraintSet.applyTo(constraintLayout)
+            }
+
+            MainActivityUiState.Other -> {
+                constraintSet.connect(
+                    binding.activityMainFragmentHost.id,
+                    ConstraintSet.TOP,
+                    binding.toolbar.id,
+                    ConstraintSet.BOTTOM
+                )
+                constraintSet.applyTo(constraintLayout)
+            }
         }
     }
 
@@ -205,18 +206,10 @@ class MainActivity : BaseActivity() {
             ToolbarStateByDates.OnCreate -> {
                 binding.datesNowHolder.visibility = View.VISIBLE
             }
+
             ToolbarStateByDates.OnDestroy -> {
                 binding.datesNowHolder.visibility = View.GONE
             }
         }
-    }
-
-    private fun createIsntRealizedDialog() {
-        createSimpleAlertDialog(
-            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_dont_available),
-            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_isnt_realized),
-            this@MainActivity.getString(by.ssrlab.common_ui.R.string.dialog_ok),
-            this@MainActivity
-        )
     }
 }

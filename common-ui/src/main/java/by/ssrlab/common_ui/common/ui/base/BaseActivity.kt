@@ -3,6 +3,7 @@ package by.ssrlab.common_ui.common.ui.base
 import android.content.Context
 import android.content.ContextWrapper
 import androidx.appcompat.app.AppCompatActivity
+import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.domain.models.SharedPreferencesUtil
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -25,6 +26,15 @@ open class BaseActivity: AppCompatActivity(), KoinComponent {
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(ContextWrapper(newBase?.loadPreferences()))
+    }
+
+    fun createIsntRealizedDialog() {
+        createSimpleAlertDialog(
+            this@BaseActivity.getString(by.ssrlab.common_ui.R.string.dialog_dont_available),
+            this@BaseActivity.getString(by.ssrlab.common_ui.R.string.dialog_isnt_realized),
+            this@BaseActivity.getString(by.ssrlab.common_ui.R.string.dialog_ok),
+            this@BaseActivity
+        )
     }
 
     companion object {
