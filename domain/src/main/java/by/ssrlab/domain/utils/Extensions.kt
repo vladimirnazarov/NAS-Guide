@@ -18,3 +18,8 @@ fun Int.transformIntToLanguage(): String {
         else -> "en"
     }
 }
+
+//Extension to html text
+fun String.fromHtml(): String {
+    return this.replace(Regex("<[^>]*>"), "").replace("&nbsp;", " ")
+}

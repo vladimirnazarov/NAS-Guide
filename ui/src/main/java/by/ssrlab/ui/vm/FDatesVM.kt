@@ -20,6 +20,8 @@ class FDatesVM(eventsRepository: EventsRepository) : BaseFragmentVM<EventLocale>
     }
 
     init {
-        getData { _datesData.value = it }
+        getData {
+            _datesData.value = it
+        }
     }
 }

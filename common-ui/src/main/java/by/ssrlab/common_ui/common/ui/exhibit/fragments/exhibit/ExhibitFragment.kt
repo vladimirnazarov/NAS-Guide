@@ -13,6 +13,7 @@ import by.ssrlab.data.data.settings.remote.OrganizationLocale
 import by.ssrlab.data.data.settings.remote.PersonLocale
 import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.util.ExhibitObject
+import by.ssrlab.domain.utils.fromHtml
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ExhibitFragment: Fragment() {
@@ -83,7 +84,7 @@ class ExhibitFragment: Fragment() {
 
         binding.apply {
             exhibitTitle.text = data.name
-            exhibitBody.text = data.about
+            exhibitBody.text = data.about.fromHtml()
 
             if (exhibitObject is ExhibitObject.Development)
                 exhibitDeveloperTitle.text = (data as DevelopmentLocale).description.departmentFilter.keyName
