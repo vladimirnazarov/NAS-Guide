@@ -15,9 +15,8 @@ import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.databinding.FragmentDatesBinding
 import by.ssrlab.ui.rv.DatesAdapter
 import by.ssrlab.ui.vm.FDatesVM
-import org.koin.android.ext.android.get
 
-class DatesFragment: BaseFragment() {
+class DatesFragment : BaseFragment() {
 
     private lateinit var binding: FragmentDatesBinding
     private lateinit var adapter: DatesAdapter
@@ -29,9 +28,7 @@ class DatesFragment: BaseFragment() {
         isDates = true
     )
 
-    override val fragmentViewModel: FDatesVM by viewModels {
-        FDatesVM.Factory(get())
-    }
+    override val fragmentViewModel: FDatesVM by viewModels()
 
     override fun onStart() {
         super.onStart()
@@ -49,7 +46,6 @@ class DatesFragment: BaseFragment() {
             setHeaderImg(by.ssrlab.common_ui.R.drawable.header_dates)
             setButtonAction(ButtonAction.BackAction, ::onBackPressed)
         }
-        //TODO Set date transformation in the viewModel
 
         initAdapter()
     }
@@ -63,8 +59,9 @@ class DatesFragment: BaseFragment() {
         }
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun initAdapter() {
-        adapter = DatesAdapter(fragmentViewModel.getData(), "Test test test")
+        adapter = DatesAdapter(fragmentViewModel.datesData.value!!, "Test test test")
 
         binding.apply {
             datesRv.layoutManager = LinearLayoutManager(requireContext())

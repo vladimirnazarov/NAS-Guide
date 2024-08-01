@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import by.ssrlab.common_ui.databinding.RvDatesItemBinding
 import by.ssrlab.common_ui.databinding.RvDatesTitleBinding
-import by.ssrlab.data.obj.DateObject
+import by.ssrlab.data.data.settings.remote.EventLocale
 import coil.load
 import coil.transform.RoundedCornersTransformation
 
@@ -14,11 +14,11 @@ private const val ITEM_TITLE = 0
 private const val ITEM_DATE = 1
 
 class DatesAdapter(
-    private val entitiesList: List<DateObject>,
+    private val entitiesList: List<EventLocale>,
     private val title: String,
-): RecyclerView.Adapter<DatesAdapter.DatesHolder>() {
+) : RecyclerView.Adapter<DatesAdapter.DatesHolder>() {
 
-    inner class DatesHolder(val binding: ViewBinding): RecyclerView.ViewHolder(binding.root)
+    inner class DatesHolder(val binding: ViewBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DatesHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -37,8 +37,8 @@ class DatesAdapter(
                 }
 
                 is RvDatesItemBinding -> {
-                    this.rvDatesDate.text = entitiesList[position].date
-                    this.rvDatesBody.text = entitiesList[position].body
+                    this.rvDatesDate.text = entitiesList[position].event.startDate
+                    this.rvDatesBody.text = entitiesList[position].about
 
                     this.rvDatesPng.load(entitiesList[position]) {
                         crossfade(true)
