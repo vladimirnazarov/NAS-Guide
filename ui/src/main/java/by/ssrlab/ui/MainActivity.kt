@@ -65,6 +65,7 @@ class MainActivity : BaseActivity() {
             setButtonAction(ButtonAction.SearchAction, ::createIsntRealizedDialog)
             setButtonAction(ButtonAction.LanguageAction, ::createIsntRealizedDialog)
             setButtonAction(ButtonAction.ChooseDateAction, ::createIsntRealizedDialog)
+            setCurrentDate(this@MainActivity)
         }
 
         observeLayoutChange()

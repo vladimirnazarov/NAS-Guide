@@ -20,7 +20,6 @@ class DatesFragment : BaseFragment() {
 
     private lateinit var binding: FragmentDatesBinding
     private lateinit var adapter: DatesAdapter
-//    override lateinit var fragmentViewModel: FDatesVM
 
     override val toolbarControlObject = ToolbarControlObject(
         isBack = true,
@@ -30,10 +29,6 @@ class DatesFragment : BaseFragment() {
     )
 
     override val fragmentViewModel: FDatesVM by viewModel()
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        fragmentViewModel = ViewModelProvider(this).get(FDatesVM::class.java)
-//    }
 
     override fun onStart() {
         super.onStart()
@@ -53,6 +48,7 @@ class DatesFragment : BaseFragment() {
         }
 
         initAdapter()
+        observeOnDataChanged()
     }
 
     override fun onStop() {
@@ -64,9 +60,14 @@ class DatesFragment : BaseFragment() {
         }
     }
 
-    @Suppress("UNCHECKED_CAST")
+    override fun observeOnDataChanged() {
+        fragmentViewModel.datesData.observe(viewLifecycleOwner) {
+            adapter.updateData(it)
+        }
+    }
+
     override fun initAdapter() {
-        adapter = DatesAdapter(fragmentViewModel.datesData.value!!, "Test test test")
+        adapter = DatesAdapter(fragmentViewModel.datesData.value!!, "") //TODO сделать title
 
         binding.apply {
             datesRv.layoutManager = LinearLayoutManager(requireContext())
