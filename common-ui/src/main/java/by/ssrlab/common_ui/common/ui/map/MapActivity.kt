@@ -195,7 +195,7 @@ class MapActivity : BaseActivity() {
             options = viewAnnotationOptions { geometry(point) }
         )
 
-//        TODO next session
+//        TODO: next session
 //        annotationArray.add(viewAnnotation
 //
 //        viewAnnotation.findViewById<TextView>(R.id.view_map_text).text = pointNumber
