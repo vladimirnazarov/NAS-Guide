@@ -1,5 +1,6 @@
 package by.ssrlab.nasguide.di.ui
 
+import by.ssrlab.ui.vm.FDatesVM
 import by.ssrlab.ui.vm.FDevelopmentsVM
 import by.ssrlab.ui.vm.FOrgsVM
 import by.ssrlab.ui.vm.FPlacesVM
@@ -14,4 +15,6 @@ val sectionsViewModelsModule = module {
     viewModel { FOrgsVM(get(named("network"))) }
 
     viewModel { FPlacesVM(get(named("network"))) }
+
+    viewModel { FDatesVM(get(named("network"))) }
 }

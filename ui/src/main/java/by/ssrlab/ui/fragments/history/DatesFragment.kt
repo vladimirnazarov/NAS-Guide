@@ -3,7 +3,6 @@ package by.ssrlab.ui.fragments.history
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.ssrlab.common_ui.common.ui.base.BaseFragment
@@ -15,11 +14,13 @@ import by.ssrlab.ui.MainActivity
 import by.ssrlab.ui.databinding.FragmentDatesBinding
 import by.ssrlab.ui.rv.DatesAdapter
 import by.ssrlab.ui.vm.FDatesVM
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DatesFragment : BaseFragment() {
 
     private lateinit var binding: FragmentDatesBinding
     private lateinit var adapter: DatesAdapter
+//    override lateinit var fragmentViewModel: FDatesVM
 
     override val toolbarControlObject = ToolbarControlObject(
         isBack = true,
@@ -28,7 +29,11 @@ class DatesFragment : BaseFragment() {
         isDates = true
     )
 
-    override val fragmentViewModel: FDatesVM by viewModels()
+    override val fragmentViewModel: FDatesVM by viewModel()
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        fragmentViewModel = ViewModelProvider(this).get(FDatesVM::class.java)
+//    }
 
     override fun onStart() {
         super.onStart()

@@ -29,7 +29,7 @@ open class BaseFragmentVM<T: RepositoryData>(private val baseRepository: BaseRep
                 }
 
                 override fun onFailure(p0: Call<List<T>>, p1: Throwable) {
-                    TODO("Not yet implemented")
+                    println(p1.message)
                 }
             })
         }

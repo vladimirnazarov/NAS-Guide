@@ -20,11 +20,11 @@ import by.ssrlab.common_ui.common.ui.exhibit.ExhibitActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.common_ui.common.vm.AMainVM
-import by.ssrlab.data.data.DevelopmentLocale
-import by.ssrlab.data.data.OrganizationLocale
-import by.ssrlab.data.data.PersonLocale
-import by.ssrlab.data.data.PlaceLocale
 import by.ssrlab.data.data.common.RepositoryData
+import by.ssrlab.data.data.settings.remote.DevelopmentLocale
+import by.ssrlab.data.data.settings.remote.OrganizationLocale
+import by.ssrlab.data.data.settings.remote.PersonLocale
+import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.util.ButtonAction
 import by.ssrlab.data.util.MainActivityUiState
 import by.ssrlab.data.util.ToolbarStateByDates
