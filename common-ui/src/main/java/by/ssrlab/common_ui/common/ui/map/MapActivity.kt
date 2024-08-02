@@ -159,14 +159,7 @@ class MapActivity : BaseActivity() {
                 binding.mapPosition.apply {
                     binding.mapPosition.setImageResource(R.drawable.ic_location_disable)
                     setOnClickListener {
-                        if (ActivityCompat.checkSelfPermission(
-                                this@MapActivity,
-                                Manifest.permission.ACCESS_FINE_LOCATION
-                            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                                this@MapActivity,
-                                Manifest.permission.ACCESS_COARSE_LOCATION
-                            ) != PackageManager.PERMISSION_GRANTED
-                        ){
+                        if (!checkPermission()){
                             val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
                             ActivityCompat.requestPermissions(this@MapActivity, permissions,0)
                         }

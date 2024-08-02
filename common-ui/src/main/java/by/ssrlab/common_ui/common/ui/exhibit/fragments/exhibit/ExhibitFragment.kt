@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.vm.AExhibitVM
 import by.ssrlab.common_ui.databinding.FragmentExhibitBinding
+import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.data.settings.remote.DevelopmentLocale
 import by.ssrlab.data.data.settings.remote.OrganizationLocale
 import by.ssrlab.data.data.settings.remote.PersonLocale
 import by.ssrlab.data.data.settings.remote.PlaceLocale
-import by.ssrlab.data.data.common.RepositoryData
 import by.ssrlab.data.util.ExhibitObject
+import by.ssrlab.domain.utils.fromHtml
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ExhibitFragment: Fragment() {
@@ -35,6 +37,20 @@ class ExhibitFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeOnParcelableData()
+        disableButtons()
+    }
+
+    private fun disableButtons() {
+        binding.apply {
+            exhibitPlayRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitPreviousRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitNextRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitContactsRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitLabsRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitAchievementsRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitResearchRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+            exhibitDeveloperRipple.setOnClickListener { (requireActivity() as BaseActivity).createIsntRealizedDialog() }
+        }
     }
 
     private fun observeOnParcelableData() {
@@ -83,7 +99,7 @@ class ExhibitFragment: Fragment() {
 
         binding.apply {
             exhibitTitle.text = data.name
-            exhibitBody.text = data.about
+            exhibitBody.text = data.about.fromHtml()
 
             if (exhibitObject is ExhibitObject.Development)
                 exhibitDeveloperTitle.text = (data as DevelopmentLocale).description.departmentFilter.keyName
