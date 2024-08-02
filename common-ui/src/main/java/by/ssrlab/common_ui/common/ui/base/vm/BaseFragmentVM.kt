@@ -10,13 +10,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
 
-open class BaseFragmentVM<T: RepositoryData>(private val baseRepository: BaseRepository<T>): ViewModel(), KoinComponent {
+open class BaseFragmentVM<T : RepositoryData>(private val baseRepository: BaseRepository<T>) :
+    ViewModel(), KoinComponent {
 
     private val networkScope = CoroutineScope(Dispatchers.IO + Job())
     private val uiScope = CoroutineScope(Dispatchers.Main + Job())
@@ -26,7 +27,6 @@ open class BaseFragmentVM<T: RepositoryData>(private val baseRepository: BaseRep
         networkScope.launch {
             baseRepository.get(sharedPreferences.getLanguage()!!.transformLanguageToInt()).enqueue(object : Callback<List<T>> {
                 override fun onResponse(p0: Call<List<T>>, p1: Response<List<T>>) {
-                    println(p1.body())
                     uiScope.launch { onSuccess(p1.body() ?: listOf()) }
                 }
 

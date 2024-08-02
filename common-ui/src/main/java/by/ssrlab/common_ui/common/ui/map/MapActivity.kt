@@ -6,6 +6,8 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
@@ -85,6 +87,14 @@ class MapActivity : BaseActivity() {
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.dark(
+                android.graphics.Color.TRANSPARENT
+            )
+        )
 
         binding = ActivityMapBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -131,16 +141,17 @@ class MapActivity : BaseActivity() {
                 }
 
                 binding.mapPosition.apply {
-                    setImageResource(R.drawable.ic_location)
-                    setOnClickListener {
-                        createIsntRealizedDialog()
-                        //Current location check and then center camera on user
-                        fusedLocationClient.lastLocation.addOnSuccessListener { location ->
-                            mapView?.camera?.flyTo(
-                                cameraOptions {
-                                    center(Point.fromLngLat(location.longitude, location.latitude))
-                                }
-                            )
+                    withContext(Dispatchers.Main){
+                        setImageResource(R.drawable.ic_location)
+                        setOnClickListener {
+                            //Current location check and then center camera on user
+                            fusedLocationClient.lastLocation.addOnSuccessListener { location ->
+                                mapView?.camera?.flyTo(
+                                    cameraOptions {
+                                        center(Point.fromLngLat(location.longitude, location.latitude))
+                                    }
+                                )
+                            }
                         }
                     }
                 }
@@ -148,8 +159,10 @@ class MapActivity : BaseActivity() {
                 binding.mapPosition.apply {
                     binding.mapPosition.setImageResource(R.drawable.ic_location_disable)
                     setOnClickListener {
-                        createIsntRealizedDialog()
-                        //TODO ask permission
+                        if (!checkPermission()){
+                            val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
+                            ActivityCompat.requestPermissions(this@MapActivity, permissions,0)
+                        }
                     }
                 }
             }
