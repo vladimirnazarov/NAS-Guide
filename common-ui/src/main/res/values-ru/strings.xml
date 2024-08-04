@@ -40,5 +40,9 @@
     <string name="exhibit_contacts">Контакты</string>
     <string name="build_route">Построить маршрут</string>
     <string name="something_went_wrong">Что-то пошло не так :(</string>
+    <string name="on_this_day">В этот день</string>
+    <string name="today">Сегодня</string>
+    <string name="date">Дата</string>
+    <string name="choose_date">Выберите дату</string>
 
 </resources>

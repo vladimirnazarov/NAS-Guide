@@ -54,7 +54,6 @@ import kotlinx.coroutines.withContext
 class MapActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMapBinding
-    private var permissionGranted = false
     private val scope = CoroutineScope(Dispatchers.IO + Job())
 
     //List of pressed points
@@ -113,12 +112,9 @@ class MapActivity : BaseActivity() {
         }
 
         setMapboxOptions()
-        checkPermission()
         setupButtons()
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this@MapActivity)
-
-        //Maybe insert setContentView here
     }
 
     override fun onStart() {
@@ -134,7 +130,7 @@ class MapActivity : BaseActivity() {
 
     private fun setLocationAction() {
         scope.launch {
-            if (permissionGranted) {
+            if (checkPermission()) {
 
                 withContext(Dispatchers.Main) {
                     setupMapbox()
@@ -159,10 +155,7 @@ class MapActivity : BaseActivity() {
                 binding.mapPosition.apply {
                     binding.mapPosition.setImageResource(R.drawable.ic_location_disable)
                     setOnClickListener {
-                        if (!checkPermission()){
-                            val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
-                            ActivityCompat.requestPermissions(this@MapActivity, permissions,0)
-                        }
+                        requestPermission()
                     }
                 }
             }
@@ -339,7 +332,13 @@ class MapActivity : BaseActivity() {
             PackageManager.PERMISSION_GRANTED)
     }
 
-    private fun checkPermission() {
-        permissionGranted = ContextCompat.checkSelfPermission(this@MapActivity, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+    private fun checkPermission() = ContextCompat.checkSelfPermission(
+        this@MapActivity,
+        Manifest.permission.ACCESS_FINE_LOCATION
+    ) == PackageManager.PERMISSION_GRANTED
+
+    private fun requestPermission() {
+        val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
+        ActivityCompat.requestPermissions(this@MapActivity, permissions,0)
     }
 }

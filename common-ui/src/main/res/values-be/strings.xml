@@ -40,5 +40,9 @@
     <string name="exhibit_contacts">Кантакты</string>
     <string name="build_route">Пабудаваць маршрут</string>
     <string name="something_went_wrong">Нешта пайшло ня так :(</string>
+    <string name="on_this_day">У гэты дзень</string>
+    <string name="today">Сёння</string>
+    <string name="date">Дата</string>
+    <string name="choose_date">Абярыце дату</string>
 
 </resources>

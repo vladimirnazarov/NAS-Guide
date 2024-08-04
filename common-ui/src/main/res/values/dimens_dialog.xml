@@ -2,11 +2,11 @@
 <resources>
 
     <dimen name="dialog_common_horizontalMargin">50dp</dimen>
-    <dimen name="dialog_common_padding">12dp</dimen>
+    <dimen name="dialog_common_padding">20dp</dimen>
     <dimen name="dialog_common_margin">20dp</dimen>
     <dimen name="dialog_common_elevation">4dp</dimen>
 
-    <dimen name="dialog_language_corners">12dp</dimen>
+    <dimen name="dialog_language_corners">20dp</dimen>
 
     <dimen name="dialog_language_text_padding">12dp</dimen>
     <dimen name="dialog_language_text">17sp</dimen>

@@ -163,6 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:text="@{viewModel.dateSubtitle}"
                 android:textColor="@color/secondary_text"
                 android:textSize="@dimen/activity_dates_title"
 
@@ -174,7 +175,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="@{viewModel.currentDateTime}"
+                android:text="@{viewModel.currentDate}"
                 android:textSize="@dimen/activity_dates_chosen"
                 android:textColor="@color/primary_text"
                 android:textStyle="bold"
