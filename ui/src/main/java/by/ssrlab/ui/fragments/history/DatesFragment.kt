@@ -49,6 +49,7 @@ class DatesFragment : BaseFragment() {
 
         initAdapter()
         observeOnDataChanged()
+        observeOnDateChanged()
     }
 
     override fun onStop() {
@@ -61,13 +62,25 @@ class DatesFragment : BaseFragment() {
     }
 
     override fun observeOnDataChanged() {
-        fragmentViewModel.datesData.observe(viewLifecycleOwner) {
-            adapter.updateData(it)
+        fragmentViewModel.apply {
+            datesObservableBoolean.observe(viewLifecycleOwner) {
+                adapter.updateData(datesData.value!!, activityVM.currentDateNumeric.value!!)
+            }
+        }
+    }
+
+    private fun observeOnDateChanged() {
+        activityVM.currentDateNumeric.observe(viewLifecycleOwner) {
+            if (fragmentViewModel.datesObservableBoolean.value == true) {
+                adapter.updateData(fragmentViewModel.datesData.value!!, it)
+            }
         }
     }
 
     override fun initAdapter() {
-        adapter = DatesAdapter(fragmentViewModel.datesData.value!!, "") //TODO сделать title
+        adapter = DatesAdapter(
+            fragmentViewModel.datesData.value!!,
+            requireContext().resources.getString(by.ssrlab.common_ui.R.string.on_this_day))
 
         binding.apply {
             datesRv.layoutManager = LinearLayoutManager(requireContext())
@@ -82,9 +95,5 @@ class DatesFragment : BaseFragment() {
 
     override fun onBackPressed() {
         findNavController().popBackStack()
-    }
-
-    override fun navigateNext(address: Int) {
-        //TODO
     }
 }

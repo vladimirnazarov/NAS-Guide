@@ -48,4 +48,10 @@
     <string name="build_route">Build route</string>
     <string name="something_went_wrong">Something went wrong :(</string>
 
+    //Date
+    <string name="on_this_day">On this day</string>
+    <string name="today">Today</string>
+    <string name="date">Date</string>
+    <string name="choose_date">Choose date</string>
+
 </resources>

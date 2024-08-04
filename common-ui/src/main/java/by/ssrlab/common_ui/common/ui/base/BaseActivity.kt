@@ -3,6 +3,7 @@ package by.ssrlab.common_ui.common.ui.base
 import android.content.Context
 import android.content.ContextWrapper
 import androidx.appcompat.app.AppCompatActivity
+import by.ssrlab.common_ui.common.util.createDateDialog
 import by.ssrlab.common_ui.common.util.createSimpleAlertDialog
 import by.ssrlab.domain.models.SharedPreferencesUtil
 import org.koin.core.component.KoinComponent
@@ -37,9 +38,13 @@ open class BaseActivity: AppCompatActivity(), KoinComponent {
         )
     }
 
+    fun createDatePickerDialog(onDateChanged: (Int, Int) -> Unit) {
+        createDateDialog(this, onDateChanged)
+    }
+
     companion object {
         const val PARCELABLE_DATA = "parcelable_data"
-        const val MAPBOX_VIEW_POINT = "mapbox_view_point"
+//        const val MAPBOX_VIEW_POINT = "mapbox_view_point"
         const val MAPBOX_VIEW_POINT_LIST = "mapbox_view_point_list"
         const val MAPBOX_LOCATION_RECHECK_TIME = 2000L
     }

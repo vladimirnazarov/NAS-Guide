@@ -1,5 +1,6 @@
 package by.ssrlab.ui.rv
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -38,10 +39,10 @@ class DatesAdapter(
                 }
 
                 is RvDatesItemBinding -> {
-                    this.rvDatesDate.text = entitiesList[position].event.startDate
-                    this.rvDatesBody.text = entitiesList[position].about.fromHtml()
+                    this.rvDatesDate.text = entitiesList[position - 1].event.keyName
+                    this.rvDatesBody.text = entitiesList[position - 1].about.fromHtml()
 
-                    this.rvDatesPng.load(entitiesList[position]) {
+                    this.rvDatesPng.load(entitiesList[position - 1]) {
                         crossfade(true)
                         crossfade(500)
                         placeholder(by.ssrlab.common_ui.R.drawable.coil_placeholder)
@@ -63,8 +64,9 @@ class DatesAdapter(
         else ITEM_DATE
     }
 
-    fun updateData(items: List<EventLocale>) {
-        entitiesList = items
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateData(items: List<EventLocale>, date: String) {
+        entitiesList = items.filter { it.event.startDate.drop(5) == date }
         notifyDataSetChanged()
     }
 }

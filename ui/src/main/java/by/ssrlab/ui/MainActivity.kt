@@ -63,8 +63,13 @@ class MainActivity : BaseActivity() {
             setButtonAction(ButtonAction.BackAction, ::createIsntRealizedDialog)
             setButtonAction(ButtonAction.SearchAction, ::createIsntRealizedDialog)
             setButtonAction(ButtonAction.LanguageAction, ::createIsntRealizedDialog)
-            setButtonAction(ButtonAction.ChooseDateAction, ::createIsntRealizedDialog)
-            setCurrentDate(this@MainActivity)
+            setButtonAction(ButtonAction.ChooseDateAction) {
+                createDatePickerDialog { day, month ->
+                    onDateChanged(day, month, this@MainActivity)
+                }
+            }
+
+            refreshDate(this@MainActivity)
         }
 
         observeLayoutChange()

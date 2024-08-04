@@ -9,15 +9,18 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageSwitcher
 import by.ssrlab.common_ui.R
+import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.databinding.DialogLanguageBinding
 import by.ssrlab.domain.models.SharedPreferencesUtil
 import by.ssrlab.domain.utils.transformIntToLanguage
 import by.ssrlab.domain.utils.transformLanguageToInt
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.util.Calendar
 
 private const val LANGUAGE_DIALOG_DELAY = 250L
 private const val LANGUAGE_EN = 1
@@ -25,7 +28,9 @@ private const val LANGUAGE_BE = 2
 private const val LANGUAGE_RU = 3
 
 private val dialogScope = CoroutineScope(Dispatchers.Main)
+private val calendar = Calendar.getInstance()
 
+//Warning Common
 fun createSimpleAlertDialog(title: String, message: String, buttonMessage: String, context: Context) {
     MaterialAlertDialogBuilder(context)
         .setTitle(title)
@@ -33,6 +38,24 @@ fun createSimpleAlertDialog(title: String, message: String, buttonMessage: Strin
         .setPositiveButton(buttonMessage) { dialog, _ -> dialog.dismiss() }
         .setCancelable(true)
         .show()
+}
+
+//Date
+fun createDateDialog(context: Context, onDateChanged: (Int, Int) -> Unit) {
+    val datePicker = MaterialDatePicker.Builder.datePicker()
+        .setTitleText(context.resources.getString(R.string.choose_date))
+        .setSelection(calendar.timeInMillis)
+        .setTheme(R.style.CustomDatePickerTheme)
+        .build()
+
+    datePicker.addOnPositiveButtonClickListener { selection ->
+        calendar.timeInMillis = selection
+        val month = calendar.get(Calendar.MONTH)
+        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+        onDateChanged(dayOfMonth, month)
+    }
+
+    datePicker.show((context as BaseActivity).supportFragmentManager, "MATERIAL_DATE_PICKER")
 }
 
 //Language Dialog Section
