@@ -39,5 +39,6 @@ dependencies {
     api(project(":data"))
 
     implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
     implementation(libs.kotlin.stdlib)
 }

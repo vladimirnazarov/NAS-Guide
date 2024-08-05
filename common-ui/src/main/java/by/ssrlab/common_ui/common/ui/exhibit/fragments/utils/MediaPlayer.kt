@@ -57,7 +57,7 @@ object MediaPlayer {
                         seekBarFuns.convertToTimerMode(mediaPlayer!!.currentPosition)
                 }
 
-//                listenProgress(binding)
+                listenProgress(binding)
                 onSuccess()
             }
 
@@ -80,7 +80,7 @@ object MediaPlayer {
                     try {
                         mediaPlayer!!.start()
                         playerStatus = "pause"
-//                        initProgressListener(activity, binding)
+                        initProgressListener(activity, binding)
                     } catch (e: Exception) {
                         Toast.makeText(activity, e.message, Toast.LENGTH_SHORT).show()
                     }
@@ -111,4 +111,54 @@ object MediaPlayer {
         }
     }
 
+    private suspend fun initProgressListener(
+        activity: ExhibitActivity,
+        binding: FragmentExhibitBinding
+    ) {
+        while (playerStatus == "pause") {
+            scope.launch {
+                activity.runOnUiThread {
+                    binding.apply {
+                        if (mediaPlayer?.isPlaying == true) {
+                            exhibitCurrentTime.text =
+                                seekBarFuns.convertToTimerMode(mediaPlayer!!.currentPosition)
+                            exhibitProgress.progress = mediaPlayer!!.currentPosition
+                        }
+                    }
+                }
+            }
+
+            delay(10)
+
+            binding.exhibitEndTime.apply {
+                if (progress == max) {
+                    playerStatus = "play"
+
+                    mediaPlayer?.seekTo(0)
+                    scope.launch {
+                        activity.runOnUiThread {
+                            binding.apply {
+//                                exhibitPlayIc.setImageResource(R.drawable.ic_play)
+                                exhibitEndTime.text = 0.toString()
+                                exhibitCurrentTime.text =
+                                    seekBarFuns.convertToTimerMode(mediaPlayer!!.currentPosition)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun listenProgress(binding: FragmentExhibitBinding) {
+        binding.exhibitDurationBar.setOnSeekBarChangeListener(
+            seekBarFuns.createSeekBarProgressListener {
+                mediaPlayer!!.seekTo(it)
+                scope.launch {
+                    binding.exhibitCurrentTime.text =
+                        seekBarFuns.convertToTimerMode(mediaPlayer!!.currentPosition)
+                }
+            }
+        )
+    }
 }

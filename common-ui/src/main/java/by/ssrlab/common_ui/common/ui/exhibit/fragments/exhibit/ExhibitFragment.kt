@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.exhibit.ExhibitActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.MediaPlayer
@@ -19,13 +17,11 @@ import by.ssrlab.data.data.settings.remote.OrganizationLocale
 import by.ssrlab.data.data.settings.remote.PersonLocale
 import by.ssrlab.data.data.settings.remote.PlaceLocale
 import by.ssrlab.data.util.ExhibitObject
+import by.ssrlab.domain.repository.network.ExhibitAudioClient
 import by.ssrlab.domain.utils.fromHtml
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import java.io.File
@@ -35,6 +31,7 @@ class ExhibitFragment : Fragment() {
     private lateinit var binding: FragmentExhibitBinding
     private val activityViewModel: AExhibitVM by activityViewModel()
     private val exhibitActivity: ExhibitActivity by lazy { (requireActivity() as ExhibitActivity) }
+    private val baseActivity: BaseActivity by lazy { (requireActivity() as BaseActivity) }
 
     private val scope = CoroutineScope(Dispatchers.Main)
 
@@ -132,10 +129,9 @@ class ExhibitFragment : Fragment() {
     }
 
     private fun checkAudioAvailability() {
-        val audioFileName = "botanical_${activityViewModel.getExhibitObject().placeId}_${exhibitActivity.getApp().getLocale()}.mp3"
-        val audioFile = File(exhibitActivity.getExternalFilesDir(null), audioFileName)
-
-        //viewmodel
+        val audioFileName =
+            "nas_guide_${activityViewModel.exhibitState.value.repositoryData!!.audio}_${baseActivity.getLocale()}.mp3"
+        val audioFile = File(baseActivity.getExternalFilesDir(null), audioFileName)
 
         if (audioFile.exists()) {
             if (audioFile.length() == 0L) {
@@ -144,11 +140,9 @@ class ExhibitFragment : Fragment() {
                 initMediaPlayer(audioFile)
             }
         } else {
-            if (activityViewModel.getExhibitObject().audio != "null") {
+            if (activityViewModel.exhibitState.value.repositoryData!!.audio != "null") {
                 checkAudioAction(audioFile)
             } else {
-//                hideAudioControls()
-
                 binding.apply {
                     exhibitPlayerBlock.visibility = View.INVISIBLE
                 }
@@ -156,12 +150,15 @@ class ExhibitFragment : Fragment() {
         }
     }
 
-    private fun hideAudioControls() {
-        binding.apply {
-//            exhibitDurationHolder.visibility = View.GONE
-            exhibitPlayerBlock.visibility = View.INVISIBLE
-            exhibitNext.visibility = View.INVISIBLE
-            exhibitPrevious.visibility = View.INVISIBLE
+    private fun checkAudioAction(file: File) {
+        activityViewModel.exhibitState.value.repositoryData!!.audio?.let {
+            ExhibitAudioClient.getAudio(it, file, {
+                initMediaPlayer(file)
+            }) {
+                exhibitActivity.runOnUiThread {
+                    Toast.makeText(exhibitActivity, it, Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
@@ -175,14 +172,29 @@ class ExhibitFragment : Fragment() {
                     exhibitCurrentTime.visibility = View.VISIBLE
                     exhibitEndTime.visibility = View.VISIBLE
                     exhibitPlay.visibility = View.VISIBLE
-                    exhibitPlayRipple.setOnClickListener { MediaPlayer.playAudio(exhibitActivity, binding) }
+                    exhibitPlayRipple.setOnClickListener {
+                        MediaPlayer.playAudio(
+                            exhibitActivity,
+                            binding
+                        )
+                    }
 
                     //pause???
 
                     exhibitPrevious.visibility = View.VISIBLE
-                    exhibitPreviousRipple.setOnClickListener { MediaPlayer.playAudio(exhibitActivity, binding) }
+                    exhibitPreviousRipple.setOnClickListener {
+                        MediaPlayer.playAudio(
+                            exhibitActivity,
+                            binding
+                        )
+                    }
                     exhibitNext.visibility = View.VISIBLE
-                    exhibitNextRipple.setOnClickListener { MediaPlayer.playAudio(exhibitActivity, binding) }
+                    exhibitNextRipple.setOnClickListener {
+                        MediaPlayer.playAudio(
+                            exhibitActivity,
+                            binding
+                        )
+                    }
                 }
             }
         }
