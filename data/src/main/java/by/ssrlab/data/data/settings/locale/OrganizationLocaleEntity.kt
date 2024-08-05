@@ -2,23 +2,27 @@ package by.ssrlab.data.data.settings.locale
 
 import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import androidx.room.Relation
 import by.ssrlab.data.data.local.LanguageEntity
 import by.ssrlab.data.data.local.OrganizationEntity
 
-@Entity
+@Entity(
+    foreignKeys = [
+        ForeignKey(
+            entity = OrganizationEntity::class,
+            parentColumns = ["pk"],
+            childColumns = ["organizationEntityPk"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
 data class OrganizationLocaleEntity(
 
     @PrimaryKey
     val pk: Int,
 
-    @Relation(
-        parentColumn = "organizationEntityPk",
-        entity = OrganizationEntity::class,
-        entityColumn = "pk"
-    )
-    val description: OrganizationEntity,
+    val organizationEntityPk: Int,
 
     @Embedded(prefix = "language_")
     val language: LanguageEntity,

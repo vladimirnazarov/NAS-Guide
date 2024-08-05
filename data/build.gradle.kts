@@ -41,8 +41,10 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.converter.gson)
     implementation(libs.symbol.processing.api)
+
     implementation(libs.androidx.room.common)
-    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
 
     implementation(libs.kotlin.stdlib)

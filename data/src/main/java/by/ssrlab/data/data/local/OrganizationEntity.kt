@@ -2,10 +2,19 @@ package by.ssrlab.data.data.local
 
 import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import androidx.room.Relation
 
-@Entity
+@Entity(
+    foreignKeys = [
+        ForeignKey(
+            entity = DepartmentFilterEntity::class,
+            parentColumns = ["pk"],
+            childColumns = ["departmentFilterPk"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
 data class OrganizationEntity(
 
     @PrimaryKey
@@ -15,12 +24,7 @@ data class OrganizationEntity(
     val lon: Double,
     val logo: String,
 
-    @Relation(
-        parentColumn = "departmentFilterPk",
-        entity = DepartmentFilterEntity::class,
-        entityColumn = "pk"
-    )
-    val departmentFilter: DepartmentFilterEntity,
+    val departmentFilterPk: Int,
 
     @Embedded
     val image: ImageEntity
