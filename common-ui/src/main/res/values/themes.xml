@@ -1,20 +1,58 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    //Main
     <style
         name="Theme.NASGuide"
-        parent="Theme.Material3.DayNight.NoActionBar">
+        parent="Theme.Material3.Light.NoActionBar">
 
-        <item name="colorPrimary">@color/clickable_text_false</item>
-        <item name="colorOnPrimary">@color/clickable_text_false</item>
+        <item name="colorPrimary">#165089</item>
 
     </style>
 
-    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+    //MapBottomSheet
+    <style
+        name="BottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+
     </style>
 
-    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+    <style
+        name="BottomSheetStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+
         <item name="android:background">@color/transparent</item>
+
+    </style>
+
+    //DatePicker
+    <style
+        name="CustomDatePickerTheme"
+        parent="ThemeOverlay.Material3.MaterialCalendar">
+
+        <item name="colorPrimary">#165089</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="backgroundTint">#165089</item>
+        <item name="shapeAppearanceMediumComponent">@style/CustomDatePickerTheme.ShapeAppearance</item>
+        <item name="materialCalendarStyle">@style/CustomDatePickerTheme.Calendar</item>
+
+    </style>
+
+    <style
+        name="CustomDatePickerTheme.ShapeAppearance"
+        parent="ShapeAppearance.Material3.MediumComponent">
+
+        <item name="cornerSize">20dp</item>
+
+    </style>
+
+    <style
+        name="CustomDatePickerTheme.Calendar"
+        parent="Widget.Material3.MaterialCalendar">
+
+        <item name="backgroundTint">#FFFFFF</item>
+
     </style>
 
 </resources>

@@ -1,9 +1,6 @@
 package by.ssrlab.domain.repository.ui
 
-import by.ssrlab.data.obj.DateObject
 import by.ssrlab.data.obj.FolderObject
-import by.ssrlab.data.obj.GridObject
-import by.ssrlab.data.obj.SectionObject
 import by.ssrlab.domain.R
 
 class UiDataProvider {
@@ -21,12 +18,6 @@ class UiDataProvider {
             FolderObject(R.string.folder_dates, R.drawable.png_folder_dates, address1),
             FolderObject(R.string.folder_persons, R.drawable.png_folder_persons, address2),
             FolderObject(R.string.folder_places, R.drawable.png_folder_places, address3)
-        )
-    }
-
-    fun getDates(): List<DateObject> {
-        return listOf(
-
         )
     }
 }
