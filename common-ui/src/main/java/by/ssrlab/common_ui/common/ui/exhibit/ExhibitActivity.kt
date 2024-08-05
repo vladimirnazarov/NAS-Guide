@@ -1,6 +1,7 @@
 package by.ssrlab.common_ui.common.ui.exhibit
 
 import android.os.Bundle
+import android.view.View
 import android.view.ViewTreeObserver
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -9,9 +10,11 @@ import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
 import by.ssrlab.common_ui.common.vm.AExhibitVM
 import by.ssrlab.common_ui.databinding.ActivityExhibitBinding
+import by.ssrlab.data.util.ExhibitObject
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.io.File
 
 class ExhibitActivity : BaseActivity() {
 
@@ -40,6 +43,36 @@ class ExhibitActivity : BaseActivity() {
 
         setupButtons()
         observeLayoutChange()
+
+        val exhibitObject = getExhibitObjectFromIntent()
+        checkAudioAvailability(exhibitObject)
+    }
+
+    private fun getExhibitObjectFromIntent(): ExhibitObject {
+        return when (val exhibitObjectType = intent.getStringExtra("exhibitObjectType")) {
+            "Development" -> ExhibitObject.Development
+            "Organization" -> ExhibitObject.Organization
+            "Person" -> ExhibitObject.Person
+            "Place" -> ExhibitObject.Place
+            else -> throw IllegalArgumentException("Invalid ExhibitObject type: $exhibitObjectType")
+        }
+    }
+
+    private fun checkAudioAvailability(exhibitObject: ExhibitObject) {
+        val audioFileName = "botanical_${getPlaceId(exhibitObject)}_${application.resources.configuration.locales.get(0)}.mp3"
+        val audioFile = File(getExternalFilesDir(null), audioFileName)
+
+        //TODO: check file availability
+
+    }
+
+    private fun getPlaceId(exhibitObject: ExhibitObject): String {
+        return when (exhibitObject) {
+            ExhibitObject.Development -> TODO()
+            ExhibitObject.Organization -> TODO()
+            ExhibitObject.Person -> TODO()
+            ExhibitObject.Place -> TODO()
+        }
     }
 
     private fun setupButtons() {
