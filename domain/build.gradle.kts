@@ -38,7 +38,8 @@ android {
 dependencies {
     api(project(":data"))
 
+    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.retrofit)
-    implementation(libs.retrofit2.converter.gson)
+    implementation(libs.converter.gson)
     implementation(libs.kotlin.stdlib)
 }
