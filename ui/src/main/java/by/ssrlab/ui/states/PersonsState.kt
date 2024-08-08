@@ -6,6 +6,6 @@ data class PersonsState(
     val playerState: PlayerState? = null,
     val playerStatus: PlayerStatus? = null,
 
-    val personList: List<PersonLocale> = listOf(), //instead of personsData
+    val personList: MutableList<PersonLocale>? = mutableListOf(),
     val title: String = "",
 )
