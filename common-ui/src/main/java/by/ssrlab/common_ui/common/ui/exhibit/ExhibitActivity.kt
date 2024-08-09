@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.constraintlayout.widget.ConstraintLayout
 import by.ssrlab.common_ui.common.ui.base.BaseActivity
 import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.ActivityMainMarginParams
+import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.MediaPlayer
+import by.ssrlab.common_ui.common.ui.exhibit.fragments.utils.MediaPlayerController
 import by.ssrlab.common_ui.common.vm.AExhibitVM
 import by.ssrlab.common_ui.databinding.ActivityExhibitBinding
 import by.ssrlab.data.util.ExhibitObject
@@ -14,7 +16,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ExhibitActivity : BaseActivity() {
+class ExhibitActivity : BaseActivity(), MediaPlayerController {
 
     private lateinit var binding: ActivityExhibitBinding
     private val activityViewModel: AExhibitVM by viewModel()
@@ -57,9 +59,13 @@ class ExhibitActivity : BaseActivity() {
         setBackAction()
     }
 
+    override fun initMediaPlayer() {
+        MediaPlayer.mediaPlayer = android.media.MediaPlayer()
+    }
+
     private fun setVolumeAction() {
         binding.toolbarVolume.setOnClickListener {
-            createIsntRealizedDialog()
+//            initMediaPlayer()
         }
     }
 
@@ -78,7 +84,8 @@ class ExhibitActivity : BaseActivity() {
     }
 
     private fun observeLayoutChange() {
-        binding.root.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+        binding.root.viewTreeObserver.addOnGlobalLayoutListener(object :
+            ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 binding.root.viewTreeObserver.removeOnGlobalLayoutListener(this)
 

@@ -40,6 +40,7 @@ open class BaseActivity: AppCompatActivity(), KoinComponent {
 
     fun createDatePickerDialog(onDateChanged: (Int, Int) -> Unit) {
         createDateDialog(this, onDateChanged)
+    }
 
     fun getLocale(): Locale {
         return resources.configuration.locales.get(0)
